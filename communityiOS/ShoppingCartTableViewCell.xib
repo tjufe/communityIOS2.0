@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ShoppingCartTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="未选择" translatesAutoresizingMaskIntoConstraints="NO" id="pqS-fn-2Kc">
+                        <rect key="frame" x="10" y="10" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="yVG-Or-TCP"/>
+                            <constraint firstAttribute="height" constant="25" id="yhD-k8-lDL"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="吉祥馄饨" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C17-fb-ba4">
+                        <rect key="frame" x="50" y="11" width="255" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="0CF-yg-dxz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pqS-fn-2Kc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Aqq-BU-ji4"/>
+                    <constraint firstItem="C17-fb-ba4" firstAttribute="leading" secondItem="pqS-fn-2Kc" secondAttribute="trailing" constant="15" id="ImB-tS-zVy"/>
+                    <constraint firstItem="C17-fb-ba4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="TRQ-jr-dgF"/>
+                    <constraint firstItem="C17-fb-ba4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="dcZ-Ys-MUP"/>
+                    <constraint firstAttribute="trailing" secondItem="C17-fb-ba4" secondAttribute="trailing" constant="15" id="ecr-SF-J8R"/>
+                    <constraint firstItem="pqS-fn-2Kc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="lcK-AM-Ueq"/>
+                </constraints>
+            </tableViewCellContentView>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="未选择" width="35" height="35"/>
+    </resources>
+</document>
