@@ -72,6 +72,16 @@
 		13B1C3751AD4D80B005C179C /* postListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B1C36D1AD4D80B005C179C /* postListItem.m */; };
 		13B1C37A1AD4D817005C179C /* regItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B1C3771AD4D817005C179C /* regItem.m */; };
 		13B1C37B1AD4D817005C179C /* StatusTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B1C3791AD4D817005C179C /* StatusTool.m */; };
+		13BC4DE91B3A9514009D181D /* CollectionViewCell4Dinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BC4DE41B3A9514009D181D /* CollectionViewCell4Dinner.m */; };
+		13BC4DEA1B3A9514009D181D /* CollectionViewCell4Dinner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BC4DE51B3A9514009D181D /* CollectionViewCell4Dinner.xib */; };
+		13BC4DEB1B3A9514009D181D /* CollectionViewCell4Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BC4DE71B3A9514009D181D /* CollectionViewCell4Food.m */; };
+		13BC4DEC1B3A9514009D181D /* CollectionViewCell4Food.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BC4DE81B3A9514009D181D /* CollectionViewCell4Food.xib */; };
+		13BC4DF61B3A9530009D181D /* Detail4FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BC4DEE1B3A9530009D181D /* Detail4FoodViewController.m */; };
+		13BC4DF71B3A9530009D181D /* Detail4Food.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13BC4DEF1B3A9530009D181D /* Detail4Food.storyboard */; };
+		13BC4DF81B3A9530009D181D /* ViewController4Dinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BC4DF11B3A9530009D181D /* ViewController4Dinner.m */; };
+		13BC4DF91B3A9530009D181D /* CollectionView4Dinner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13BC4DF21B3A9530009D181D /* CollectionView4Dinner.storyboard */; };
+		13BC4DFA1B3A9530009D181D /* ViewController4Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BC4DF41B3A9530009D181D /* ViewController4Food.m */; };
+		13BC4DFB1B3A9530009D181D /* CollectionView4Food.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13BC4DF51B3A9530009D181D /* CollectionView4Food.storyboard */; };
 		13BE566D1ABA574700379ACD /* ForumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE566B1ABA574700379ACD /* ForumTableViewCell.m */; };
 		13BE566E1ABA574700379ACD /* ForumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BE566C1ABA574700379ACD /* ForumTableViewCell.xib */; };
 		13BE56721ABA6F0E00379ACD /* UIViewController+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE56711ABA6F0E00379ACD /* UIViewController+Create.m */; };
@@ -295,6 +305,21 @@
 		13B1C3771AD4D817005C179C /* regItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = regItem.m; sourceTree = "<group>"; };
 		13B1C3781AD4D817005C179C /* StatusTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusTool.h; sourceTree = "<group>"; };
 		13B1C3791AD4D817005C179C /* StatusTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusTool.m; sourceTree = "<group>"; };
+		13BC4DE31B3A9514009D181D /* CollectionViewCell4Dinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell4Dinner.h; sourceTree = "<group>"; };
+		13BC4DE41B3A9514009D181D /* CollectionViewCell4Dinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell4Dinner.m; sourceTree = "<group>"; };
+		13BC4DE51B3A9514009D181D /* CollectionViewCell4Dinner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell4Dinner.xib; sourceTree = "<group>"; };
+		13BC4DE61B3A9514009D181D /* CollectionViewCell4Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell4Food.h; sourceTree = "<group>"; };
+		13BC4DE71B3A9514009D181D /* CollectionViewCell4Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell4Food.m; sourceTree = "<group>"; };
+		13BC4DE81B3A9514009D181D /* CollectionViewCell4Food.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell4Food.xib; sourceTree = "<group>"; };
+		13BC4DED1B3A9530009D181D /* Detail4FoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detail4FoodViewController.h; sourceTree = "<group>"; };
+		13BC4DEE1B3A9530009D181D /* Detail4FoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Detail4FoodViewController.m; sourceTree = "<group>"; };
+		13BC4DEF1B3A9530009D181D /* Detail4Food.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail4Food.storyboard; sourceTree = "<group>"; };
+		13BC4DF01B3A9530009D181D /* ViewController4Dinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController4Dinner.h; sourceTree = "<group>"; };
+		13BC4DF11B3A9530009D181D /* ViewController4Dinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController4Dinner.m; sourceTree = "<group>"; };
+		13BC4DF21B3A9530009D181D /* CollectionView4Dinner.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CollectionView4Dinner.storyboard; sourceTree = "<group>"; };
+		13BC4DF31B3A9530009D181D /* ViewController4Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController4Food.h; sourceTree = "<group>"; };
+		13BC4DF41B3A9530009D181D /* ViewController4Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController4Food.m; sourceTree = "<group>"; };
+		13BC4DF51B3A9530009D181D /* CollectionView4Food.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CollectionView4Food.storyboard; sourceTree = "<group>"; };
 		13BE566A1ABA574700379ACD /* ForumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumTableViewCell.h; sourceTree = "<group>"; };
 		13BE566B1ABA574700379ACD /* ForumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumTableViewCell.m; sourceTree = "<group>"; };
 		13BE566C1ABA574700379ACD /* ForumTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForumTableViewCell.xib; sourceTree = "<group>"; };
@@ -1012,6 +1037,12 @@
 		A048FDC31B313FF1009146FA /* buyers */ = {
 			isa = PBXGroup;
 			children = (
+				13BC4DE31B3A9514009D181D /* CollectionViewCell4Dinner.h */,
+				13BC4DE41B3A9514009D181D /* CollectionViewCell4Dinner.m */,
+				13BC4DE51B3A9514009D181D /* CollectionViewCell4Dinner.xib */,
+				13BC4DE61B3A9514009D181D /* CollectionViewCell4Food.h */,
+				13BC4DE71B3A9514009D181D /* CollectionViewCell4Food.m */,
+				13BC4DE81B3A9514009D181D /* CollectionViewCell4Food.xib */,
 				A048FDCA1B3140D0009146FA /* ShoppingCartTableViewCell.h */,
 				A048FDCB1B3140D0009146FA /* ShoppingCartTableViewCell.m */,
 				A048FDCC1B3140D0009146FA /* ShoppingCartTableViewCell.xib */,
@@ -1028,6 +1059,15 @@
 				A048FDD91B317159009146FA /* ShoppingCart.storyboard */,
 				A048FDDB1B317175009146FA /* ShoppingCartViewController.h */,
 				A048FDDC1B317175009146FA /* ShoppingCartViewController.m */,
+				13BC4DED1B3A9530009D181D /* Detail4FoodViewController.h */,
+				13BC4DEE1B3A9530009D181D /* Detail4FoodViewController.m */,
+				13BC4DEF1B3A9530009D181D /* Detail4Food.storyboard */,
+				13BC4DF01B3A9530009D181D /* ViewController4Dinner.h */,
+				13BC4DF11B3A9530009D181D /* ViewController4Dinner.m */,
+				13BC4DF21B3A9530009D181D /* CollectionView4Dinner.storyboard */,
+				13BC4DF31B3A9530009D181D /* ViewController4Food.h */,
+				13BC4DF41B3A9530009D181D /* ViewController4Food.m */,
+				13BC4DF51B3A9530009D181D /* CollectionView4Food.storyboard */,
 			);
 			name = buyers;
 			sourceTree = "<group>";
@@ -1036,9 +1076,9 @@
 			isa = PBXGroup;
 			children = (
 				A0CD1CCC1B33B52300FCA919 /* ShopUserInfo.h */,
+				A0CD1CD01B33C3C600FCA919 /* ShopUserList.m */,
 				A0CD1CCD1B33B52300FCA919 /* ShopUserInfo.m */,
 				A0CD1CCF1B33C3C600FCA919 /* ShopUserList.h */,
-				A0CD1CD01B33C3C600FCA919 /* ShopUserList.m */,
 				A0C97CF61B38F902006B7946 /* CommodityInfo.h */,
 				A0C97CF71B38F902006B7946 /* CommodityInfo.m */,
 				A0C97CF91B38FBCD006B7946 /* CommodityList.h */,
@@ -1193,12 +1233,15 @@
 				13B1C35E1AD4D6ED005C179C /* TitleTableViewCell.xib in Resources */,
 				13B1C3541AD4D6ED005C179C /* PostList.storyboard in Resources */,
 				A048FDCE1B3140D0009146FA /* ShoppingCartTableViewCell.xib in Resources */,
+				13BC4DEA1B3A9514009D181D /* CollectionViewCell4Dinner.xib in Resources */,
 				13D247191B04383F00717780 /* ApplyTableViewCell.xib in Resources */,
 				13B1C3211AD4D6B3005C179C /* FSCollectionView.storyboard in Resources */,
+				13BC4DFB1B3A9530009D181D /* CollectionView4Food.storyboard in Resources */,
 				13B1C3171AD4D674005C179C /* ForumSelectTableViewCell.xib in Resources */,
 				13B1C3561AD4D6ED005C179C /* PostTextTableViewCell.xib in Resources */,
 				183FCD551B158AF80050D5B6 /* MyMendReplyTableViewCell.xib in Resources */,
 				13C58BE81AB9550600090157 /* Main.storyboard in Resources */,
+				13BC4DF71B3A9530009D181D /* Detail4Food.storyboard in Resources */,
 				1842AE6D1ADB77290022D2CB /* PushConfig.plist in Resources */,
 				18628CB91B10750D00E81A8B /* MyReplyTableViewCell.xib in Resources */,
 				188933871AFB57E8006329D8 /* AuthStoryboard.storyboard in Resources */,
@@ -1206,6 +1249,7 @@
 				13C58BED1AB9550600090157 /* LaunchScreen.xib in Resources */,
 				A05C7D3A1AF86D7400838247 /* UserJoinPostList.storyboard in Resources */,
 				137D80DF1B06FC24001E8CDA /* EditApplyTableViewCell.xib in Resources */,
+				13BC4DEC1B3A9514009D181D /* CollectionViewCell4Food.xib in Resources */,
 				13B1C34C1AD4D6ED005C179C /* PostDetailStoryboard.storyboard in Resources */,
 				8EE5A4631B0ECE6A00F05A12 /* NewPostEditViewController.xib in Resources */,
 				13D247211B048CCE00717780 /* chainToWeb.storyboard in Resources */,
@@ -1218,6 +1262,7 @@
 				13B1C2E31ACB7DC5005C179C /* MJRefresh.bundle in Resources */,
 				A048FDDA1B317159009146FA /* ShoppingCart.storyboard in Resources */,
 				13B1C2CB1ACA6E7C005C179C /* userCenter.xcassets in Resources */,
+				13BC4DF91B3A9530009D181D /* CollectionView4Dinner.storyboard in Resources */,
 				13B1C2BB1ACA5956005C179C /* demo.xcassets in Resources */,
 				8ED353131B0D87280017F2F6 /* MainTableViewHeaderCell.xib in Resources */,
 				8EF3F7511AD54F5400924975 /* PostReply.storyboard in Resources */,
@@ -1346,8 +1391,10 @@
 				8EE5A4691B0F2CA900F05A12 /* RepairInfo.m in Sources */,
 				A02842D81B2745A1002EC4DB /* AddressGetter.m in Sources */,
 				13B1C37A1AD4D817005C179C /* regItem.m in Sources */,
+				13BC4DE91B3A9514009D181D /* CollectionViewCell4Dinner.m in Sources */,
 				A0D39DFA1AF76419007DEFA0 /* uncheckPostListItem.m in Sources */,
 				13BE56721ABA6F0E00379ACD /* UIViewController+Create.m in Sources */,
+				13BC4DF61B3A9530009D181D /* Detail4FoodViewController.m in Sources */,
 				13B1C3751AD4D80B005C179C /* postListItem.m in Sources */,
 				13B1C2E91ACB7DC5005C179C /* UIScrollView+MJExtension.m in Sources */,
 				13C58BE51AB9550600090157 /* ViewController.m in Sources */,
@@ -1359,6 +1406,7 @@
 				13C58BE21AB9550600090157 /* AppDelegate.m in Sources */,
 				13B1C3721AD4D80B005C179C /* loginItem.m in Sources */,
 				13B1C3741AD4D80B005C179C /* postItem.m in Sources */,
+				13BC4DEB1B3A9514009D181D /* CollectionViewCell4Food.m in Sources */,
 				13B1C34D1AD4D6ED005C179C /* PostDetailViewController.m in Sources */,
 				137D80DE1B06FC24001E8CDA /* EditApplyTableViewCell.m in Sources */,
 				8ED353121B0D87280017F2F6 /* MainTableViewHeaderCell.m in Sources */,
@@ -1381,8 +1429,10 @@
 				8EEC487E1AD8B9CF002E70DA /* ifApplyItem.m in Sources */,
 				A0D401FB1B213FCC0033F45D /* getSMSCodeItem.m in Sources */,
 				A0C97CFB1B38FBCD006B7946 /* CommodityList.m in Sources */,
+				13BC4DFA1B3A9530009D181D /* ViewController4Food.m in Sources */,
 				13B1C2E21ACB7DC5005C179C /* AMPActivityIndicator.m in Sources */,
 				13B1C3011ACBBED2005C179C /* SettingsViewController.m in Sources */,
+				13BC4DF81B3A9530009D181D /* ViewController4Dinner.m in Sources */,
 				13B1C3711AD4D80B005C179C /* HttpTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

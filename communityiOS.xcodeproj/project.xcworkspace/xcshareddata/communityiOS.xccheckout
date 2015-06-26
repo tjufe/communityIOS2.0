@@ -10,6 +10,8 @@
 	<string>communityiOS</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>CF3C2A5E002BD3B89AEC761E256681FCF49062B4</key>
+		<string>https://github.com/tjufe/communityIOS2.0.git</string>
 		<key>E5811A8AAB1C5E0E17122A0A19866697124F914B</key>
 		<string>https://github.com/tjufe/communityiOS.git</string>
 	</dict>
@@ -17,15 +19,17 @@
 	<string>communityiOS.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E5811A8AAB1C5E0E17122A0A19866697124F914B</key>
+		<key>CF3C2A5E002BD3B89AEC761E256681FCF49062B4</key>
 		<string>../..</string>
+		<key>E5811A8AAB1C5E0E17122A0A19866697124F914B</key>
+		<string>../../../communityiOS_201504081442</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/tjufe/communityiOS.git</string>
+	<string>https://github.com/tjufe/communityIOS2.0.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E5811A8AAB1C5E0E17122A0A19866697124F914B</string>
+	<string>CF3C2A5E002BD3B89AEC761E256681FCF49062B4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>E5811A8AAB1C5E0E17122A0A19866697124F914B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>communityiOS_201504081442</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CF3C2A5E002BD3B89AEC761E256681FCF49062B4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>communityIOS2.0</string>
 		</dict>
 	</array>
 </dict>
