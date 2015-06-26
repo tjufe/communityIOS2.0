@@ -79,6 +79,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentDirectory stringByAppendingPathComponent:@"test"];
+    BOOL flag = [NSKeyedArchiver archiveRootObject:@"aaa" toFile:path];
+    
+    if(flag){
+        NSLog(@"归档成功^^^^%@",path);
+        
+        
+    }
+    
+    NSString *aa = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    if(aa){
+        NSLog(@"^^^^%@",aa);
+    }
 }
 
 - (void)didReceiveMemoryWarning {

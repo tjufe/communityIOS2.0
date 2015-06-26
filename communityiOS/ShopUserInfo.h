@@ -28,7 +28,7 @@
 @property (assign,nonatomic) int shop_sequence;//排列序号
 @property (assign,nonatomic) int commodity_num;//在卖商品数量
 @property (assign,nonatomic) int estimate_num;//商家评价数
-@property (assign,nonatomic) int edt;//多余
+
 
 +(ShopUserInfo *)initWithparametes:(NSDictionary*)dic;
 

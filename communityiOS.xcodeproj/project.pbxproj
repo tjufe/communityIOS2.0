@@ -154,6 +154,7 @@
 		A048FDDD1B317175009146FA /* ShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A048FDDC1B317175009146FA /* ShoppingCartViewController.m */; };
 		A0539A641B05E65800DC33BB /* newPostItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0539A631B05E65800DC33BB /* newPostItem.m */; };
 		A05C7D3A1AF86D7400838247 /* UserJoinPostList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05C7D391AF86D7400838247 /* UserJoinPostList.storyboard */; };
+		A0AA4B711B3BF760001487FA /* ShoppingCartCommodity.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AA4B701B3BF760001487FA /* ShoppingCartCommodity.m */; };
 		A0C97CF81B38F902006B7946 /* CommodityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C97CF71B38F902006B7946 /* CommodityInfo.m */; };
 		A0C97CFB1B38FBCD006B7946 /* CommodityList.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C97CFA1B38FBCD006B7946 /* CommodityList.m */; };
 		A0CA6DEF1AFC5E3400F88237 /* UserJoinPostListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6DEE1AFC5E3400F88237 /* UserJoinPostListViewController.m */; };
@@ -431,6 +432,8 @@
 		A0539A621B05E65800DC33BB /* newPostItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newPostItem.h; sourceTree = "<group>"; };
 		A0539A631B05E65800DC33BB /* newPostItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newPostItem.m; sourceTree = "<group>"; };
 		A05C7D391AF86D7400838247 /* UserJoinPostList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserJoinPostList.storyboard; sourceTree = "<group>"; };
+		A0AA4B6F1B3BF760001487FA /* ShoppingCartCommodity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartCommodity.h; sourceTree = "<group>"; };
+		A0AA4B701B3BF760001487FA /* ShoppingCartCommodity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartCommodity.m; sourceTree = "<group>"; };
 		A0C97CF61B38F902006B7946 /* CommodityInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityInfo.h; sourceTree = "<group>"; };
 		A0C97CF71B38F902006B7946 /* CommodityInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityInfo.m; sourceTree = "<group>"; };
 		A0C97CF91B38FBCD006B7946 /* CommodityList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityList.h; sourceTree = "<group>"; };
@@ -1043,6 +1046,8 @@
 				A0C97CF71B38F902006B7946 /* CommodityInfo.m */,
 				A0C97CF91B38FBCD006B7946 /* CommodityList.h */,
 				A0C97CFA1B38FBCD006B7946 /* CommodityList.m */,
+				A0AA4B6F1B3BF760001487FA /* ShoppingCartCommodity.h */,
+				A0AA4B701B3BF760001487FA /* ShoppingCartCommodity.m */,
 			);
 			name = buyers;
 			sourceTree = "<group>";
@@ -1298,6 +1303,7 @@
 				13878AE51AD6260400658F21 /* AlterPasswordViewController.m in Sources */,
 				1892E3ED1ADBFAAD008A75B1 /* FirstSettingsViewController.m in Sources */,
 				A048FDD21B3159C1009146FA /* ShoppingCart2TableViewCell.m in Sources */,
+				A0AA4B711B3BF760001487FA /* ShoppingCartCommodity.m in Sources */,
 				13B1C2BE1ACA5A27005C179C /* KZPropertyMapper.m in Sources */,
 				187A42A61B1C03E900DD8A50 /* PostText1TableViewCell.m in Sources */,
 				13B1C35D1AD4D6ED005C179C /* TitleTableViewCell.m in Sources */,
