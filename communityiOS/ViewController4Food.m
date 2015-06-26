@@ -26,6 +26,8 @@
     return cell4food;
 }
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.comm_list = [[NSMutableArray alloc]init];

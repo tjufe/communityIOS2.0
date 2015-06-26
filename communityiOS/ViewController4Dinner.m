@@ -12,6 +12,7 @@
 #import "ShopUserInfo.h"
 
 @interface ViewController4Dinner ()<UICollectionViewDataSource,UICollectionViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionview4dinner;
 @property(strong ,nonatomic)CollectionViewCell4Dinner *cell4dinner;
 @property (strong,nonatomic)NSMutableArray *ShopList;
@@ -19,6 +20,13 @@
 @end
 
 @implementation ViewController4Dinner
+
+
+#pragma mark------获取商家列表
++(NSMutableArray *)getShopList{
+    
+    return shopListArray;
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
@@ -79,7 +87,9 @@
     
     [ShopUserList LoadShopUserListWithCommunityID:[defaults objectForKey:@"CommunityID"] page:[NSNumber numberWithInt:1] rows:[NSNumber numberWithInt:20] Success:^(id object) {
         self.ShopList =(NSMutableArray *) object;
+        shopListArray = self.ShopList;
         [self.collectionview4dinner reloadData];
+        
    
     } failurs:^(NSError *error) {
         
@@ -88,6 +98,8 @@
     UIBarButtonItem *temporaryBarButtonItem=[[UIBarButtonItem alloc] init];
     temporaryBarButtonItem.title=@"";
     self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+    
+    
 
 }
 

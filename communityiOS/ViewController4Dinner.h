@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
+ NSMutableArray *shopListArray;
+
 @interface ViewController4Dinner : UIViewController
+
++(NSMutableArray *)getShopList;
 
 @end
