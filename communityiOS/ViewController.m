@@ -35,6 +35,7 @@
 #import "AddressGetter.h"
 #import "AppDelegate.h"
 #import "ShoppingCartViewController.h"
+#import "ViewController4Dinner.h"
 
 
 
@@ -812,8 +813,8 @@ bool alreadyGetAddress = NO;
     forumItem *f = [self.listForumItem objectAtIndex:index];
     NSLog(@"%@",f.forum_name);
     if ([f.forum_name containsString:@"外卖"]){
-        ShoppingCartViewController *SCVC = [ShoppingCartViewController createFromStoryboardName:@"ShoppingCart" withIdentifier:@"ShoppingCart"];
-        [self.navigationController pushViewController:SCVC animated:YES];
+         ViewController4Dinner *VC4D = [ViewController4Dinner createFromStoryboardName:@"CollectionView4Dinner" withIdentifier:@"CollectionView4Dinner"];
+        [self.navigationController pushViewController:VC4D animated:YES];
     }else{
 
     PostListViewController *poLVC = [PostListViewController createFromStoryboardName:@"PostList" withIdentifier:@"PostListID"];

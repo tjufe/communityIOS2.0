@@ -8,6 +8,7 @@
 
 #import "ShopUserList.h"
 #import "HttpTool.h"
+#import "ShopUserInfo.h"
 
 
 @implementation ShopUserList
@@ -51,14 +52,17 @@
                          NSData *data = [[NSData alloc] initWithData:responseObject];
                          NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                          ShopUserList *list = [ShopUserList initWithparametes:dic];
-                         
-                         success(list);
+                         NSMutableArray *ListArray = [NSMutableArray array];
+                         for(NSDictionary *dic in list.ShopUserList ){
+                             ShopUserInfo *shopuser_info = [ShopUserInfo initWithparametes:dic];
+                             [ListArray addObject:shopuser_info];
+                         }
+                         success(ListArray);
                          
                      } failure:^(NSError *error) {
                          if (failure == nil) return;
                          failure(error);
                      }];
-
     
     
 }

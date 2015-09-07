@@ -26,19 +26,38 @@
                             <constraint firstAttribute="height" constant="21" id="0CF-yg-dxz"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i49-k6-ffp">
+                        <rect key="frame" x="0.0" y="8" width="46" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="EwF-bT-xe6"/>
+                            <constraint firstAttribute="height" constant="30" id="G6A-gv-BVe"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="Btn2selectComm:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PKE-eM-vhf"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="i49-k6-ffp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3Gv-gg-DZd"/>
                     <constraint firstItem="pqS-fn-2Kc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Aqq-BU-ji4"/>
                     <constraint firstItem="C17-fb-ba4" firstAttribute="leading" secondItem="pqS-fn-2Kc" secondAttribute="trailing" constant="15" id="ImB-tS-zVy"/>
                     <constraint firstItem="C17-fb-ba4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="TRQ-jr-dgF"/>
+                    <constraint firstItem="i49-k6-ffp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="WPP-VV-Wns"/>
                     <constraint firstItem="C17-fb-ba4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="dcZ-Ys-MUP"/>
                     <constraint firstAttribute="trailing" secondItem="C17-fb-ba4" secondAttribute="trailing" constant="15" id="ecr-SF-J8R"/>
                     <constraint firstItem="pqS-fn-2Kc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="lcK-AM-Ueq"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="img_select_shop" destination="pqS-fn-2Kc" id="Vqb-ZS-KpW"/>
+                <outlet property="label_shop_name" destination="C17-fb-ba4" id="Ehc-AH-YPh"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

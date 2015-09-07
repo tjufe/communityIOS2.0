@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ShoppingCartCommodity : NSObject
+@interface ShoppingCartCommodity : NSObject<NSCoding>
 @property (strong,nonatomic) NSString *commodity_id;
 @property (strong,nonatomic) NSString *comm_unit;
 @property (assign,nonatomic) double comm_price;
 @property (strong,nonatomic) NSString *comm_name;
-@property (assign,nonatomic) double buy_amount;
+@property (assign,nonatomic) int  buy_amount;
 @property (strong,nonatomic) NSString *comm_photo;
 @property (strong,nonatomic) NSString *shop_id;
+@property (strong,nonatomic) NSString *shop_name;
+@property (assign,nonatomic) int select_status;
 
 
 @end

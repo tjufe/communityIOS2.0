@@ -111,6 +111,9 @@
                                         <state key="normal" image="去结算按钮">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="Btn2sumbitOrders:" destination="HWF-3Z-4s3" eventType="touchUpInside" id="q1p-9B-dot"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t1-jf-oYC">
                                         <rect key="frame" x="319" y="25" width="8" height="10"/>
@@ -212,6 +215,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="img_select_all" destination="Rat-ZQ-hRj" id="DdI-Lj-fH9"/>
+                        <outlet property="label_comm_count" destination="c4G-6C-i3M" id="hAO-gx-vDy"/>
+                        <outlet property="label_total" destination="Tgs-0i-p8f" id="sHy-1B-BoJ"/>
+                        <outlet property="label_total_price" destination="qTf-Gr-hYx" id="JwG-ba-bbS"/>
                         <outlet property="sc_table" destination="FlV-Qp-s9J" id="2N9-fY-edP"/>
                     </connections>
                 </viewController>
