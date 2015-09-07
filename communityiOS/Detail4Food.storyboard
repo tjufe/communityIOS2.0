@@ -7,7 +7,7 @@
         <!--Detail4 Food View Controller-->
         <scene sceneID="R85-27-2Tp">
             <objects>
-                <viewController id="fxl-eY-ynV" customClass="Detail4FoodViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail4food" id="fxl-eY-ynV" customClass="Detail4FoodViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Ck-EU-Ujy"/>
                         <viewControllerLayoutGuide type="bottom" id="1s9-ni-kH1"/>
@@ -92,6 +92,9 @@
                                                 <state key="normal" title="bt" image="店铺">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="IntoShopOnclick:" destination="fxl-eY-ynV" eventType="touchUpInside" id="k4k-D0-bGy"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfX-s6-mYS">
                                                 <rect key="frame" x="68" y="6" width="36" height="33"/>
@@ -110,6 +113,9 @@
                                                         <exclude reference="JyF-6m-69C"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="CallSellerOnclick:" destination="fxl-eY-ynV" eventType="touchUpInside" id="g41-LZ-d1k"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egb-u9-guo">
                                                 <rect key="frame" x="121" y="6" width="86" height="33"/>
@@ -144,6 +150,9 @@
                                                 <state key="normal" title="Button" image="立即购买按钮">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="BuyNowOnclick:" destination="fxl-eY-ynV" eventType="touchUpInside" id="A8E-UI-Nph"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -223,6 +232,11 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="BuyNowBt" destination="yqD-i0-XRs" id="Yhz-xL-nX5"/>
+                        <outlet property="CallSellerBt" destination="gfX-s6-mYS" id="WGw-fe-A2b"/>
+                        <outlet property="IntoShopBt" destination="NJu-95-4z6" id="O81-ee-hFe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlS-Ki-Ngh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

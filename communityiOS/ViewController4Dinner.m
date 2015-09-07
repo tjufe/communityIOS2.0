@@ -11,6 +11,9 @@
 #import "ShopUserList.h"
 #import "ShopUserInfo.h"
 
+#import "UIViewController+Create.h"
+#import "ViewController4Food.h"
+
 @interface ViewController4Dinner ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionview4dinner;
@@ -52,15 +55,23 @@
         [cell setShopmainpic:shop_user_info.shop_photo];
         [cell setFoodnum:[NSString stringWithFormat:@"%d",shop_user_info.commodity_num]];
         [cell setReplynum:[NSString stringWithFormat:@"%d",shop_user_info.estimate_num]];
-        
-//        cell.frame.size = CGSizeMake(self.view.frame.size.width, 300);
-        
-        
-        
+
     }
     
     
     return cell;
+
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    ShopUserInfo *shop_user_info = [self.ShopList objectAtIndex:indexPath.row];
+    ViewController4Food *VC4F = [ViewController4Food createFromStoryboardName:@"CollectionView4Food" withIdentifier:@"CollectionView4Food"];
+    [VC4F getShopID:shop_user_info.shop_user_id];
+    [VC4F getShopName:shop_user_info.shop_user_name];
+    [VC4F getShopIcon:shop_user_info.shop_icon];
+    [self.navigationController pushViewController:VC4F  animated:YES];
+    
+    
 
 }
 

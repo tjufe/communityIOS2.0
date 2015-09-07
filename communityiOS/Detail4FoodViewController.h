@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface Detail4FoodViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *IntoShopBt;
+- (IBAction)IntoShopOnclick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *CallSellerBt;
+- (IBAction)CallSellerOnclick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *BuyNowBt;
+- (IBAction)BuyNowOnclick:(id)sender;
 
 @end

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="154" id="KGk-i7-Jjw" customClass="OrderListTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="154"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="吉祥馄饨" translatesAutoresizingMaskIntoConstraints="NO" id="l9e-8a-xEL">
+                        <rect key="frame" x="20" y="10" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="O1w-p3-cLI"/>
+                            <constraint firstAttribute="height" constant="25" id="j6h-1b-VeA"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="吉祥馄饨" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUa-BA-NsU">
+                        <rect key="frame" x="47" y="10" width="60" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="x08-dm-11i"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="CJn-z2-UKN">
+                        <rect key="frame" x="275" y="10" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="UYe-qb-srC"/>
+                            <constraint firstAttribute="width" constant="25" id="h9z-a8-EbD"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-Oy-zoU">
+                        <rect key="frame" x="20" y="43" width="58" height="58"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="58" id="j0F-JP-I41"/>
+                            <constraint firstAttribute="height" constant="58" id="yKg-o5-aOt"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实付款： ¥" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWq-2o-5jf">
+                        <rect key="frame" x="20" y="114" width="63.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="0TV-9o-Czh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999.99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwN-w2-JyV">
+                        <rect key="frame" x="91" y="114" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="T2l-ul-mXR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="l9e-8a-xEL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="1qV-RA-UYc"/>
+                    <constraint firstItem="AWq-2o-5jf" firstAttribute="centerY" secondItem="QwN-w2-JyV" secondAttribute="centerY" id="6ay-cQ-onS"/>
+                    <constraint firstItem="JUa-BA-NsU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="O1M-Ea-qdk"/>
+                    <constraint firstItem="TG5-Oy-zoU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="PH3-Xd-xcm"/>
+                    <constraint firstItem="AWq-2o-5jf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="PYq-xr-Zpu"/>
+                    <constraint firstAttribute="trailing" secondItem="CJn-z2-UKN" secondAttribute="trailing" constant="20" id="QjW-Lr-Phu"/>
+                    <constraint firstItem="CJn-z2-UKN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="RQF-6h-4T8"/>
+                    <constraint firstItem="JUa-BA-NsU" firstAttribute="leading" secondItem="l9e-8a-xEL" secondAttribute="trailing" constant="2" id="WLX-8u-TnE"/>
+                    <constraint firstItem="TG5-Oy-zoU" firstAttribute="top" secondItem="JUa-BA-NsU" secondAttribute="bottom" constant="8" id="j51-Wg-J4Q"/>
+                    <constraint firstItem="QwN-w2-JyV" firstAttribute="leading" secondItem="AWq-2o-5jf" secondAttribute="trailing" constant="7.5" id="okv-L2-ayv"/>
+                    <constraint firstItem="l9e-8a-xEL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="sM1-O8-4sS"/>
+                    <constraint firstItem="AWq-2o-5jf" firstAttribute="top" secondItem="TG5-Oy-zoU" secondAttribute="bottom" constant="13" id="w8G-h8-ay4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="240" y="354"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="delete" width="36" height="35"/>
+        <image name="吉祥馄饨" width="58" height="56"/>
+    </resources>
+</document>

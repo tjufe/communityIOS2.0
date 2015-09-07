@@ -11,6 +11,8 @@
 @interface UserCenterLoggedViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgAvatar;
+- (IBAction)MyOrderOncilck:(id)sender;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *labelNickname;
 @end
