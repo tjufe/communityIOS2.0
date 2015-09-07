@@ -49,9 +49,11 @@
     [_CommUnit setText:comm_unit];
 }
 
--(void)setComm_price:(NSString *)comm_price{
 
-    [_CommPrice setText:comm_price];
+-(void)setComm_price:(double)comm_price{
+
+    [_CommPrice setText:[NSString stringWithFormat:@"%f",comm_price]];
 }
+
 
 @end

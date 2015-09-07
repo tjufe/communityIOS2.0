@@ -19,7 +19,8 @@
 @property(weak ,nonatomic) NSString *comm_main_pic;
 @property(weak ,nonatomic) NSString *Comm_name;
 @property(weak ,nonatomic) NSString *comm_unit;
-@property(weak ,nonatomic) NSString *comm_price;
+@property(assign ,nonatomic) double comm_price;
+
 
 
 @end

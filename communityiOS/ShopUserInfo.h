@@ -25,6 +25,7 @@
 @property (strong,nonatomic) NSString *shop_idcard;//认证文凭
 @property (strong,nonatomic) NSString *shop_desc;//商家描述介绍
 @property (strong,nonatomic) NSString *shop_photo;//商家主图
+@property (strong,nonatomic) NSString *shop_icon;//商家商标
 @property (assign,nonatomic) int shop_sequence;//排列序号
 @property (assign,nonatomic) int commodity_num;//在卖商品数量
 @property (assign,nonatomic) int estimate_num;//商家评价数

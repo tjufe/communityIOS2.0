@@ -6,27 +6,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionViewCell4Food">
-            <rect key="frame" x="-5" y="-6" width="210" height="291"/>
+
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell4food" id="gTV-IL-0wX" customClass="CollectionViewCell4Food">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="315"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="210" height="291"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="315"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="商家小图" translatesAutoresizingMaskIntoConstraints="NO" id="AJ4-0X-1XF">
-                        <rect key="frame" x="15" y="14" width="180" height="170"/>
+                        <rect key="frame" x="15" y="14" width="170" height="170"/>
+
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="170" id="PDs-xH-sYL"/>
                             <constraint firstAttribute="height" constant="170" id="UWQ-CJ-uyz"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鲜肉黄瓜馄饨" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jp-Cc-2lZ">
-                        <rect key="frame" x="15" y="196" width="180" height="18"/>
+
+                        <rect key="frame" x="15" y="196" width="170" height="18"/>
+
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.070588235289999995" green="0.12941176469999999" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="份" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoB-8m-QuM">
-                        <rect key="frame" x="60" y="219" width="135" height="20"/>
+
+                        <rect key="frame" x="60" y="219" width="125" height="20"/>
+
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="AjJ-UV-PDc"/>
                             <constraint firstAttribute="height" constant="20" id="FlP-D2-mK8"/>
@@ -81,6 +87,9 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+
+            <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+
             <constraints>
                 <constraint firstItem="7jp-Cc-2lZ" firstAttribute="top" secondItem="AJ4-0X-1XF" secondAttribute="bottom" constant="12" id="8cp-XJ-91x"/>
                 <constraint firstItem="Frt-GF-0ov" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="AVg-Np-rZ8"/>

@@ -812,7 +812,10 @@ bool alreadyGetAddress = NO;
     NSInteger *index = view.tag;
     forumItem *f = [self.listForumItem objectAtIndex:index];
     NSLog(@"%@",f.forum_name);
+    //这里判断是不是外卖如果是跳到外卖商家列表
     if ([f.forum_name containsString:@"外卖"]){
+//        ShoppingCartViewController *SCVC = [ShoppingCartViewController createFromStoryboardName:@"ShoppingCart" withIdentifier:@"ShoppingCart"];
+//        [self.navigationController pushViewController:SCVC animated:YES];
          ViewController4Dinner *VC4D = [ViewController4Dinner createFromStoryboardName:@"CollectionView4Dinner" withIdentifier:@"CollectionView4Dinner"];
         [self.navigationController pushViewController:VC4D animated:YES];
     }else{

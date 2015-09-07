@@ -8,6 +8,7 @@
 
 #import "CommodityList.h"
 #import "HttpTool.h"
+#import "CommodityInfo.h"
 
 @implementation CommodityList
 
@@ -50,8 +51,13 @@
                          NSData *data = [[NSData alloc] initWithData:responseObject];
                          NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                          CommodityList *list = [CommodityList initWithparametes:dic];
-                         
-                         success(list);
+                         NSMutableArray *ListArray = [NSMutableArray array];
+                         for(NSDictionary *dic in list.CommodityList ){
+                             CommodityInfo *comm_info = [CommodityInfo initWithparametes:dic];
+                             [ListArray addObject:comm_info];
+                         }
+                         success(ListArray);
+                      
                          
                      } failure:^(NSError *error) {
                          if (failure == nil) return;

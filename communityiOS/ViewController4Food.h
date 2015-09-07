@@ -11,5 +11,13 @@
 @interface ViewController4Food : UIViewController
 
 
+-(void)getShopName:(NSString *)shop_name;
+-(void)getShopID:(NSString *) shop_id ;
+-(void)getShopIcon:(NSString *) shop_icon_url;
+
+@property (weak, nonatomic) IBOutlet UILabel *ShopName;
+@property (weak, nonatomic) IBOutlet UIImageView *ShopIcon;
+@property (weak, nonatomic) IBOutlet UILabel *ReplyNum;
+
 
 @end
