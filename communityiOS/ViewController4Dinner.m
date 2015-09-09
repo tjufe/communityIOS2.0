@@ -79,6 +79,7 @@
     [VC4F getShopID:shop_user_info.shop_user_id];
     [VC4F getShopName:shop_user_info.shop_user_name];
     [VC4F getShopIcon:shop_user_info.shop_icon];
+    VC4F.shop_phone = shop_user_info.shop_phone;
     [self.navigationController pushViewController:VC4F  animated:YES];
     
     

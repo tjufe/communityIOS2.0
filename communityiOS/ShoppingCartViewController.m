@@ -11,6 +11,8 @@
 #import "ShoppingCartTableViewCell.h"
 #import "ShoppingCartCommodity.h"
 #import "String.h"
+#import "OrderDetailViewController.h"
+#import "UIViewController+Create.h"
 
 @interface ShoppingCartViewController () <UITableViewDataSource,UITableViewDelegate,ShoppingCart2TableViewCellDelegate,ShoppingCartTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *sc_table;
@@ -37,6 +39,23 @@ bool comm_select;//全选状态
 
 #pragma mark-----跳转到提交订单页-----
 - (IBAction)Btn2sumbitOrders:(id)sender {
+    //跳转到提交订单结算页
+    NSMutableArray *order_comm = [[NSMutableArray alloc]init];
+    NSMutableArray *order =[[NSMutableArray alloc]init];
+    for(int i=0;i<[self.shopping count];i++){
+        NSMutableArray *temp = [self.shopping objectAtIndex:i];
+        for (int j=0; j<[temp count]; j++) {
+            ShoppingCartCommodity *s = [temp objectAtIndex:j];
+            if(s.select_status==1){//已选中
+                [order_comm addObject:s];
+            }
+        }
+        [order addObject:order_comm];
+    }
+    
+    OrderDetailViewController *ODVC = [OrderDetailViewController createFromStoryboardName:@"OrderDetail" withIdentifier:@"order_detail"];
+    ODVC.order_comm = order;
+    [self.navigationController pushViewController:ODVC animated:YES];
 }
 
 #pragma mark-----实现协议中选中一个section商品的方法----
@@ -279,34 +298,34 @@ bool comm_select;//全选状态
                       ShoppingCartFile];
     //接档，读取文件数据
     NSMutableArray *cart = [NSKeyedUnarchiver unarchiveObjectWithFile:self.save_path];
-    self.shopping = [[NSMutableArray alloc]init];
-    NSArray *cart1 = [NSArray arrayWithArray:cart];
-    if(!cart){
-        NSLog(@"获取购物车信息失败！");
-    }else{
-        //将数组记录按商店id划分
-        NSMutableArray *cart2 = [[NSMutableArray alloc]init];
-        NSMutableArray *temp = [NSMutableArray arrayWithArray:cart];
-        for(int i = 0;i<[temp count];i++){
-            ShoppingCartCommodity *s = [temp objectAtIndex:i];
-            //[cart2 addObject:s];
-            for(int j = 0;j<[cart1 count];j++){
-                ShoppingCartCommodity *s1 = [cart1 objectAtIndex:j];
-                if([s1.shop_id isEqualToString:s.shop_id]){
-                    [cart2 addObject:s1];
-                }
-                
-            }
-            self.cart3 = [NSMutableArray arrayWithArray:cart2];
-            [self.shopping addObject:self.cart3];
-            [temp removeObjectsInArray:cart2];
-            [cart2 removeAllObjects];
-        }
-//        NSLog(@"^^^^^%lu",(unsigned long)[self.shopping count]);
-//        self.cart_shop = [self.shopping objectAtIndex:0];
-//        NSLog(@"****%lu",[self.cart_shop count]);
-        
-    }
+    self.shopping = [NSMutableArray arrayWithArray:cart];
+//    NSArray *cart1 = [NSArray arrayWithArray:cart];
+//    if(!cart){
+//        NSLog(@"获取购物车信息失败！");
+//    }else{
+//        //将数组记录按商店id划分
+//        NSMutableArray *cart2 = [[NSMutableArray alloc]init];
+//        NSMutableArray *temp = [NSMutableArray arrayWithArray:cart];
+//        for(int i = 0;i<[temp count];i++){
+//            ShoppingCartCommodity *s = [temp objectAtIndex:i];
+//            //[cart2 addObject:s];
+//            for(int j = 0;j<[cart1 count];j++){
+//                ShoppingCartCommodity *s1 = [cart1 objectAtIndex:j];
+//                if([s1.shop_id isEqualToString:s.shop_id]){
+//                    [cart2 addObject:s1];
+//                }
+//                
+//            }
+//            self.cart3 = [NSMutableArray arrayWithArray:cart2];
+//            [self.shopping addObject:self.cart3];
+//            [temp removeObjectsInArray:cart2];
+//            [cart2 removeAllObjects];
+//        }
+////        NSLog(@"^^^^^%lu",(unsigned long)[self.shopping count]);
+////        self.cart_shop = [self.shopping objectAtIndex:0];
+////        NSLog(@"****%lu",[self.cart_shop count]);
+//        
+//    }
     
 //    BOOL flag = [NSKeyedArchiver archiveRootObject:@"aaa" toFile:self.save_path];
 //    
@@ -327,7 +346,11 @@ bool comm_select;//全选状态
     comm_select = false;//初始全选状态为false
     self.cart_shop =[[NSMutableArray alloc]init];
     [self getShoppingCartCommodity];
-    [self.sc_table reloadData];
+    if(self.shopping&&[self.shopping count]>0){
+        [self.sc_table reloadData];
+    }else{
+        self.sc_table.hidden = YES;
+    }
    
 }
 
@@ -339,41 +362,45 @@ bool comm_select;//全选状态
     //初始化导航条右侧按钮和title
     self.navigationItem.title = @"购物车";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"编辑" style: UIBarButtonSystemItemDone target:self action:@selector(Go2Edit)];
+    //使下一页的导航栏左边没有文字
+    UIBarButtonItem *temporaryBarButtonItem=[[UIBarButtonItem alloc] init];
+    temporaryBarButtonItem.title=@"";
+    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
     //添加单击手势
     self.img_select_all.userInteractionEnabled = YES;//与用户交互激活
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(selectAllComm)];
     [self.img_select_all addGestureRecognizer:singleTap];
     
     //获取路径
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentDirectory = [paths objectAtIndex:0];
-    self.save_path = [documentDirectory stringByAppendingPathComponent:
-                      ShoppingCartFile];
-    NSMutableArray *text =[[NSMutableArray alloc]init];
-    ShoppingCartCommodity *s =[[ShoppingCartCommodity alloc]init];
-    s.shop_name = @"吉祥馄饨";
-    s.comm_name = @"凉拌馄饨";
-    s.shop_id = @"0001";
-    s.buy_amount = 1;
-    s.comm_price = 8.0;
-    s.select_status = 0;
-    [text addObject:s];
-    ShoppingCartCommodity *s1 = [[ShoppingCartCommodity alloc]init];
-    s1.shop_name = @"吉祥馄饨";
-    s1.shop_id = @"0001";
-    s1.buy_amount = 1;
-    s1.comm_price = 12.0;
-    s1.comm_name = @"鲜肉馄饨";
-    s1.select_status = 0;
-    [text addObject:s1];
-    
-    bool flag=[NSKeyedArchiver archiveRootObject:text toFile:self.save_path];
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentDirectory = [paths objectAtIndex:0];
+//    self.save_path = [documentDirectory stringByAppendingPathComponent:
+//                      ShoppingCartFile];
+//    NSMutableArray *text =[[NSMutableArray alloc]init];
+//    ShoppingCartCommodity *s =[[ShoppingCartCommodity alloc]init];
+//    s.shop_name = @"吉祥馄饨";
+//    s.comm_name = @"凉拌馄饨";
+//    s.shop_id = @"0001";
+//    s.buy_amount = 1;
+//    s.comm_price = 8.0;
+//    s.select_status = 0;
+//    [text addObject:s];
+//    ShoppingCartCommodity *s1 = [[ShoppingCartCommodity alloc]init];
+//    s1.shop_name = @"吉祥馄饨";
+//    s1.shop_id = @"0001";
+//    s1.buy_amount = 1;
+//    s1.comm_price = 12.0;
+//    s1.comm_name = @"鲜肉馄饨";
+//    s1.select_status = 0;
+//    [text addObject:s1];
+//    
+//    bool flag=[NSKeyedArchiver archiveRootObject:text toFile:self.save_path];
     
  //   bool flag=[text writeToFile:self.save_path atomically:YES];
     
-    if(flag){
-        NSLog(@"chenggong");
-    }
+//    if(flag){
+//        NSLog(@"chenggong");
+//    }
     
 
 }
@@ -455,20 +482,20 @@ bool comm_select;//全选状态
     
     NSMutableArray *cart = [[NSMutableArray alloc]init];
     NSMutableArray *comm_array = [[NSMutableArray alloc]init];
-    ShoppingCartCommodity *comm = [[ShoppingCartCommodity alloc]init];
+//    ShoppingCartCommodity *comm = [[ShoppingCartCommodity alloc]init];
 
     
     for(int i=0;i<[self.shopping count];i++){
         comm_array = [self.shopping objectAtIndex:i];
-        for(int j=0;j<[comm_array count];j++){
-            comm = [comm_array objectAtIndex:j];
-            [cart addObject:comm];//重新清理购物车数据
-        }
+//        for(int j=0;j<[comm_array count];j++){
+//            comm = [comm_array objectAtIndex:j];
+            [cart addObject:comm_array];//重新清理购物车数据
+//        }
     }
     //保存归档
-    if(cart&&[cart count]>0){
+//    if(cart&&[cart count]>0){
         [NSKeyedArchiver archiveRootObject:cart toFile:self.save_path];
-    }
+//    }
     
 }
 

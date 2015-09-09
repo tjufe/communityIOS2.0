@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommodityInfo.h"
 
 @interface Detail4FoodViewController : UIViewController
 
@@ -16,6 +17,8 @@
 - (IBAction)CallSellerOnclick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *BuyNowBt;
 - (IBAction)BuyNowOnclick:(id)sender;
-
+@property(nonatomic,strong)CommodityInfo *comm_info;//商品信息
+@property(nonatomic,strong)NSString *shop_name;//商家名称
+@property (nonatomic,strong)NSString *shop_phone;
 
 @end

@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface OrderDetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITableView *OrderDetailTableView;
-@property (weak, nonatomic) IBOutlet UIButton *SubmitOrderBt;
-- (IBAction)SubmitOrderOnclick:(id)sender;
+
+@property (nonatomic,strong)NSMutableArray *order_comm;//要结算的商品
 
 @end

@@ -18,6 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *ShopName;
 @property (weak, nonatomic) IBOutlet UIImageView *ShopIcon;
 @property (weak, nonatomic) IBOutlet UILabel *ReplyNum;
-
+@property (strong ,nonatomic)NSString *shop_phone;
 
 @end
