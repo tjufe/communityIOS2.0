@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface OrderDetailAddressTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *label_name;
+@property (weak, nonatomic) IBOutlet UILabel *label_phone;
+@property (weak, nonatomic) IBOutlet UILabel *label_address;
 
 @end

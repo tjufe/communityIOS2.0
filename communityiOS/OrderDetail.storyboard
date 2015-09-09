@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -68,7 +68,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="SubmitOrderOnclick:" destination="wFl-5p-Q0V" eventType="touchUpInside" id="stk-FQ-1fM"/>
+                                            <action selector="SubmitOrderOnclick:" destination="wFl-5p-Q0V" eventType="touchUpInside" id="bAR-69-Nvj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -117,8 +117,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="OrderDetailTableView" destination="KTs-Kc-qS1" id="qRP-zj-TVd"/>
-                        <outlet property="SubmitOrderBt" destination="dJM-i2-jhu" id="T4x-va-Pp2"/>
+                        <outlet property="table" destination="KTs-Kc-qS1" id="jZ2-YQ-V9e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjL-Ti-4iW" userLabel="First Responder" sceneMemberID="firstResponder"/>

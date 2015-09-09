@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface OrderDetailZhifuTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *label_send_date;
 
 @end

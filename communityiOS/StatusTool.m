@@ -25,8 +25,11 @@
 #import "RepairInfo.h"
 #import "findPassword.h"
 
+
 #import "CommSales.h"
 
+
+#import "getUserNameItem.h"
 #import "replyInfoListItem.h"
 #import "editPostItem.h"
 #import "ifApplyItem.h"
@@ -909,7 +912,31 @@
         if (failure == nil) return ;
         failure(error);
     }];
+}
 
+//获取用户真实姓名及认证地址
++(void)statusToolGetUserNameWithCommunityID:(NSString *)community_id UserID:(NSString *)user_id Success:(StatusSuccess)success failurs:(StatusFailurs)failure{
+    NSMutableDictionary *firstDic = [[NSMutableDictionary alloc]init];
+    [firstDic setValue:community_id forKey:@"community_id"];
+    [firstDic setValue:user_id forKey:@"user_id"];
+    NSMutableDictionary *secondDic = [[NSMutableDictionary  alloc] init];
+    [secondDic  setValue:firstDic forKey:@"Data"];
+    NSMutableDictionary *thirdDic = [[NSMutableDictionary  alloc] init];
+    [thirdDic setValue:secondDic forKey:@"param"];
+    [thirdDic setValue:@"GetUserName" forKey:@"method"];
+    
+    [HttpTool postWithparams:thirdDic success:^(id responseObject) {
+        
+        NSData *data = [[NSData alloc] initWithData:responseObject];
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        getUserNameItem *item = [getUserNameItem createItemWitparametes:dic];
+        success(item);
+        
+        
+    } failure:^(NSError *error) {
+        if (failure == nil) return ;
+        failure(error);
+    }];
 
 }
 

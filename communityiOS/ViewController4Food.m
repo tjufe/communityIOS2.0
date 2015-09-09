@@ -14,7 +14,7 @@
 #import "UIViewController+Create.h"
 #import "UIImageView+WebCache.h"//加载图片
 #import "APIAddress.h"
-
+#import "ShoppingCartViewController.h"
 #import "AppDelegate.h"
 
 #import "MJRefresh.h"
@@ -41,6 +41,12 @@ BOOL FirstLoad ;
 
 @implementation ViewController4Food
 
+#pragma mark-----跳转购物车页面------
+- (IBAction)go2ShoppingCart:(id)sender {
+    
+    ShoppingCartViewController *SCVC = [ShoppingCartViewController createFromStoryboardName:@"ShoppingCart" withIdentifier:@"ShoppingCart"];
+    [self.navigationController pushViewController:SCVC animated:YES];
+}
 
 -(void)getShopName:(NSString *)shop_name{
     self.shop_name = shop_name;
@@ -85,8 +91,12 @@ BOOL FirstLoad ;
     
     
     Detail4FoodViewController *DFVC = [Detail4FoodViewController createFromStoryboardName:@"Detail4Food" withIdentifier:@"detail4food"];
+
     
     [DFVC getCommodityInfo:comm_info];
+
+    DFVC.shop_name = self.shop_name;
+    DFVC.shop_phone = _shop_phone;
     [self.navigationController pushViewController:DFVC  animated:YES];
 
 

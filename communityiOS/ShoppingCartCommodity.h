@@ -17,6 +17,7 @@
 @property (strong,nonatomic) NSString *comm_photo;
 @property (strong,nonatomic) NSString *shop_id;
 @property (strong,nonatomic) NSString *shop_name;
+@property (strong,nonatomic) NSString *shop_phone;
 @property (assign,nonatomic) int select_status;
 
 
