@@ -7,12 +7,32 @@
 //
 
 #import "OrderListViewController.h"
+#import "OrderListTableViewCell.h"
 
-@interface OrderListViewController ()
+@interface OrderListViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property(strong,nonatomic)NSMutableDictionary *orderListArray;
+@property(strong,nonatomic) OrderListTableViewCell *OLcell;
 
 @end
 
 @implementation OrderListViewController
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return [self.orderListArray count];
+
+}
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    self.OLcell = [tableView dequeueReusableCellWithIdentifier:@"order_cell"];
+//    if (self.orderListArray!=nil) {
+//        <#statements#>
+//    }
+//    
+//
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

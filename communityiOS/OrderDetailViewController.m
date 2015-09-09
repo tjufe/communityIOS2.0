@@ -339,7 +339,7 @@ int result;
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"订单提交成功" delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
         [alert show];
         //前往订单列表页
-        OrderListViewController *OLVC = [OrderListViewController createFromStoryboardName:@"OrderList" withIdentifier:@"orderList"];
+        OrderListViewController *OLVC = [OrderListViewController createFromStoryboardName:@"OrderList" withIdentifier:@"order_list"];
         [self.navigationController pushViewController:OLVC animated:YES];
 
 

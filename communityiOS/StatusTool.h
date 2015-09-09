@@ -110,6 +110,10 @@ typedef void(^StatusFailurs)(NSError * error);
 //获取手机验证码
 +(void)statusToolFindPasswordWithPhone:(NSString *)phone Id:(NSString *)user_id Password:(NSString *)password ConfirmPassword:(NSString *)confirm_password Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
 
+
+//请求商品销量
++(void)statusToolGetCommSalesWithComm_id:(NSString *)comm_id Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
+
 //获取用户真实姓名及认证地址
 +(void)statusToolGetUserNameWithCommunityID:(NSString *)community_id UserID:(NSString *)user_id Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
 

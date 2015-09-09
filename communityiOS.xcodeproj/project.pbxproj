@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1300C7801BA013F000575EEB /* EstimateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300C77E1BA013F000575EEB /* EstimateTableViewCell.m */; };
+		1300C7811BA013F000575EEB /* EstimateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1300C77F1BA013F000575EEB /* EstimateTableViewCell.xib */; };
 		131A9ECB1B03846700926D6F /* ChainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 131A9EC91B03846700926D6F /* ChainTableViewCell.m */; };
 		131A9ECC1B03846700926D6F /* ChainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131A9ECA1B03846700926D6F /* ChainTableViewCell.xib */; };
 		1352E0D01AE76B4D0089EAC8 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352E0CF1AE76B4D0089EAC8 /* AuthViewController.m */; };
@@ -89,6 +91,7 @@
 		13BE567A1ABA6FD800379ACD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13BE56791ABA6FD800379ACD /* Login.storyboard */; };
 		13BE567F1ABA70D800379ACD /* UIStoryboard+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE567E1ABA70D800379ACD /* UIStoryboard+Addition.m */; };
 		13BE56821ABA7F3D00379ACD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE56811ABA7F3D00379ACD /* LoginViewController.m */; };
+		13C34DC31B9EC0DB00A4B6A9 /* CommSales.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C34DC21B9EC0DB00A4B6A9 /* CommSales.m */; };
 		13C58BDF1AB9550600090157 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C58BDE1AB9550600090157 /* main.m */; };
 		13C58BE21AB9550600090157 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C58BE11AB9550600090157 /* AppDelegate.m */; };
 		13C58BE51AB9550600090157 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C58BE41AB9550600090157 /* ViewController.m */; };
@@ -210,6 +213,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1300C77D1BA013F000575EEB /* EstimateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstimateTableViewCell.h; sourceTree = "<group>"; };
+		1300C77E1BA013F000575EEB /* EstimateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstimateTableViewCell.m; sourceTree = "<group>"; };
+		1300C77F1BA013F000575EEB /* EstimateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EstimateTableViewCell.xib; sourceTree = "<group>"; };
 		131A9EC81B03846700926D6F /* ChainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainTableViewCell.h; sourceTree = "<group>"; };
 		131A9EC91B03846700926D6F /* ChainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainTableViewCell.m; sourceTree = "<group>"; };
 		131A9ECA1B03846700926D6F /* ChainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChainTableViewCell.xib; sourceTree = "<group>"; };
@@ -350,6 +356,8 @@
 		13BE567E1ABA70D800379ACD /* UIStoryboard+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+Addition.m"; sourceTree = "<group>"; };
 		13BE56801ABA7F3D00379ACD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		13BE56811ABA7F3D00379ACD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		13C34DC11B9EC0DB00A4B6A9 /* CommSales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommSales.h; sourceTree = "<group>"; };
+		13C34DC21B9EC0DB00A4B6A9 /* CommSales.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommSales.m; sourceTree = "<group>"; };
 		13C58BD91AB9550600090157 /* communityiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = communityiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13C58BDD1AB9550600090157 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13C58BDE1AB9550600090157 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1110,6 +1118,9 @@
 				13C74BBB1B8B6E17007DD716 /* OrderListTableViewCell.h */,
 				13C74BBC1B8B6E17007DD716 /* OrderListTableViewCell.m */,
 				13C74BBD1B8B6E17007DD716 /* OrderListTableViewCell.xib */,
+				1300C77D1BA013F000575EEB /* EstimateTableViewCell.h */,
+				1300C77E1BA013F000575EEB /* EstimateTableViewCell.m */,
+				1300C77F1BA013F000575EEB /* EstimateTableViewCell.xib */,
 			);
 			name = buyers;
 			sourceTree = "<group>";
@@ -1145,6 +1156,8 @@
 		A0CD1CCB1B33B04500FCA919 /* buyers */ = {
 			isa = PBXGroup;
 			children = (
+				13C34DC11B9EC0DB00A4B6A9 /* CommSales.h */,
+				13C34DC21B9EC0DB00A4B6A9 /* CommSales.m */,
 				A0CD1CCC1B33B52300FCA919 /* ShopUserInfo.h */,
 				A0CD1CD01B33C3C600FCA919 /* ShopUserList.m */,
 				A0CD1CCD1B33B52300FCA919 /* ShopUserInfo.m */,
@@ -1319,6 +1332,7 @@
 				13B1C3211AD4D6B3005C179C /* FSCollectionView.storyboard in Resources */,
 				13BC4DFB1B3A9530009D181D /* CollectionView4Food.storyboard in Resources */,
 				13B1C3171AD4D674005C179C /* ForumSelectTableViewCell.xib in Resources */,
+				1300C7811BA013F000575EEB /* EstimateTableViewCell.xib in Resources */,
 				13B1C3561AD4D6ED005C179C /* PostTextTableViewCell.xib in Resources */,
 				183FCD551B158AF80050D5B6 /* MyMendReplyTableViewCell.xib in Resources */,
 				13C58BE81AB9550600090157 /* Main.storyboard in Resources */,
@@ -1501,6 +1515,7 @@
 				13C74BAA1B8B582F007DD716 /* OrderDetailAddressTableViewCell.m in Sources */,
 				13B1C34D1AD4D6ED005C179C /* PostDetailViewController.m in Sources */,
 				137D80DE1B06FC24001E8CDA /* EditApplyTableViewCell.m in Sources */,
+				13C34DC31B9EC0DB00A4B6A9 /* CommSales.m in Sources */,
 				8ED353121B0D87280017F2F6 /* MainTableViewHeaderCell.m in Sources */,
 				13B1C2E51ACB7DC5005C179C /* MJRefreshBaseView.m in Sources */,
 				13C58BDF1AB9550600090157 /* main.m in Sources */,
@@ -1522,6 +1537,7 @@
 				8EEC48811AD8BA3F002E70DA /* postInfoItem.m in Sources */,
 				A0DD19131ABB1E8F00E34E8C /* PostTableViewCell.m in Sources */,
 				8EEC487E1AD8B9CF002E70DA /* ifApplyItem.m in Sources */,
+				1300C7801BA013F000575EEB /* EstimateTableViewCell.m in Sources */,
 				A0D401FB1B213FCC0033F45D /* getSMSCodeItem.m in Sources */,
 				A0C97CFB1B38FBCD006B7946 /* CommodityList.m in Sources */,
 				13C74BBE1B8B6E17007DD716 /* OrderListTableViewCell.m in Sources */,

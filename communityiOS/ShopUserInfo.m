@@ -12,7 +12,8 @@
 
 +(ShopUserInfo *)initWithparametes:(NSDictionary*)dic{
     
-    ShopUserInfo *shopUserInfo = [ShopUserInfo new];    [KZPropertyMapper mapValuesFrom:dic toInstance:shopUserInfo usingMapping:[ShopUserInfo mapDictionary]];
+    ShopUserInfo *shopUserInfo = [ShopUserInfo new];
+    [KZPropertyMapper mapValuesFrom:dic toInstance:shopUserInfo usingMapping:[ShopUserInfo mapDictionary]];
     return shopUserInfo;
 }
 

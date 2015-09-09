@@ -11,7 +11,7 @@
 
 #pragma mark------程序中的常量-----------
 
-#define ShoppingCartFile @"ShoppingCartInfo.dat"
+#define ShoppingCartFile @"ShoppingCart.dat"
 
 
 #endif

@@ -17,6 +17,9 @@
 #import "ShoppingCartViewController.h"
 #import "AppDelegate.h"
 
+#import "MJRefresh.h"
+
+#import "MBProgressHUD.h"
 
 @interface ViewController4Food ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView4Food;
@@ -24,8 +27,17 @@
 @property(strong,nonatomic) NSString *shop_id;
 @property(strong,nonatomic) NSString *shop_name;
 @property(strong,nonatomic) NSString *shop_icon_url;
+@property(assign,nonatomic) int estimate_num;
+@property(weak,nonatomic)NSNumber *page;
+@property(weak,nonatomic)NSNumber *rows;
+@property (strong,nonatomic)CommodityInfo *comm_info;
+
+@property(strong,nonatomic)NSMutableArray *commlistArray;
 
 @end
+NSInteger page1 ;//页数
+NSInteger rows1 ;//分页请求行数
+BOOL FirstLoad ;
 
 @implementation ViewController4Food
 
@@ -47,30 +59,42 @@
 -(void)getShopIcon:(NSString *) shop_icon_url {
     self.shop_icon_url = shop_icon_url;
 }
+-(void)getEstimateNum:(int) estimate_num {
+    self.estimate_num = estimate_num;
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    //暂时注释掉，改成静态数据wangyao 0828
-//    return [self.comm_list count];
-    return 1;
+//    暂时注释掉，改成静态数据wangyao 0828
+    return [self.comm_list count];
+ //   return 1;
 
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CollectionViewCell4Food *cell4food = [[CollectionViewCell4Food alloc]init];
     cell4food = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell4food" forIndexPath:indexPath];
 
-     //暂时注释掉，改成静态数据 wangyao 0828
-//    if(self.comm_list!=nil){
-//        CommodityInfo *comm_info = [self.comm_list objectAtIndex:indexPath.row];
-//        [cell4food setComm_main_pic:comm_info.comm_photo];
-//        [cell4food setComm_name:comm_info.comm_name];
-//        [cell4food setComm_price:comm_info.comm_price];
-//    }
+
+    if(self.comm_list!=nil){
+        CommodityInfo *comm_info = [self.comm_list objectAtIndex:indexPath.row];
+        [cell4food setComm_main_pic:comm_info.comm_photo];
+        [cell4food setComm_name:comm_info.comm_name];
+       [cell4food setComm_price:comm_info.comm_price];
+        
+    }
     
     
     return cell4food;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    //传值
+    CommodityInfo *comm_info = [self.comm_list objectAtIndex:indexPath.row];
+    
+    
     Detail4FoodViewController *DFVC = [Detail4FoodViewController createFromStoryboardName:@"Detail4Food" withIdentifier:@"detail4food"];
+
+    
+    [DFVC getCommodityInfo:comm_info];
+
     DFVC.shop_name = self.shop_name;
     DFVC.shop_phone = _shop_phone;
     [self.navigationController pushViewController:DFVC  animated:YES];
@@ -84,7 +108,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+    self.comm_list = [[NSMutableArray alloc]init];
+    self.commlistArray = [[NSMutableArray alloc] init];
+    page1 = 1;
+    rows1 = 10;
+    FirstLoad = true;
     //导航栏
     self.navigationItem.title = @"商品列表";
     UIBarButtonItem *temporaryBarButtonItem=[[UIBarButtonItem alloc] init];
@@ -93,7 +121,8 @@
     
     
 
-    self.comm_list = [[NSMutableArray alloc]init];
+
+    
     //wangyao 0624  设定collectionview的布局形式，来设定行间距，item间距，以及item的size大小！
     UICollectionViewFlowLayout *flow_layout = [[UICollectionViewFlowLayout alloc]init];
     flow_layout.minimumLineSpacing = 1;
@@ -107,8 +136,11 @@
     
     
     [_collectionView4Food registerNib:[UINib nibWithNibName:@"CollectionViewCell4Food" bundle:nil]forCellWithReuseIdentifier:@"cell4food" ];
+    //赋值
 
     [self.ShopName setText:self.shop_name];
+    
+    [self.ReplyNum setText:[NSString stringWithFormat:@"%d",self.estimate_num]];
     
     if(![self.shop_icon_url isEqual:@""]){
         NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,self.shop_icon_url];
@@ -124,20 +156,88 @@
         
     }
     
+    //设置上拉刷新
     
-    [CommodityList LoadCommodityListWithShopID:self.shop_id page:[NSNumber numberWithInt:1] rows:[NSNumber numberWithInt:20] Success:^(id object) {
-        self.comm_list = (NSMutableArray *)object;
-        [self.collectionView4Food reloadData];
-    } failurs:^(NSError *error) {
-        
-    }];
-    
-    
-
+    [self setupRefresh];
+    [self loadData];
     
     
     
 }
+
+-(void)setupRefresh{
+    //waring自动刷新
+    //   [self.pltable headerBeginRefreshing];
+    //上拉加载更多
+    [self.collectionView4Food addFooterWithTarget:self action:@selector(footerReresh)];
+}
+
+-(void)footerReresh{
+    
+    page1++;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        [self loadData];
+        
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.collectionView4Food footerEndRefreshing];
+    });
+    
+}
+
+-(void)loadData{
+    
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    self.page = [NSNumber numberWithInteger:page1];
+    self.rows = [NSNumber numberWithInteger:rows1];
+    [CommodityList LoadCommodityListWithShopID:self.shop_id page:[NSNumber numberWithInt:1] rows:[NSNumber numberWithInt:20] Success:^(id object) {
+        self.comm_list = (NSMutableArray *)object;
+        
+        if(self.comm_list!=nil){
+            
+            for (int i=0; i<[self.comm_list count]; i++) {
+                self.comm_info = [self.comm_list objectAtIndex:i];
+                if(FirstLoad){//第一次加载
+                    [self.commlistArray addObject:self.comm_info];
+                    
+                    
+                }else{ //上拉刷新
+                    if(![self.commlistArray containsObject:self.comm_info]){//去重
+                        [self.commlistArray addObject:self.comm_info];
+                    }
+                }
+            }
+            FirstLoad = false;
+            [self.collectionView4Food reloadData];
+        }else{
+            if(FirstLoad){
+                //    self.table.hidden = YES;
+                [self.collectionView4Food reloadData];
+            }else{//刷新完成，已无更多
+                page1--;
+                //提示
+                MBProgressHUD *hud = [[MBProgressHUD alloc]initWithView:self.view];
+                [self.view addSubview:hud];
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"没有更多内容了！";
+                [hud showAnimated:YES whileExecutingBlock:^{
+                    sleep(1);
+                }completionBlock:^{
+                    [hud removeFromSuperview];
+                }];
+                
+                
+            }
+        }
+
+    } failurs:^(NSError *error) {
+        
+    }];
+
+    }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

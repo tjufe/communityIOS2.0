@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface OrderListViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *OLTableview;
 
 
 
