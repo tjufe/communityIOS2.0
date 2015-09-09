@@ -7,9 +7,7 @@
         <!--View Controller4 Food-->
         <scene sceneID="w6J-qD-gV1">
             <objects>
-
                 <viewController storyboardIdentifier="CollectionView4Food" id="I0X-z9-bcs" customClass="ViewController4Food" sceneMemberID="viewController">
-
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="73B-EK-i3b"/>
                         <viewControllerLayoutGuide type="bottom" id="uZL-1v-1re"/>
@@ -81,9 +79,8 @@
                                             <constraint firstItem="Y1J-c4-6Gt" firstAttribute="leading" secondItem="mJ1-u6-vhG" secondAttribute="trailing" constant="10" id="tsZ-JW-bac"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cp6-fx-XML">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cp6-fx-XML">
                                         <rect key="frame" x="0.0" y="108" width="320" height="460"/>
-
                                         <color key="backgroundColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Iwe-0o-zTI">
                                             <size key="itemSize" width="160" height="300"/>
@@ -96,41 +93,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-
                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="300"/>
-
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7vo-xl-ngB">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="300"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Khq-WS-Axa">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="300"/>
-
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="692-rc-5zs">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="300"/>
-
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -179,11 +142,9 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-
                         <outlet property="ReplyNum" destination="L4F-uv-wcU" id="qWF-4w-3of"/>
                         <outlet property="ShopIcon" destination="mJ1-u6-vhG" id="tBk-r9-PGF"/>
                         <outlet property="ShopName" destination="Y1J-c4-6Gt" id="vKg-OT-7Ed"/>
-
                         <outlet property="collectionView4Food" destination="Cp6-fx-XML" id="ueu-TN-VUN"/>
                     </connections>
                 </viewController>

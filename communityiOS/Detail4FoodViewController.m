@@ -12,12 +12,26 @@
 #import "ViewController4Food.h"
 #import "OrderDetailViewController.h"
 #import "UIAlertView+Blocks.h"
+#import "CommodityInfo.h"
+#import "CommSales.h"
+
+#import "AppDelegate.h"
+#import "UIImageView+WebCache.h"//加载图片
+#import "APIAddress.h"
+#import "StatusTool.h"
 
 @interface Detail4FoodViewController ()
+@property (strong,nonatomic)CommodityInfo *comm_info;
 
 @end
 
 @implementation Detail4FoodViewController
+
+-(void)getCommodityInfo:(id)comm_info{
+    self.comm_info = (CommodityInfo *)comm_info;
+
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,7 +42,39 @@
     UIBarButtonItem *temporaryBarButtonItem=[[UIBarButtonItem alloc] init];
     temporaryBarButtonItem.title=@"";
     self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+    //赋值
+    [self setValues];
+    //调用网络接口获取销量
+    [StatusTool statusToolGetCommSalesWithComm_id:self.comm_info.commodity_id Success:^(id object) {
+        CommSales *comm_sales = (CommSales *)object;
+        [self.CommSales setText:[NSString stringWithFormat:@"%d",comm_sales.comm_sales]];
+    } failurs:^(NSError *error) {
+        NSLog(@"fail to get comm sales");
+    }];
     
+//    NSLog(@"~~~~~~");
+    
+    
+    
+}
+
+-(void)setValues{
+    [self.CommName setText:self.comm_info.comm_name];
+    [self.CommDescribe setText:self.comm_info.comm_desc];
+    [self.CommPrice setText:[NSString stringWithFormat:@"%.2f",self.comm_info.comm_price]];
+    if(![self.comm_info.comm_photo isEqual:@""]){
+        NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,self.comm_info.comm_photo];
+        
+        [self.CommImage sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
+            
+            self.CommImage.image = image;
+            
+        }];
+    }else{
+        
+        self.CommImage.image = [UIImage imageNamed:@"商家小图"];
+        
+    }
     
 }
 

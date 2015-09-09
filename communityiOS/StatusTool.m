@@ -25,6 +25,8 @@
 #import "RepairInfo.h"
 #import "findPassword.h"
 
+#import "CommSales.h"
+
 #import "replyInfoListItem.h"
 #import "editPostItem.h"
 #import "ifApplyItem.h"
@@ -888,7 +890,28 @@
         failure(error);
     }];
 }
+//get comm sales
++(void)statusToolGetCommSalesWithComm_id:(NSString *)comm_id Success:(StatusSuccess)success failurs:(StatusFailurs)failure{
+    NSMutableDictionary *fir = [[NSMutableDictionary alloc]init];
+    [fir setValue:comm_id forKey:@"comm_id"];
+    NSMutableDictionary *sec = [[NSMutableDictionary alloc]init];
+    [sec setValue:fir forKey:@"Data"];
+    NSMutableDictionary *thirdDic = [[NSMutableDictionary  alloc] init];
+    [thirdDic setValue:sec forKey:@"param"];
+    [thirdDic setValue:@"GetCommSales" forKey:@"method"];
+    [HttpTool postWithparams:thirdDic success:^(id responseObject) {
+        NSData *data = [[NSData alloc] initWithData:responseObject];
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        CommSales *result = [CommSales createItemWitparametes:dic];
+        success(result);
+        
+    } failure:^(NSError *error) {
+        if (failure == nil) return ;
+        failure(error);
+    }];
 
+
+}
 
 
 @end
