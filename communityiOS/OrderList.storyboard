@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -7,10 +7,7 @@
         <!--Order List View Controller-->
         <scene sceneID="pT5-Vz-7SU">
             <objects>
-
                 <viewController storyboardIdentifier="order_list" id="LVY-XM-e91" customClass="OrderListViewController" sceneMemberID="viewController">
-
-
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iPY-FZ-XhB"/>
                         <viewControllerLayoutGuide type="bottom" id="ZYY-t7-M7e"/>
@@ -20,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="81b-6W-luV">
-                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="LVY-XM-e91" id="gNh-R4-jgy"/>
@@ -33,7 +30,7 @@
                             <constraint firstItem="ZYY-t7-M7e" firstAttribute="top" secondItem="81b-6W-luV" secondAttribute="bottom" id="3Yz-Zy-A9j"/>
                             <constraint firstAttribute="trailing" secondItem="81b-6W-luV" secondAttribute="trailing" id="41T-0P-Xvo"/>
                             <constraint firstItem="81b-6W-luV" firstAttribute="leading" secondItem="LFg-yj-zvx" secondAttribute="leading" id="hdT-8m-mqh"/>
-                            <constraint firstItem="81b-6W-luV" firstAttribute="top" secondItem="LFg-yj-zvx" secondAttribute="top" constant="60" id="iYC-1W-DNr"/>
+                            <constraint firstItem="81b-6W-luV" firstAttribute="top" secondItem="LFg-yj-zvx" secondAttribute="top" id="iYC-1W-DNr"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

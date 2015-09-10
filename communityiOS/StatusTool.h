@@ -116,6 +116,8 @@ typedef void(^StatusFailurs)(NSError * error);
 
 //获取用户真实姓名及认证地址
 +(void)statusToolGetUserNameWithCommunityID:(NSString *)community_id UserID:(NSString *)user_id Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
+//发表新的评价
++(void)statusToolAddNewEstimateWithShop_id:(NSString *)shop_id Content:(NSString *)content Score:(NSString *)score User_id:(NSString *)user_id User_name:(NSString *)user_name User_head:(NSString *)user_head EstimateDate:(NSString *)estimate_date Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
 
 
 @end

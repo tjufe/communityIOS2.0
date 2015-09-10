@@ -20,4 +20,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *EstimateContent;
 @property (weak, nonatomic) IBOutlet UILabel *BuyDate;
 
+-(void)MakeCustHead:(NSString *)CustHead;
+-(void)MakeCustName:(NSString *)CustName;
+-(void)MakeEstimateTime:(NSString *)EstimateTime;
+-(void)MakeEstimateContent:(NSString *)EstimateContent;
+-(void)MakeBuyDate:(NSString *)BuyDate;
+
 @end

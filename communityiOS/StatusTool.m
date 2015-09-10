@@ -939,6 +939,39 @@
     }];
 
 }
+//添加新评论
++(void)statusToolAddNewEstimateWithShop_id:(NSString *)shop_id Content:(NSString *)content Score:(NSString *)score User_id:(NSString *)user_id User_name:(NSString *)user_name User_head:(NSString *)user_head EstimateDate:(NSString *)estimate_date Success:(StatusSuccess)success failurs:(StatusFailurs)failure{
+    NSMutableDictionary *firstDic = [[NSMutableDictionary alloc]init];
+    [firstDic setValue:shop_id forKey:@"shop_id"];
+    [firstDic setValue:content forKey:@"content"];
+    [firstDic setValue:score forKey:@"score"];
+    [firstDic setValue:user_id forKey:@"user_id"];
+    [firstDic setValue:user_name forKey:@"user_name"];
+    [firstDic setValue:user_head forKey:@"user_head"];
+    [firstDic setValue:estimate_date forKey:@"estimate_date"];
+
+    NSMutableDictionary *secondDic = [[NSMutableDictionary  alloc] init];
+    [secondDic  setValue:firstDic forKey:@"Data"];
+    NSMutableDictionary *thirdDic = [[NSMutableDictionary  alloc] init];
+    [thirdDic setValue:secondDic forKey:@"param"];
+    [thirdDic setValue:@"GetUserName" forKey:@"method"];
+    
+    [HttpTool postWithparams:thirdDic success:^(id responseObject) {
+        
+
+        success(responseObject);
+        
+        
+    } failure:^(NSError *error) {
+        if (failure == nil) return ;
+        failure(error);
+    }];
+
+
+
+
+}
+
 
 
 @end

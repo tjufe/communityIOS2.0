@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		1300C7801BA013F000575EEB /* EstimateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300C77E1BA013F000575EEB /* EstimateTableViewCell.m */; };
 		1300C7811BA013F000575EEB /* EstimateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1300C77F1BA013F000575EEB /* EstimateTableViewCell.xib */; };
+		1300C7841BA0756600575EEB /* EstimateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300C7831BA0756600575EEB /* EstimateListViewController.m */; };
+		1300C7861BA0758000575EEB /* EstimateList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1300C7851BA0758000575EEB /* EstimateList.storyboard */; };
+		1300C7891BA0769B00575EEB /* EstimateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300C7881BA0769B00575EEB /* EstimateInfo.m */; };
+		1300C78C1BA07C9900575EEB /* Estimatelist.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300C78B1BA07C9900575EEB /* Estimatelist.m */; };
+		1300C78F1BA10AAF00575EEB /* NewEstimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300C78E1BA10AAF00575EEB /* NewEstimateViewController.m */; };
+		1300C7911BA10AC800575EEB /* NewEstimate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1300C7901BA10AC800575EEB /* NewEstimate.storyboard */; };
 		131A9ECB1B03846700926D6F /* ChainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 131A9EC91B03846700926D6F /* ChainTableViewCell.m */; };
 		131A9ECC1B03846700926D6F /* ChainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131A9ECA1B03846700926D6F /* ChainTableViewCell.xib */; };
 		1352E0D01AE76B4D0089EAC8 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352E0CF1AE76B4D0089EAC8 /* AuthViewController.m */; };
@@ -216,6 +222,16 @@
 		1300C77D1BA013F000575EEB /* EstimateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstimateTableViewCell.h; sourceTree = "<group>"; };
 		1300C77E1BA013F000575EEB /* EstimateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstimateTableViewCell.m; sourceTree = "<group>"; };
 		1300C77F1BA013F000575EEB /* EstimateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EstimateTableViewCell.xib; sourceTree = "<group>"; };
+		1300C7821BA0756600575EEB /* EstimateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstimateListViewController.h; sourceTree = "<group>"; };
+		1300C7831BA0756600575EEB /* EstimateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstimateListViewController.m; sourceTree = "<group>"; };
+		1300C7851BA0758000575EEB /* EstimateList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EstimateList.storyboard; sourceTree = "<group>"; };
+		1300C7871BA0769B00575EEB /* EstimateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstimateInfo.h; sourceTree = "<group>"; };
+		1300C7881BA0769B00575EEB /* EstimateInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstimateInfo.m; sourceTree = "<group>"; };
+		1300C78A1BA07C9900575EEB /* Estimatelist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Estimatelist.h; sourceTree = "<group>"; };
+		1300C78B1BA07C9900575EEB /* Estimatelist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Estimatelist.m; sourceTree = "<group>"; };
+		1300C78D1BA10AAF00575EEB /* NewEstimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEstimateViewController.h; sourceTree = "<group>"; };
+		1300C78E1BA10AAF00575EEB /* NewEstimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEstimateViewController.m; sourceTree = "<group>"; };
+		1300C7901BA10AC800575EEB /* NewEstimate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewEstimate.storyboard; sourceTree = "<group>"; };
 		131A9EC81B03846700926D6F /* ChainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainTableViewCell.h; sourceTree = "<group>"; };
 		131A9EC91B03846700926D6F /* ChainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainTableViewCell.m; sourceTree = "<group>"; };
 		131A9ECA1B03846700926D6F /* ChainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChainTableViewCell.xib; sourceTree = "<group>"; };
@@ -1149,6 +1165,12 @@
 				13C74BC01B8C66CA007DD716 /* ShopContentViewController.h */,
 				13C74BC11B8C66CA007DD716 /* ShopContentViewController.m */,
 				13C74BC31B8C66E0007DD716 /* ShopContent.storyboard */,
+				1300C7821BA0756600575EEB /* EstimateListViewController.h */,
+				1300C7831BA0756600575EEB /* EstimateListViewController.m */,
+				1300C7851BA0758000575EEB /* EstimateList.storyboard */,
+				1300C78D1BA10AAF00575EEB /* NewEstimateViewController.h */,
+				1300C78E1BA10AAF00575EEB /* NewEstimateViewController.m */,
+				1300C7901BA10AC800575EEB /* NewEstimate.storyboard */,
 			);
 			name = buyers;
 			sourceTree = "<group>";
@@ -1174,6 +1196,10 @@
 				A0CCA45F1B9E9AB300E6E396 /* addOrderItem.m */,
 				A0CCA4611B9EBD9400E6E396 /* getUserNameItem.h */,
 				A0CCA4621B9EBD9400E6E396 /* getUserNameItem.m */,
+				1300C7871BA0769B00575EEB /* EstimateInfo.h */,
+				1300C7881BA0769B00575EEB /* EstimateInfo.m */,
+				1300C78A1BA07C9900575EEB /* Estimatelist.h */,
+				1300C78B1BA07C9900575EEB /* Estimatelist.m */,
 			);
 			name = buyers;
 			sourceTree = "<group>";
@@ -1318,6 +1344,7 @@
 				13C74BBF1B8B6E17007DD716 /* OrderListTableViewCell.xib in Resources */,
 				184B42AA1B098D2A004CD398 /* ReplyTableViewCell.xib in Resources */,
 				13B1C2FB1ACB9C16005C179C /* UserCenterLogged.storyboard in Resources */,
+				1300C7911BA10AC800575EEB /* NewEstimate.storyboard in Resources */,
 				13B1C3231AD4D6B3005C179C /* FSCollectionViewController.xib in Resources */,
 				13B1C34E1AD4D6ED005C179C /* PostEdit.storyboard in Resources */,
 				13C74BBA1B8B6DC2007DD716 /* OrderList.storyboard in Resources */,
@@ -1368,6 +1395,7 @@
 				8E4FA7471B1F0E1900561AEB /* Images.xcassets in Resources */,
 				13B1C2FE1ACBB56B005C179C /* Settings.storyboard in Resources */,
 				187A42AC1B1C07FD00DD8A50 /* PostText23TableViewCell.xib in Resources */,
+				1300C7861BA0758000575EEB /* EstimateList.storyboard in Resources */,
 				13C74BAB1B8B582F007DD716 /* OrderDetailAddressTableViewCell.xib in Resources */,
 				18E6BCEE1B187860005B70F3 /* EvaluateTableViewCell.xib in Resources */,
 				13BE566E1ABA574700379ACD /* ForumTableViewCell.xib in Resources */,
@@ -1428,6 +1456,7 @@
 				13BE56821ABA7F3D00379ACD /* LoginViewController.m in Sources */,
 				A0CB9D511ADBB3AE00F421E1 /* deletepostItem.m in Sources */,
 				8EEC48841AD8BAB9002E70DA /* replyInfoItem.m in Sources */,
+				1300C78F1BA10AAF00575EEB /* NewEstimateViewController.m in Sources */,
 				8EF6F38B1B12DE2D00ABAEF9 /* PostInfo.m in Sources */,
 				13D247141B0436E400717780 /* ChainToWebView.m in Sources */,
 				8EF3F74F1AD54F1D00924975 /* PostReplyViewController.m in Sources */,
@@ -1519,6 +1548,7 @@
 				8ED353121B0D87280017F2F6 /* MainTableViewHeaderCell.m in Sources */,
 				13B1C2E51ACB7DC5005C179C /* MJRefreshBaseView.m in Sources */,
 				13C58BDF1AB9550600090157 /* main.m in Sources */,
+				1300C7841BA0756600575EEB /* EstimateListViewController.m in Sources */,
 				18628CB81B10750D00E81A8B /* MyReplyTableViewCell.m in Sources */,
 				184B42A91B098D2A004CD398 /* ReplyTableViewCell.m in Sources */,
 				8EE5A4621B0ECE6A00F05A12 /* NewPostEditViewController.m in Sources */,
@@ -1532,10 +1562,12 @@
 				13C74BB41B8B621C007DD716 /* OrderDetailZhifuTableViewCell.m in Sources */,
 				13C865E71B05D4A0001D34B4 /* endApplyItem.m in Sources */,
 				A0CCA4631B9EBD9400E6E396 /* getUserNameItem.m in Sources */,
+				1300C7891BA0769B00575EEB /* EstimateInfo.m in Sources */,
 				A048FDCD1B3140D0009146FA /* ShoppingCartTableViewCell.m in Sources */,
 				A0D401FE1B2186440033F45D /* FindPasswordViewController.m in Sources */,
 				8EEC48811AD8BA3F002E70DA /* postInfoItem.m in Sources */,
 				A0DD19131ABB1E8F00E34E8C /* PostTableViewCell.m in Sources */,
+				1300C78C1BA07C9900575EEB /* Estimatelist.m in Sources */,
 				8EEC487E1AD8B9CF002E70DA /* ifApplyItem.m in Sources */,
 				1300C7801BA013F000575EEB /* EstimateTableViewCell.m in Sources */,
 				A0D401FB1B213FCC0033F45D /* getSMSCodeItem.m in Sources */,

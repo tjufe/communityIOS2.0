@@ -16,6 +16,7 @@
 #import "APIAddress.h"
 #import "ShoppingCartViewController.h"
 #import "AppDelegate.h"
+#import "EstimateListViewController.h"
 
 #import "MJRefresh.h"
 
@@ -61,6 +62,13 @@ BOOL FirstLoad ;
 }
 -(void)getEstimateNum:(int) estimate_num {
     self.estimate_num = estimate_num;
+}
+
+- (IBAction)ToEstimateListOnclick:(id)sender {
+    EstimateListViewController *ELVC =  [EstimateListViewController createFromStoryboardName:@"EstimateList" withIdentifier:@"estimate_list"];
+    [ELVC shopID:self.shop_id];
+    [self.navigationController pushViewController:ELVC animated:YES];
+    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
