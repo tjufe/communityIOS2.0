@@ -42,6 +42,7 @@
 @property (strong,nonatomic)NSNumber *order_money;
 
 
+
 @property (strong,nonatomic) NSMutableArray *comm_pic;//存放商品图片
 @property (strong,nonatomic) NSMutableArray *comm_name;
 @property (strong,nonatomic) NSMutableArray *comm_unit;
@@ -50,7 +51,7 @@
 @property (strong,nonatomic) NSMutableArray *comm_buy_amount;
 
 
-
+@property (assign,nonatomic) double sum_order_money;
 
 
 
@@ -189,15 +190,15 @@ int result;
         }
         
     } failurs:^(NSError *error) {
-        [UIAlertView showAlertViewWithTitle:@"提示" message:@"订单提交失败" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
-                    if(buttonIndex==0){
-                       //
-                    }else{
-                        //取消
-                    }
-                } onCancel:^{
-                    
-                }];
+//        [UIAlertView showAlertViewWithTitle:@"提示" message:@"订单提交失败" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
+//                    if(buttonIndex==0){
+//                       //
+//                    }else{
+//                        //取消
+//                    }
+//                } onCancel:^{
+//                    
+//                }];
          result = 0;
 
     }];
@@ -230,11 +231,13 @@ int result;
     self.comm_unit = [[NSMutableArray alloc]init];
     self.comm_pic = [[NSMutableArray alloc]init];
     self.comm_buy_amount = [[NSMutableArray alloc]init];
+    self.sum_order_money = 0;
     
     for(int i=0;i<[_order_comm count];i++){
         NSMutableArray *temp=[_order_comm objectAtIndex:i];
         for(int j=0;j<[temp count];j++){
             ShoppingCartCommodity *s = [temp objectAtIndex:j];
+            self.sum_order_money = self.sum_order_money+s.buy_amount*s.comm_price;
             if(s.comm_photo&&![s.comm_photo isEqualToString:@""]){
                 [self.comm_pic addObject:s.comm_photo];
             }else{
@@ -242,6 +245,7 @@ int result;
             }
         }
     }
+    self.label_order_money.text = [NSString stringWithFormat:@"%.2f",self.sum_order_money];
     self.order_state = @"已下单";
     self.pay_type = @"货到付款";
     self.order_sendfee = [NSNumber numberWithInt:0];
@@ -269,15 +273,15 @@ int result;
     
     
     //日期比较
-     NSInteger seconds = [p_date timeIntervalSinceDate:cur_date];//计算时间差秒数
-    long time = (long)seconds;
-    if(time>0){//超过晚上11点下订单，明日送达
-        NSDate *date = [NSDate dateWithTimeInterval:24*60*60 sinceDate:p_date];
-        self.send_time = [formatter stringFromDate:date];
-    }else{
-        self.send_time = cur_date_str;//今日送达
-    }
-    
+//     NSInteger seconds = [p_date timeIntervalSinceDate:cur_date];//计算时间差秒数
+//    long time = (long)seconds;
+//    if(time>0){//超过晚上11点下订单，明日送达
+//        NSDate *date = [NSDate dateWithTimeInterval:24*60*60 sinceDate:p_date];
+//        self.send_time = [formatter stringFromDate:date];
+//    }else{
+//        self.send_time = cur_date_str;//今日送达
+//    }
+    self.send_time = cur_date_str;//今日送达
     
 }
 
@@ -326,7 +330,9 @@ int result;
             sum_money = sum_money+s.buy_amount*s.comm_price;
         }
         self.order_money = [NSNumber numberWithDouble:sum_money];
-        [result addObject:[NSNumber numberWithInt:[self addNewOrder]]];
+        int result2 =[self addNewOrder];
+        
+        [result addObject:[NSNumber numberWithInt:result2]];
     }
     if([result containsObject:[NSNumber numberWithInt:0]]){
         [UIAlertView showAlertViewWithTitle:@"提示" message:@"订单提交失败" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {

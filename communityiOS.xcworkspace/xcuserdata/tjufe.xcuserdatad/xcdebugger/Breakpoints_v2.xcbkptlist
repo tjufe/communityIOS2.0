@@ -374,16 +374,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "463560041.833755"
+            timestampString = "463561045.537166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "-getUserInfo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/OrderDetailViewController.m"
+            timestampString = "463561045.537166"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -394,12 +410,219 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "463558831.157913"
+            timestampString = "463561142.340069"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "-addNewOrder"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/OrderDetailViewController.m"
+            timestampString = "463561204.132035"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "-addNewOrder"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[OrderDetailViewController addNewOrder]"
+                  moduleName = "communityiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "463564696.453897"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "183"
+                  endingLineNumber = "183"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__40-[OrderDetailViewController addNewOrder]_block_invoke"
+                  moduleName = "communityiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "463564696.45408"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "183"
+                  endingLineNumber = "183"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/OrderDetailViewController.m"
+            timestampString = "463561215.095611"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "-addNewOrder"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/OrderInfo.m"
+            timestampString = "463561241.834602"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "+AddNewOrderInfowithShopID:CustID:CustName:CustPhone:ShopPhone:OrderMoney:OrderSendfee:OrderState:OrderAddress:PayType:CommID:CommUnit:CommPrice:CommName:BuyAmount:Success:failurs:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/OrderInfo.m"
+            timestampString = "463561249.760466"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "+AddNewOrderInfowithShopID:CustID:CustName:CustPhone:ShopPhone:OrderMoney:OrderSendfee:OrderState:OrderAddress:PayType:CommID:CommUnit:CommPrice:CommName:BuyAmount:Success:failurs:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/OrderDetailViewController.m"
+            timestampString = "463561810.618093"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "-sendDate"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/OrderInfo.m"
+            timestampString = "463562737.219099"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "+AddNewOrderInfowithShopID:CustID:CustName:CustPhone:ShopPhone:OrderMoney:OrderSendfee:OrderState:OrderAddress:PayType:CommID:CommUnit:CommPrice:CommName:BuyAmount:Success:failurs:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__192+[OrderInfo AddNewOrderInfowithShopID:CustID:CustName:CustPhone:ShopPhone:OrderMoney:OrderSendfee:OrderState:OrderAddress:PayType:CommID:CommUnit:CommPrice:CommName:BuyAmount:Success:failurs:]_block_invoke"
+                  moduleName = "communityiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderInfo.m"
+                  timestampString = "463564696.456567"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "223">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__192+[OrderInfo AddNewOrderInfowithShopID:CustID:CustName:CustPhone:ShopPhone:OrderMoney:OrderSendfee:OrderState:OrderAddress:PayType:CommID:CommUnit:CommPrice:CommName:BuyAmount:Success:failurs:]_block_invoke"
+                  moduleName = "communityiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderInfo.m"
+                  timestampString = "463564696.456684"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "277">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__192+[OrderInfo AddNewOrderInfowithShopID:CustID:CustName:CustPhone:ShopPhone:OrderMoney:OrderSendfee:OrderState:OrderAddress:PayType:CommID:CommUnit:CommPrice:CommName:BuyAmount:Success:failurs:]_block_invoke75"
+                  moduleName = "communityiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderInfo.m"
+                  timestampString = "463564696.45678"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/OrderInfo.m"
+            timestampString = "463562738.188791"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "+AddNewOrderInfowithShopID:CustID:CustName:CustPhone:ShopPhone:OrderMoney:OrderSendfee:OrderState:OrderAddress:PayType:CommID:CommUnit:CommPrice:CommName:BuyAmount:Success:failurs:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/OrderInfo.m"
+            timestampString = "463564693.288023"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "+AddNewOrderInfowithShopID:CustID:CustName:CustPhone:ShopPhone:OrderMoney:OrderSendfee:OrderState:OrderAddress:PayType:CommID:CommUnit:CommPrice:CommName:BuyAmount:Success:failurs:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
