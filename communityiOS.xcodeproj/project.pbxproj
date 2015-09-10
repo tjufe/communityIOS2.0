@@ -190,6 +190,8 @@
 		A0CCA45D1B9E8F6100E6E396 /* OrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CCA45C1B9E8F6100E6E396 /* OrderInfo.m */; };
 		A0CCA4601B9E9AB300E6E396 /* addOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CCA45F1B9E9AB300E6E396 /* addOrderItem.m */; };
 		A0CCA4631B9EBD9400E6E396 /* getUserNameItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CCA4621B9EBD9400E6E396 /* getUserNameItem.m */; };
+		A0CCA4661BA1462C00E6E396 /* OrderList.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CCA4651BA1462C00E6E396 /* OrderList.m */; };
+		A0CCA4691BA14FAB00E6E396 /* DetailOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CCA4681BA14FAB00E6E396 /* DetailOrderInfo.m */; };
 		A0CD1CCE1B33B52300FCA919 /* ShopUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CD1CCD1B33B52300FCA919 /* ShopUserInfo.m */; };
 		A0CD1CD11B33C3C600FCA919 /* ShopUserList.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CD1CD01B33C3C600FCA919 /* ShopUserList.m */; };
 		A0D39DFA1AF76419007DEFA0 /* uncheckPostListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D39DF91AF76419007DEFA0 /* uncheckPostListItem.m */; };
@@ -523,6 +525,10 @@
 		A0CCA45F1B9E9AB300E6E396 /* addOrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addOrderItem.m; sourceTree = "<group>"; };
 		A0CCA4611B9EBD9400E6E396 /* getUserNameItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getUserNameItem.h; sourceTree = "<group>"; };
 		A0CCA4621B9EBD9400E6E396 /* getUserNameItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getUserNameItem.m; sourceTree = "<group>"; };
+		A0CCA4641BA1462C00E6E396 /* OrderList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderList.h; sourceTree = "<group>"; };
+		A0CCA4651BA1462C00E6E396 /* OrderList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderList.m; sourceTree = "<group>"; };
+		A0CCA4671BA14FAB00E6E396 /* DetailOrderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailOrderInfo.h; sourceTree = "<group>"; };
+		A0CCA4681BA14FAB00E6E396 /* DetailOrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailOrderInfo.m; sourceTree = "<group>"; };
 		A0CD1CCC1B33B52300FCA919 /* ShopUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopUserInfo.h; sourceTree = "<group>"; };
 		A0CD1CCD1B33B52300FCA919 /* ShopUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopUserInfo.m; sourceTree = "<group>"; };
 		A0CD1CCF1B33C3C600FCA919 /* ShopUserList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopUserList.h; sourceTree = "<group>"; };
@@ -1174,6 +1180,10 @@
 				A0CCA45F1B9E9AB300E6E396 /* addOrderItem.m */,
 				A0CCA4611B9EBD9400E6E396 /* getUserNameItem.h */,
 				A0CCA4621B9EBD9400E6E396 /* getUserNameItem.m */,
+				A0CCA4641BA1462C00E6E396 /* OrderList.h */,
+				A0CCA4651BA1462C00E6E396 /* OrderList.m */,
+				A0CCA4671BA14FAB00E6E396 /* DetailOrderInfo.h */,
+				A0CCA4681BA14FAB00E6E396 /* DetailOrderInfo.m */,
 			);
 			name = buyers;
 			sourceTree = "<group>";
@@ -1491,6 +1501,7 @@
 				13B1C3201AD4D6B3005C179C /* FSCollectionView.m in Sources */,
 				A0D402011B2192A80033F45D /* findPassword.m in Sources */,
 				13B1C2F91ACB9BF6005C179C /* UserCenterLoggedViewController.m in Sources */,
+				A0CCA4691BA14FAB00E6E396 /* DetailOrderInfo.m in Sources */,
 				188160561B170F7600191342 /* ScoreTypeList.m in Sources */,
 				1889338A1AFB580F006329D8 /* AuthTableViewController.m in Sources */,
 				8EE5A4691B0F2CA900F05A12 /* RepairInfo.m in Sources */,
@@ -1529,6 +1540,7 @@
 				A0DD190F1ABB1BF300E34E8C /* PostListViewController.m in Sources */,
 				181D10EE1B174AD9003DC04A /* RatingBar.m in Sources */,
 				13C74BB81B8B6DB1007DD716 /* OrderListViewController.m in Sources */,
+				A0CCA4661BA1462C00E6E396 /* OrderList.m in Sources */,
 				13C74BB41B8B621C007DD716 /* OrderDetailZhifuTableViewCell.m in Sources */,
 				13C865E71B05D4A0001D34B4 /* endApplyItem.m in Sources */,
 				A0CCA4631B9EBD9400E6E396 /* getUserNameItem.m in Sources */,

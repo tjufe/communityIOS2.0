@@ -117,6 +117,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="label_order_money" destination="oDy-iP-UFH" id="QFT-Z7-jFf"/>
                         <outlet property="table" destination="KTs-Kc-qS1" id="jZ2-YQ-V9e"/>
                     </connections>
                 </viewController>

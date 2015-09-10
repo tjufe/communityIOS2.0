@@ -7,10 +7,7 @@
         <!--Order List View Controller-->
         <scene sceneID="pT5-Vz-7SU">
             <objects>
-
                 <viewController storyboardIdentifier="order_list" id="LVY-XM-e91" customClass="OrderListViewController" sceneMemberID="viewController">
-
-
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iPY-FZ-XhB"/>
                         <viewControllerLayoutGuide type="bottom" id="ZYY-t7-M7e"/>
