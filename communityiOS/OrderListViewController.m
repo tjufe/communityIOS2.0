@@ -8,6 +8,7 @@
 
 #import "OrderListViewController.h"
 #import "OrderListTableViewCell.h"
+#import "OrderList.h"
 
 @interface OrderListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -36,6 +37,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSNumber *page = [NSNumber numberWithInt:1];
+    NSNumber *rows = [NSNumber numberWithInt:2];
+    
+    [OrderList LoadOrderListWithCustID:@"0001" page:page rows:rows Success:^(id object) {
+        
+        NSArray *array = (NSArray *)object;
+        NSLog(@"%lu",(unsigned long)[array count]);
+        
+    } failurs:^(NSError *error) {
+        
+    }];
     // Do any additional setup after loading the view.
 }
 

@@ -21,6 +21,7 @@
 #import "AuthTableViewController.h"
 #import "APIAddress.h"
 #import "AppDelegate.h"
+#import "OrderListViewController.h"
 
 
 @interface UserCenterLoggedViewController ()
@@ -89,6 +90,12 @@
 //    
 //    [self.revealSideViewController popViewControllerWithNewCenterController:nav animated:YES];
 //    [nav pushViewController:poLVC animated:YES];
+    
+    OrderListViewController *OLVC = [OrderListViewController createFromStoryboardName:@"OrderList" withIdentifier:@"order_list"];
+    UINavigationController *nav = [[UINavigationController alloc]init];
+    [self.revealSideViewController popViewControllerWithNewCenterController:nav animated:YES ];
+    [nav pushViewController:OLVC animated:YES];
+    
 
 }
 

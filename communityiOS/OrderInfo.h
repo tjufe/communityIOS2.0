@@ -25,12 +25,14 @@
 @property (strong,nonatomic) NSString *pay_type;
 @property (strong,nonatomic) NSString *order_date;
 @property (strong,nonatomic) NSString *sendtime;
+@property (strong,nonatomic) NSString *shop_name;
+@property (strong,nonatomic) NSString *shop_head;
 @property (strong,nonatomic) NSArray *detail_order_list;
 
 
 +(OrderInfo *)initWithparametes:(NSDictionary*)dic;
 
-
-+(void)AddNewOrderInfowithShopID:(NSString *)shop_id CustID:(NSString *)cust_id CustName:(NSString *)cust_name CustPhone:(NSString *)cust_phone ShopPhone:(NSString *)shop_phone OrderMoney:(NSNumber *)order_money OrderSendfee:(NSNumber *)order_sendfee OrderState:(NSString *)order_state OrderAddress:(NSString *)order_address PayType:(NSString *)pay_type CommID:(NSArray *)comm_id CommUnit:(NSArray *)comm_unit CommPrice:(NSArray *)comm_price CommName:(NSArray *)comm_name BuyAmount:(NSArray *)buy_amount Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
+//添加主订单
++(void)AddNewMainOrderInfowithShopID:(NSString *)shop_id CustID:(NSString *)cust_id CustName:(NSString *)cust_name CustPhone:(NSString *)cust_phone ShopPhone:(NSString *)shop_phone OrderMoney:(NSNumber *)order_money OrderSendfee:(NSNumber *)order_sendfee OrderState:(NSString *)order_state OrderAddress:(NSString *)order_address PayType:(NSString *)pay_type Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
 
 @end
