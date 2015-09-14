@@ -351,6 +351,9 @@ bool comm_select;//全选状态
     }else{
         self.sc_table.hidden = YES;
     }
+    
+    [self checkSelect];
+    [self calculateTotalPrice];
    
 }
 
@@ -482,15 +485,20 @@ bool comm_select;//全选状态
     
     NSMutableArray *cart = [[NSMutableArray alloc]init];
     NSMutableArray *comm_array = [[NSMutableArray alloc]init];
-//    ShoppingCartCommodity *comm = [[ShoppingCartCommodity alloc]init];
+    ShoppingCartCommodity *comm = [[ShoppingCartCommodity alloc]init];
 
     
     for(int i=0;i<[self.shopping count];i++){
         comm_array = [self.shopping objectAtIndex:i];
-//        for(int j=0;j<[comm_array count];j++){
-//            comm = [comm_array objectAtIndex:j];
-            [cart addObject:comm_array];//重新清理购物车数据
-//        }
+       for(int j=0;j<[comm_array count];j++){
+           ShoppingCartCommodity *comm2 = [ShoppingCartCommodity new];
+           comm = [comm_array objectAtIndex:j];
+           comm.select_status = 0;
+           comm2 = comm;
+           [comm_array removeObject:comm];
+           [comm_array addObject:comm2];
+        }
+        [cart addObject:comm_array];//重新清理购物车数据
     }
     //保存归档
 //    if(cart&&[cart count]>0){

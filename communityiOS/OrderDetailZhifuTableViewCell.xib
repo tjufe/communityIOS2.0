@@ -49,12 +49,22 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eiu-ve-oXd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="10"/>
+                        <color key="backgroundColor" red="0.90697995580000002" green="0.90697995580000002" blue="0.90697995580000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="CxK-I5-xFR"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="eiu-ve-oXd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="18A-J1-Guq"/>
                     <constraint firstItem="eBh-Rh-8AS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="2aO-YK-N94"/>
                     <constraint firstItem="ntk-hC-BFe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5Bo-u5-YDS"/>
                     <constraint firstItem="7ZA-Aj-jRX" firstAttribute="leading" secondItem="Sx9-c5-Ypt" secondAttribute="trailing" constant="2" id="ERF-ej-jL1"/>
                     <constraint firstAttribute="trailing" secondItem="eBh-Rh-8AS" secondAttribute="trailing" constant="50" id="geb-xg-53G"/>
+                    <constraint firstAttribute="trailing" secondItem="eiu-ve-oXd" secondAttribute="trailing" id="has-vT-3Fg"/>
+                    <constraint firstItem="eiu-ve-oXd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="j7B-bs-JnL"/>
                     <constraint firstItem="7ZA-Aj-jRX" firstAttribute="top" secondItem="eBh-Rh-8AS" secondAttribute="bottom" constant="11" id="rT0-lU-on8"/>
                     <constraint firstItem="ntk-hC-BFe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="39" id="vOd-YG-qst"/>
                     <constraint firstItem="Sx9-c5-Ypt" firstAttribute="top" secondItem="eBh-Rh-8AS" secondAttribute="bottom" constant="11" id="wBA-ry-GJA"/>

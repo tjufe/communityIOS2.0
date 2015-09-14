@@ -74,14 +74,6 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-px-W1q">
-                        <rect key="frame" x="383" y="57" width="46" height="30"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <state key="normal" title="已完成">
-                            <color key="titleColor" red="0.63786300510000005" green="0.63786300510000005" blue="0.63786300510000005" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODd-Ql-lhq">
                         <rect key="frame" x="383" y="105" width="46" height="30"/>
                         <state key="normal" title="去评价">
@@ -127,16 +119,27 @@
                             <action selector="OrderDeleteOnclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yQd-4b-vRb"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已完成" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO9-a1-mON">
+                        <rect key="frame" x="384" y="59" width="45" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="Ot5-af-9Mt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.63786300510000005" green="0.63786300510000005" blue="0.63786300510000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="6Rb-jN-Ogb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="64" id="1Cb-XV-Oru"/>
                     <constraint firstItem="6Rb-jN-Ogb" firstAttribute="leading" secondItem="X36-71-sZI" secondAttribute="trailing" constant="19" id="1nK-Xg-3jk"/>
                     <constraint firstItem="l9e-8a-xEL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="1qV-RA-UYc"/>
+                    <constraint firstAttribute="trailing" secondItem="pO9-a1-mON" secondAttribute="trailing" constant="20" id="2GH-dX-Hg1"/>
                     <constraint firstItem="AWq-2o-5jf" firstAttribute="centerY" secondItem="QwN-w2-JyV" secondAttribute="centerY" id="6ay-cQ-onS"/>
                     <constraint firstItem="X36-71-sZI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="43" id="J0q-x5-kQQ"/>
                     <constraint firstItem="JUa-BA-NsU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="O1M-Ea-qdk"/>
                     <constraint firstItem="TG5-Oy-zoU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="PH3-Xd-xcm"/>
                     <constraint firstItem="AWq-2o-5jf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="PYq-xr-Zpu"/>
+                    <constraint firstItem="pO9-a1-mON" firstAttribute="top" secondItem="czj-9H-lrr" secondAttribute="bottom" constant="24" id="Tby-DA-YdD"/>
                     <constraint firstItem="JUa-BA-NsU" firstAttribute="leading" secondItem="l9e-8a-xEL" secondAttribute="trailing" constant="2" id="WLX-8u-TnE"/>
                     <constraint firstItem="Vka-A1-ypN" firstAttribute="leading" secondItem="TG5-Oy-zoU" secondAttribute="trailing" constant="10" id="Wkd-QN-o6U"/>
                     <constraint firstItem="czj-9H-lrr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ZKM-Ic-ySV"/>
@@ -156,7 +159,7 @@
                 <outlet property="CommPicMore" destination="H2p-sc-9uM" id="hkL-Ng-Ho5"/>
                 <outlet property="OrderDeleteBt" destination="czj-9H-lrr" id="ptA-3x-3Eo"/>
                 <outlet property="OrderPrice" destination="QwN-w2-JyV" id="b3L-pZ-sP2"/>
-                <outlet property="OrderStatus" destination="c4j-px-W1q" id="xjM-Wv-LHo"/>
+                <outlet property="OrderState" destination="pO9-a1-mON" id="Vp6-2C-TKY"/>
                 <outlet property="ShopHead" destination="l9e-8a-xEL" id="DPq-9m-oXH"/>
                 <outlet property="ShopName" destination="JUa-BA-NsU" id="BsY-80-x2j"/>
                 <outlet property="toEstimateBt" destination="ODd-Ql-lhq" id="ZGg-Oy-2pU"/>

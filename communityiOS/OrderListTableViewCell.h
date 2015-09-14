@@ -18,8 +18,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *OrderPrice;
 @property (weak, nonatomic) IBOutlet UIButton *OrderDeleteBt;
 - (IBAction)OrderDeleteOnclick:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *OrderStatus;
+
 @property (weak, nonatomic) IBOutlet UIButton *toEstimateBt;
 - (IBAction)toEstimateOnclick:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *OrderState;
 
+-(void)makeOrderPrice:(NSString *)OrderPrice;
+-(void)makeCommPic3:(NSString *)comm_pic3;
+-(void)makeCommPic2:(NSString *)comm_pic2;
+-(void)makeCommPic1:(NSString *)comm_pic1;
+-(void)makeShopName:(NSString *)shop_name;
+-(void)makeShopHead:(NSString *)ShopHead;
+-(void)makeOrderState:(NSString *)Order_state;
 @end

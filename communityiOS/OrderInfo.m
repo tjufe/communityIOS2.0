@@ -13,6 +13,36 @@
 @implementation OrderInfo
 
 
++(OrderInfo *)initWithparametes:(NSDictionary *)dic{
+    
+    OrderInfo *orderInfo = [OrderInfo new];
+    [KZPropertyMapper mapValuesFrom:dic toInstance:orderInfo usingMapping:[OrderInfo mapDictionary]];
+    return orderInfo;
+}
+
++ (NSDictionary*)mapDictionary
+{
+    return @{
+             @"order_id":@"order_id",
+             @"cust_id":@"cust_id",
+             @"cust_name":@"cust_name",
+             @"order_state":@"order_state",
+             @"shop_id":@"shop_id",
+             @"shop_name":@"shop_name",
+             @"user_phone":@"user_phone",
+             @"shop_phone":@"shop_phone",
+             @"shop_head":@"shop_head",
+             @"order_money":@"order_money",
+             @"order_sendfee":@"order_sendfee",
+             @"address":@"address",
+             @"pay_type":@"pay_type",
+             @"order_date":@"order_date",
+             @"sendtime":@"sendtime",
+             @"detail_order_list":@"detail_order_list"
+             };
+}
+
+
 
 +(void)AddNewOrderInfowithShopID:(NSString *)shop_id CustID:(NSString *)cust_id CustName:(NSString *)cust_name CustPhone:(NSString *)cust_phone ShopPhone:(NSString *)shop_phone OrderMoney:(NSNumber *)order_money OrderSendfee:(NSNumber *)order_sendfee OrderState:(NSString *)order_state OrderAddress:(NSString *)order_address PayType:(NSString *)pay_type CommID:(NSMutableArray *)comm_id CommUnit:(NSMutableArray *)comm_unit CommPrice:(NSMutableArray *)comm_price CommName:(NSMutableArray *)comm_name BuyAmount:(NSMutableArray *)buy_amount Success:(StatusSuccess)success failurs:(StatusFailurs)failure{
     
@@ -45,12 +75,14 @@
     
         [HttpTool postWithparams:thirdDic success:^(id responseObject) {
             //no response
+            
             NSData *data = [[NSData alloc]initWithData:responseObject];
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             addOrderItem *result = [addOrderItem createItemWitparametes:dic];
             success(result);
         
         } failure:^(NSError *error) {
+            NSLog(@"%@",thirdDic);
             if (failure == nil) return;
             failure(error);
         }];

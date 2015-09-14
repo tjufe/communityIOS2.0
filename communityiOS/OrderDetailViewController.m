@@ -26,18 +26,19 @@
 @property (strong,nonatomic) OrderDetailPicTableViewCell *ODPicCell;
 @property (strong,nonatomic) OrderDetailZhifuTableViewCell *ODZhifuCell;
 @property (weak, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet UILabel *label_order_money;
 
-@property (weak,nonatomic) NSString *cust_name;
+@property (strong,nonatomic) NSString *cust_name;
 @property (weak,nonatomic) NSString *cust_id;
 @property (weak,nonatomic) NSString *cust_phone;
-@property (weak,nonatomic) NSString *cust_address;
+@property (strong,nonatomic) NSString *cust_address;
 @property (weak,nonatomic) NSString *cust_community_id;
-@property (weak,nonatomic) NSString *send_time;
-@property (weak,nonatomic) NSString *shop_id;
-@property (weak,nonatomic) NSString *shop_phone;
-@property (weak,nonatomic) NSString *order_state;
-@property (weak,nonatomic) NSString *pay_type;
-@property (weak,nonatomic) NSNumber *order_sendfee;
+@property (strong,nonatomic) NSString *send_time;
+@property (strong,nonatomic) NSString *shop_id;
+@property (strong,nonatomic) NSString *shop_phone;
+@property (strong,nonatomic) NSString *order_state;
+@property (strong,nonatomic) NSString *pay_type;
+@property (strong,nonatomic) NSNumber *order_sendfee;
 @property (strong,nonatomic)NSNumber *order_money;
 
 
@@ -134,7 +135,7 @@ int result;
 
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    return 150;
 
 
 }
@@ -166,6 +167,7 @@ int result;
     [self getUserInfo];
     [self getOrderCommInfo];
     [self sendDate];
+    self.table.separatorStyle = UITableViewCellSeparatorStyleNone;//去掉分割线
     [self.table reloadData];
     
 
@@ -211,6 +213,7 @@ int result;
         getUserNameItem *item = (getUserNameItem *)object;
         self.cust_name = item.user_name;
         self.cust_address = item.user_address;
+        [self.table reloadData];
         
     } failurs:^(NSError *error) {
         //

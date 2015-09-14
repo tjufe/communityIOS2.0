@@ -59,7 +59,8 @@
     NSString *file_path = [documentDirectory stringByAppendingPathComponent:
                       ShoppingCartFile];
     //接档，读取文件数据
-    NSMutableArray *cart = [NSKeyedUnarchiver unarchiveObjectWithFile:file_path];
+    NSMutableArray *cart = [[NSMutableArray alloc]init];
+    cart = [NSKeyedUnarchiver unarchiveObjectWithFile:file_path];
     
     if(cart && [cart count]>0){//购物车不为空
         for(int i=0;i<[cart count];i++){
@@ -89,7 +90,8 @@
             }
         }
         
-    }else{//购物车为空
+    }else{//购物车cart为空
+        cart = [[NSMutableArray alloc]init];
         NSMutableArray *comm_array = [[NSMutableArray alloc]init];
         [comm_array addObject:newfood];
         [cart addObject:comm_array];

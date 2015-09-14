@@ -24,7 +24,7 @@
     // Configure the view for the selected state
 }
 
--(void)setShopHead:(NSString *)ShopHead{
+-(void)makeShopHead:(NSString *)ShopHead{
     if(![ShopHead isEqual:@""]){
         NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,ShopHead];
         
@@ -42,12 +42,12 @@
 
 }
 
--(void)setShopName:(NSString *)shop_name{
+-(void)makeShopName:(NSString *)shop_name{
     [_ShopName setText:shop_name];
     
 }
 
--(void)setCommPic1:(NSString *)comm_pic1{
+-(void)makeCommPic1:(NSString *)comm_pic1{
     if(![comm_pic1 isEqual:@""]){
         NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,comm_pic1];
         
@@ -63,7 +63,7 @@
     }
 
 }
--(void)setCommPic2:(NSString *)comm_pic2{
+-(void)makeCommPic2:(NSString *)comm_pic2{
     if(![comm_pic2 isEqual:@""]){
         NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,comm_pic2];
         
@@ -81,7 +81,7 @@
 
 }
 
--(void)setCommPic3:(NSString *)comm_pic3{
+-(void)makeCommPic3:(NSString *)comm_pic3{
     if(![comm_pic3 isEqual:@""]){
         NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,comm_pic3];
         
@@ -98,14 +98,18 @@
     
     
 }
--(void)setOrderPrice:(NSString *)OrderPrice{
+-(void)makeOrderPrice:(NSString *)OrderPrice{
     [_OrderPrice setText:OrderPrice];
 
 }
+-(void)makeOrderState:(NSString *)Order_state{
+
+    [_OrderState setText:Order_state];
+}
 
 
-- (IBAction)OrderDeleteOnclick:(id)sender {
-}
-- (IBAction)toEstimateOnclick:(id)sender {
-}
+//- (IBAction)OrderDeleteOnclick:(id)sender {
+//}
+//- (IBAction)toEstimateOnclick:(id)sender {
+//}
 @end

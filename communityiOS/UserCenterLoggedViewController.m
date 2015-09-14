@@ -21,6 +21,7 @@
 #import "AuthTableViewController.h"
 #import "APIAddress.h"
 #import "AppDelegate.h"
+#import "OrderListViewController.h"
 
 
 @interface UserCenterLoggedViewController ()
@@ -196,6 +197,10 @@
 }
 
 - (IBAction)MyOrderOncilck:(id)sender {
+     UINavigationController *nav = [[UINavigationController alloc]init];
+    OrderListViewController  *OLVC = [OrderListViewController createFromStoryboardName:@"OrderList" withIdentifier:@"order_list"];
+    [self.revealSideViewController popViewControllerWithNewCenterController:nav animated:YES];
+    [nav pushViewController:OLVC animated:YES];
     
     
     
