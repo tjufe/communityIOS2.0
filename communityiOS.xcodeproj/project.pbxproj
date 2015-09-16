@@ -24,6 +24,10 @@
 		137D80E41B06FD25001E8CDA /* EditChainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137D80E21B06FD25001E8CDA /* EditChainTableViewCell.xib */; };
 		13878AE21AD624B300658F21 /* AlterNicknameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13878AE11AD624B300658F21 /* AlterNicknameViewController.m */; };
 		13878AE51AD6260400658F21 /* AlterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13878AE41AD6260400658F21 /* AlterPasswordViewController.m */; };
+		13ACD6CF1BA82CCF001F9F21 /* OrderL2DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACD6CE1BA82CCF001F9F21 /* OrderL2DViewController.m */; };
+		13ACD6D11BA82CE8001F9F21 /* OrderL2D.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13ACD6D01BA82CE8001F9F21 /* OrderL2D.storyboard */; };
+		13ACD6D51BA8387C001F9F21 /* OrderL2DTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACD6D31BA8387C001F9F21 /* OrderL2DTableViewCell.m */; };
+		13ACD6D61BA8387C001F9F21 /* OrderL2DTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13ACD6D41BA8387C001F9F21 /* OrderL2DTableViewCell.xib */; };
 		13B1C2B61ACA58B5005C179C /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B1C2B41ACA58B5005C179C /* APIClient.m */; };
 		13B1C2BB1ACA5956005C179C /* demo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B1C2BA1ACA5956005C179C /* demo.xcassets */; };
 		13B1C2BE1ACA5A27005C179C /* KZPropertyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B1C2BD1ACA5A27005C179C /* KZPropertyMapper.m */; };
@@ -249,6 +253,12 @@
 		13878AE11AD624B300658F21 /* AlterNicknameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlterNicknameViewController.m; sourceTree = "<group>"; };
 		13878AE31AD6260400658F21 /* AlterPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterPasswordViewController.h; sourceTree = "<group>"; };
 		13878AE41AD6260400658F21 /* AlterPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlterPasswordViewController.m; sourceTree = "<group>"; };
+		13ACD6CD1BA82CCF001F9F21 /* OrderL2DViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderL2DViewController.h; sourceTree = "<group>"; };
+		13ACD6CE1BA82CCF001F9F21 /* OrderL2DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderL2DViewController.m; sourceTree = "<group>"; };
+		13ACD6D01BA82CE8001F9F21 /* OrderL2D.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrderL2D.storyboard; sourceTree = "<group>"; };
+		13ACD6D21BA8387C001F9F21 /* OrderL2DTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderL2DTableViewCell.h; sourceTree = "<group>"; };
+		13ACD6D31BA8387C001F9F21 /* OrderL2DTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderL2DTableViewCell.m; sourceTree = "<group>"; };
+		13ACD6D41BA8387C001F9F21 /* OrderL2DTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderL2DTableViewCell.xib; sourceTree = "<group>"; };
 		13B1C2B41ACA58B5005C179C /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		13B1C2B51ACA58B5005C179C /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		13B1C2BA1ACA5956005C179C /* demo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = demo.xcassets; sourceTree = "<group>"; };
@@ -1143,6 +1153,9 @@
 				1300C77D1BA013F000575EEB /* EstimateTableViewCell.h */,
 				1300C77E1BA013F000575EEB /* EstimateTableViewCell.m */,
 				1300C77F1BA013F000575EEB /* EstimateTableViewCell.xib */,
+				13ACD6D21BA8387C001F9F21 /* OrderL2DTableViewCell.h */,
+				13ACD6D31BA8387C001F9F21 /* OrderL2DTableViewCell.m */,
+				13ACD6D41BA8387C001F9F21 /* OrderL2DTableViewCell.xib */,
 			);
 			name = buyers;
 			sourceTree = "<group>";
@@ -1177,6 +1190,9 @@
 				1300C78D1BA10AAF00575EEB /* NewEstimateViewController.h */,
 				1300C78E1BA10AAF00575EEB /* NewEstimateViewController.m */,
 				1300C7901BA10AC800575EEB /* NewEstimate.storyboard */,
+				13ACD6CD1BA82CCF001F9F21 /* OrderL2DViewController.h */,
+				13ACD6CE1BA82CCF001F9F21 /* OrderL2DViewController.m */,
+				13ACD6D01BA82CE8001F9F21 /* OrderL2D.storyboard */,
 			);
 			name = buyers;
 			sourceTree = "<group>";
@@ -1202,17 +1218,14 @@
 				A0CCA45F1B9E9AB300E6E396 /* addOrderItem.m */,
 				A0CCA4611B9EBD9400E6E396 /* getUserNameItem.h */,
 				A0CCA4621B9EBD9400E6E396 /* getUserNameItem.m */,
-
 				1300C7871BA0769B00575EEB /* EstimateInfo.h */,
 				1300C7881BA0769B00575EEB /* EstimateInfo.m */,
 				1300C78A1BA07C9900575EEB /* Estimatelist.h */,
 				1300C78B1BA07C9900575EEB /* Estimatelist.m */,
-
 				A0CCA4641BA1462C00E6E396 /* OrderList.h */,
 				A0CCA4651BA1462C00E6E396 /* OrderList.m */,
 				A0CCA4671BA14FAB00E6E396 /* DetailOrderInfo.h */,
 				A0CCA4681BA14FAB00E6E396 /* DetailOrderInfo.m */,
-
 			);
 			name = buyers;
 			sourceTree = "<group>";
@@ -1365,6 +1378,7 @@
 				13B1C3531AD4D6ED005C179C /* PostImageTableViewCell.xib in Resources */,
 				13B1C35E1AD4D6ED005C179C /* TitleTableViewCell.xib in Resources */,
 				13C74BC41B8C66E0007DD716 /* ShopContent.storyboard in Resources */,
+				13ACD6D61BA8387C001F9F21 /* OrderL2DTableViewCell.xib in Resources */,
 				13B1C3541AD4D6ED005C179C /* PostList.storyboard in Resources */,
 				A048FDCE1B3140D0009146FA /* ShoppingCartTableViewCell.xib in Resources */,
 				13BC4DEA1B3A9514009D181D /* CollectionViewCell4Dinner.xib in Resources */,
@@ -1415,6 +1429,7 @@
 				13C74BB01B8B5EEF007DD716 /* OrderDetailPicTableViewCell.xib in Resources */,
 				137D80E41B06FD25001E8CDA /* EditChainTableViewCell.xib in Resources */,
 				A048FDD31B3159C1009146FA /* ShoppingCart2TableViewCell.xib in Resources */,
+				13ACD6D11BA82CE8001F9F21 /* OrderL2D.storyboard in Resources */,
 				183FCD4A1B1483CF0050D5B6 /* PostMendDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1504,6 +1519,7 @@
 				13B1C3701AD4D80B005C179C /* forumSetItem.m in Sources */,
 				131A9ECB1B03846700926D6F /* ChainTableViewCell.m in Sources */,
 				A0CCA45D1B9E8F6100E6E396 /* OrderInfo.m in Sources */,
+				13ACD6D51BA8387C001F9F21 /* OrderL2DTableViewCell.m in Sources */,
 				13C74BA41B8B56A7007DD716 /* OrderDetailViewController.m in Sources */,
 				13B1C3501AD4D6ED005C179C /* PosterTableViewCell.m in Sources */,
 				8EEC48871AD8BB11002E70DA /* replyInfoListItem.m in Sources */,
@@ -1514,6 +1530,7 @@
 				13BE567F1ABA70D800379ACD /* UIStoryboard+Addition.m in Sources */,
 				13B1C2E71ACB7DC5005C179C /* MJRefreshFooterView.m in Sources */,
 				13B1C3061ACCDA92005C179C /* DemoViewController.m in Sources */,
+				13ACD6CF1BA82CCF001F9F21 /* OrderL2DViewController.m in Sources */,
 				13B1C3161AD4D674005C179C /* ForumSelectTableViewCell.m in Sources */,
 				8EEC48921AD90B17002E70DA /* DChainTableViewCell.m in Sources */,
 				A0CCA4601B9E9AB300E6E396 /* addOrderItem.m in Sources */,

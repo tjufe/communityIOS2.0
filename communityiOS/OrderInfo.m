@@ -28,10 +28,10 @@
              @"cust_name":@"cust_name",
              @"order_state":@"order_state",
              @"shop_id":@"shop_id",
-             @"shop_name":@"shop_name",
+             @"shop_user_name":@"shop_name",
              @"user_phone":@"user_phone",
              @"shop_phone":@"shop_phone",
-             @"shop_head":@"shop_head",
+             @"shop_icon":@"shop_head",
              @"order_money":@"order_money",
              @"order_sendfee":@"order_sendfee",
              @"address":@"address",
@@ -44,7 +44,7 @@
 
 
 
-+(void)AddNewOrderInfowithShopID:(NSString *)shop_id CustID:(NSString *)cust_id CustName:(NSString *)cust_name CustPhone:(NSString *)cust_phone ShopPhone:(NSString *)shop_phone OrderMoney:(NSNumber *)order_money OrderSendfee:(NSNumber *)order_sendfee OrderState:(NSString *)order_state OrderAddress:(NSString *)order_address PayType:(NSString *)pay_type CommID:(NSMutableArray *)comm_id CommUnit:(NSMutableArray *)comm_unit CommPrice:(NSMutableArray *)comm_price CommName:(NSMutableArray *)comm_name BuyAmount:(NSMutableArray *)buy_amount Success:(StatusSuccess)success failurs:(StatusFailurs)failure{
++(void)AddNewMainOrderInfowithShopID:(NSString *)shop_id CustID:(NSString *)cust_id CustName:(NSString *)cust_name CustPhone:(NSString *)cust_phone ShopPhone:(NSString *)shop_phone OrderMoney:(NSNumber *)order_money OrderSendfee:(NSNumber *)order_sendfee OrderState:(NSString *)order_state OrderAddress:(NSString *)order_address PayType:(NSString *)pay_type CommID:(NSMutableArray *)comm_id CommUnit:(NSMutableArray *)comm_unit CommPrice:(NSMutableArray *)comm_price CommName:(NSMutableArray *)comm_name BuyAmount:(NSMutableArray *)buy_amount Success:(StatusSuccess)success failurs:(StatusFailurs)failure{
     
         NSMutableDictionary *firstDic = [[NSMutableDictionary alloc]init];
         [firstDic setValue:shop_id forKey:@"shop_id"];
@@ -57,12 +57,7 @@
         [firstDic setValue:order_state forKey:@"order_state"];
         [firstDic setValue:order_address forKey:@"order_address"];
         [firstDic setValue:pay_type forKey:@"pay_type"];
-        [firstDic setValue:comm_id forKey:@"comm_id"];
-        [firstDic setValue:comm_unit forKey:@"comm_unit"];
-        [firstDic setValue:comm_price forKey:@"comm_price"];
-        [firstDic setValue:comm_name forKey:@"comm_name"];
-        [firstDic setValue:buy_amount forKey:@"buy_amount"];
-        
+    
     
     
     
@@ -71,7 +66,7 @@
     
         NSMutableDictionary *thirdDic = [[NSMutableDictionary  alloc] init];
         [thirdDic setValue:secondDic forKey:@"param"];
-        [thirdDic setValue:@"AddNewOrder" forKey:@"method"];
+        [thirdDic setValue:@"AddNewMainOrder" forKey:@"method"];
     
         [HttpTool postWithparams:thirdDic success:^(id responseObject) {
             //no response
@@ -79,7 +74,7 @@
             NSData *data = [[NSData alloc]initWithData:responseObject];
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             addOrderItem *result = [addOrderItem createItemWitparametes:dic];
-            success(result);
+            success(result.mainorder_id);
         
         } failure:^(NSError *error) {
             NSLog(@"%@",thirdDic);

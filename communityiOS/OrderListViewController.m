@@ -19,6 +19,11 @@
 #import "EstimateListViewController.h"
 #import "UIViewController+Create.h"
 
+#import "OrderL2DViewController.h"
+
+#import "PPRevealSideViewController.h"
+
+
 @interface OrderListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong,nonatomic)NSMutableArray *orderListArray;
@@ -36,6 +41,8 @@
 @property (strong,nonatomic)NSString *evaluateStr;
 
 @property (strong,nonatomic)UITextField *messageField;
+
+@property (strong,nonatomic)NSMutableArray *temp;
 @end
 
 NSInteger page1 ;//页数
@@ -49,74 +56,99 @@ BOOL FirstLoad ;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     return [self.orderListArray count];
+//    return 10;
+
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 150;
 
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    self.OLcell = [tableView dequeueReusableCellWithIdentifier:@"order_cell"];
+    
+    self.OLcell = [tableView dequeueReusableCellWithIdentifier:@"order_list_cell"];
     if (!self.OLcell) {
         self.OLcell = [[[NSBundle mainBundle]loadNibNamed:@"OrderListTableViewCell" owner:nil options:nil]objectAtIndex:0];
     }
     self.OrderInfo = [self.orderListArray objectAtIndex:indexPath.row];
-    for(NSDictionary *dic in self.OrderInfo.detail_order_list ){
-        DetailOrderInfo *detail_order_info = [DetailOrderInfo initWithparametes:dic];
-        [self.DetailOrderList addObject:detail_order_info];
-    }
-    switch ([self.DetailOrderList count]) {
+    
+//    for(int i=0;i<[self.orderListArray count];i++){
+//        OrderInfo *info = [self.orderListArray objectAtIndex:i];
+
+        for(NSDictionary *dic in self.OrderInfo.detail_order_list ){
+            DetailOrderInfo *DOI = [DetailOrderInfo initWithparametes:dic];
+ //            NSMutableArray *temp_array = [[NSMutableArray alloc]init];
+            [self.temp addObject:DOI];
+        }
+    
+        
+//   }
+
+//
+////    self.temp =[self.DetailOrderList objectAtIndex:indexPath.row];
+//    
+    switch ([self.temp count]) {
         case 1:{
             self.OLcell.CommPic2.hidden = YES;
             self.OLcell.CommPic3.hidden = YES;
             self.OLcell.CommPicMore.hidden = YES;
-            DetailOrderInfo *detail_order_info = [self.DetailOrderList objectAtIndex:0];
-            [self.OLcell makeCommPic1:detail_order_info.comm_pic];
+            DetailOrderInfo *detail_order_info = [self.temp objectAtIndex:0];
+            [self.OLcell setComm_pic1_url:detail_order_info.comm_pic];
         }
             break;
         case 2:{
             self.OLcell.CommPic3.hidden = YES;
             self.OLcell.CommPicMore.hidden = YES;
-            DetailOrderInfo *detail_order_info = [self.DetailOrderList objectAtIndex:0];
-            [self.OLcell makeCommPic1:detail_order_info.comm_pic];
-            DetailOrderInfo *detail_order_info2 = [self.DetailOrderList objectAtIndex:1];
-            [self.OLcell makeCommPic1:detail_order_info2.comm_pic];
+            DetailOrderInfo *detail_order_info = [self.temp objectAtIndex:0];
+            [self.OLcell setComm_pic1_url:detail_order_info.comm_pic];
+            DetailOrderInfo *detail_order_info2 = [self.temp objectAtIndex:1];
+            [self.OLcell setComm_pic2_url:detail_order_info2.comm_pic];
         }
             break;
         case 3:{
             
             self.OLcell.CommPicMore.hidden = YES;
-            DetailOrderInfo *detail_order_info = [self.DetailOrderList objectAtIndex:0];
-            [self.OLcell makeCommPic1:detail_order_info.comm_pic];
-            DetailOrderInfo *detail_order_info2 = [self.DetailOrderList objectAtIndex:1];
-            [self.OLcell makeCommPic1:detail_order_info2.comm_pic];
-            DetailOrderInfo *detail_order_info3 = [self.DetailOrderList objectAtIndex:2];
-            [self.OLcell makeCommPic1:detail_order_info3.comm_pic];
+            DetailOrderInfo *detail_order_info = [self.temp objectAtIndex:0];
+            [self.OLcell setComm_pic1_url:detail_order_info.comm_pic];
+            DetailOrderInfo *detail_order_info2 = [self.temp objectAtIndex:1];
+            [self.OLcell setComm_pic2_url:detail_order_info2.comm_pic];
+            DetailOrderInfo *detail_order_info3 = [self.temp objectAtIndex:2];
+            [self.OLcell setComm_pic3_url:detail_order_info3.comm_pic];
         }
             break;
             
         default:{
-            DetailOrderInfo *detail_order_info = [self.DetailOrderList objectAtIndex:0];
-            [self.OLcell makeCommPic1:detail_order_info.comm_pic];
-            DetailOrderInfo *detail_order_info2 = [self.DetailOrderList objectAtIndex:1];
-            [self.OLcell makeCommPic1:detail_order_info2.comm_pic];
-            DetailOrderInfo *detail_order_info3 = [self.DetailOrderList objectAtIndex:2];
-            [self.OLcell makeCommPic1:detail_order_info3.comm_pic];
+            self.OLcell.CommPicMore.hidden = NO;
+            DetailOrderInfo *detail_order_info = [self.temp objectAtIndex:0];
+            [self.OLcell setComm_pic1_url:detail_order_info.comm_pic];
+            DetailOrderInfo *detail_order_info2 = [self.temp objectAtIndex:1];
+            [self.OLcell setComm_pic2_url:detail_order_info2.comm_pic];
+            DetailOrderInfo *detail_order_info3 = [self.temp objectAtIndex:2];
+            [self.OLcell setComm_pic3_url:detail_order_info3.comm_pic];
         }
             break;
     }
-    [self.OLcell makeShopHead:self.OrderInfo.shop_head];
-    [self.OLcell makeShopName:self.OrderInfo.shop_name];
-    [self.OLcell makeOrderPrice:[NSString stringWithFormat:@"%.2f",self.OrderInfo.order_money]];
-    [self.OLcell makeOrderState:self.OrderInfo.order_state];
+    [self.temp removeAllObjects];
+    
+    [self.OLcell setShop_head_url:self.OrderInfo.shop_head];
+    [self.OLcell setShop_name:self.OrderInfo.shop_name];
+    [self.OLcell setOrder_price:[NSString stringWithFormat:@"%.2f",self.OrderInfo.order_money]];
+    [self.OLcell setOrder_state:self.OrderInfo.order_state];
     //暂时不加删除功能
-    self.OLcell.OrderDeleteBt.hidden = YES;
+ //   self.OLcell.OrderDeleteBt.hidden = YES;
 //    [self.OLcell.OrderDeleteBt addTarget:self action:@selector(DeleteOrder) forControlEvents:UIControlEventTouchUpInside];
     
     if ([self.OrderInfo.order_state isEqualToString:@"尚未处理"]) {
-        self.OLcell.OrderDeleteBt.hidden = YES;
+//        self.OLcell.OrderDeleteBt.hidden = YES;
         self.OLcell.toEstimateBt.hidden = YES;
     }else if([self.OrderInfo.order_state isEqualToString:@"已发送"]){
         [self.OLcell.toEstimateBt setTitle:@"确认收货" forState:UIControlStateNormal];
-        [self.OLcell.toEstimateBt addTarget:self action:@selector(EnsureOrder) forControlEvents:UIControlEventTouchUpInside];
-        self.OLcell.toEstimateBt.hidden = YES;
+        [self.OLcell.toEstimateBt addTarget:self action:@selector(EnsureOrder:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.OLcell.toEstimateBt setTag:indexPath.row];
     
     }else{
         [self.OLcell.toEstimateBt setTitle:@"去评论" forState:UIControlStateNormal];
@@ -152,16 +184,24 @@ BOOL FirstLoad ;
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    OrderInfo *order_info = [self.orderListArray objectAtIndex:indexPath.row];
+    OrderL2DViewController *OL2D = [OrderL2DViewController createFromStoryboardName:@"OrderL2D" withIdentifier:@"order_l2d"];
+    [OL2D getOrderInfo:order_info];
+    [self.navigationController pushViewController:OL2D animated:YES];
     
 
 
 }
 
--(void)EnsureOrder{
+-(void)EnsureOrder:(id)sender{
     [StatusTool statusToolEnsureOrderWithOrder_id:self.OrderInfo.order_id Success:^(id object) {
-        [self.OLcell.OrderState setText:@"已完成"];
-        [self.OLcell.toEstimateBt setTitle:@"去评价" forState:UIControlStateNormal];
+        OrderInfo *order_info = [self.orderListArray objectAtIndex:[sender tag]];
+        order_info.order_state = @"已完成";
+        [self.orderListArray replaceObjectAtIndex:[sender tag] withObject:order_info];
+        
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:[sender tag] inSection:0];
+        [self.OLTableview reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        
         [self.OLTableview reloadData];
         MBProgressHUD *hud = [[MBProgressHUD alloc]initWithView:self.view];
         [self.view addSubview:hud];
@@ -200,7 +240,7 @@ BOOL FirstLoad ;
     
     //推送
     UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(10, 15, 100, 30)];
-    title.text = @"结束报修";
+    title.text = @"添加评论";
     title.textColor = [UIColor redColor];
     title.font = [UIFont fontWithName:@"STHeitiTC-Light" size:18];
     [self.assessView addSubview:title];
@@ -217,7 +257,7 @@ BOOL FirstLoad ;
     tlabel.lineBreakMode = UILineBreakModeWordWrap;
     tlabel.numberOfLines = 0;
     tlabel.textColor = [UIColor grayColor];
-    tlabel.font = [UIFont fontWithName:@"STHeitiTC-Light" size:17];
+    tlabel.font = [UIFont fontWithName:@"STHeitiTC-Light" size:15];
     [self.assessView addSubview:tlabel];
     
 //    //第一行评价语句
@@ -228,7 +268,7 @@ BOOL FirstLoad ;
 //    [self.assessView addSubview:self.assessLabel];
     
     //星星
-    self.ratingBar = [[RatingBar alloc] initWithFrame:CGRectMake(tlabel.frame.origin.x+tlabel.frame.size.width-16, tlabel.frame.origin.y+tlabel.frame.size.height+10, 180, 35) WithStarAmount:5];
+    self.ratingBar = [[RatingBar alloc] initWithFrame:CGRectMake(tlabel.frame.origin.x+tlabel.frame.size.width, 80, 180, 35) WithStarAmount:5];
     self.ratingBar.starNumber = 5;
     [self.assessView addSubview:self.ratingBar];
     
@@ -240,12 +280,12 @@ BOOL FirstLoad ;
     
     //第二行文字
     UILabel *flabel = [[UILabel alloc]initWithFrame:CGRectMake(10, vii.frame.origin.y+vii.frame.size.height+13, 100, 35)];
-    flabel.text = @"请给我们留言:";
+    flabel.text = @"给该店铺留言:";
     flabel.textAlignment = UITextAlignmentLeft;
     flabel.numberOfLines = 0;
     flabel.lineBreakMode = UILineBreakModeWordWrap;
     flabel.textColor = [UIColor grayColor];
-    flabel.font = [UIFont fontWithName:@"STHeitiTC-Light" size:17];
+    flabel.font = [UIFont fontWithName:@"STHeitiTC-Light" size:15];
     [self.assessView addSubview:flabel];
     //留言文本框
     self.messageField = [[UITextField alloc]init];
@@ -287,7 +327,7 @@ BOOL FirstLoad ;
     cancelBtn.alpha = 0.8;
     [cancelBtn.layer setMasksToBounds:YES];
     [cancelBtn.layer setCornerRadius:5.0];
-    [cancelBtn addTarget:self action:@selector(justClose) forControlEvents:UIControlEventTouchUpInside];
+    [cancelBtn addTarget:self action:@selector(justClose1) forControlEvents:UIControlEventTouchUpInside];
     [self.assessView addSubview:cancelBtn];
 
 }
@@ -310,13 +350,23 @@ BOOL FirstLoad ;
         }completionBlock:^{
             [hud removeFromSuperview];
             
+            
             EstimateListViewController *ELVC  =[EstimateListViewController createFromStoryboardName:@"EstimateList" withIdentifier:@"estimate_list"];
+            [ELVC shopID:self.OrderInfo.shop_id];
+            [self.maskView removeFromSuperview];
+            [self.assessView removeFromSuperview];
             [self.navigationController pushViewController:ELVC animated:YES];
+            
             
         }];
     } failurs:^(NSError *error) {
         
     }];
+
+}
+-(void)justClose1{
+    [self.assessView removeFromSuperview];
+    [self.maskView removeFromSuperview];
 
 }
 
@@ -325,25 +375,30 @@ BOOL FirstLoad ;
     [super viewDidLoad];
     self.orderList = [[NSMutableArray alloc]init];
     self.orderListArray = [[NSMutableArray alloc]init];
-    self.DetailOrderList =[[NSMutableArray alloc]init];
+    self.DetailOrderList = [[NSMutableArray alloc]init];
+    self.temp =[[NSMutableArray alloc]init];
+    page1 = 1;
+    rows1 = 10;
+    FirstLoad = true;
+    //导航栏
+    self.navigationItem.title = @"订单列表";
+
+    
+
+    
     // Do any additional setup after loading the view.
     
     //注册通知  ，用于用户评价时点击星星
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeLabelText:) name:@"ChangeLabelTextNotification" object:nil];
     
-    page1 = 1;
-    rows1 = 10;
-    FirstLoad = true;
-    //导航栏
-    self.navigationItem.title = @"店铺评价";
-    UIBarButtonItem *temporaryBarButtonItem=[[UIBarButtonItem alloc] init];
-    temporaryBarButtonItem.title=@"";
-    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+
     //设置上拉刷新
     
     [self setupRefresh];
     [self loadData];
 }
+
+
 
 -(void)footerReresh21{
     
@@ -372,7 +427,11 @@ BOOL FirstLoad ;
     
     self.page = [NSNumber numberWithInteger:page1];
     self.rows = [NSNumber numberWithInteger:rows1];
-    [OrderList LoadOrderListWithCustID:self.OrderInfo.cust_id page:self.page rows:self.rows Success:^(id object) {
+    
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [OrderList LoadOrderListWithCustID:@"0001" page:self.page rows:self.rows Success:^(id object) {
+        
         self.orderList = (NSMutableArray *)object;
         
         if(self.orderList!=nil){
@@ -389,12 +448,20 @@ BOOL FirstLoad ;
                     }
                 }
             }
+            
+            
             FirstLoad = false;
-            [self.OLTableview reloadData];
+            
+           
+            
+            
+             [self.OLTableview reloadData];
+
+            
         }else{
             if(FirstLoad){
                 //    self.table.hidden = YES;
-                [self.OLTableview reloadData];
+                self.OLTableview.hidden = YES;
             }else{//刷新完成，已无更多
                 page1--;
                 //提示
@@ -412,10 +479,13 @@ BOOL FirstLoad ;
             }
         }
 
+        
     } failurs:^(NSError *error) {
         
     }];
     
+    
+     
     
 }
 

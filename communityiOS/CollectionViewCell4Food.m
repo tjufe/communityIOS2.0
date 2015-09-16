@@ -52,7 +52,7 @@
 
 -(void)setComm_price:(double)comm_price{
 
-    [_CommPrice setText:[NSString stringWithFormat:@"%f",comm_price]];
+    [_CommPrice setText:[NSString stringWithFormat:@"%.2f",comm_price]];
 }
 
 

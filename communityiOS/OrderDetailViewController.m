@@ -15,9 +15,11 @@
 #import "getUserNameItem.h"
 #import "ShoppingCartCommodity.h"
 #import "OrderInfo.h"
+#import "DetailOrderInfo.h"
 #import "addOrderItem.h"
 #import "OrderListViewController.h"
 #import "UIViewController+Create.h"
+#import "newPostItem.h"
 
 
 @interface OrderDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -42,15 +44,18 @@
 @property (strong,nonatomic)NSNumber *order_money;
 
 
+
 @property (strong,nonatomic) NSMutableArray *comm_pic;//存放商品图片
-@property (strong,nonatomic) NSMutableArray *comm_name;
-@property (strong,nonatomic) NSMutableArray *comm_unit;
-@property (strong,nonatomic) NSMutableArray *comm_price;
-@property (strong,nonatomic) NSMutableArray *comm_id;
-@property (strong,nonatomic) NSMutableArray *comm_buy_amount;
+@property (strong,nonatomic) NSString *comm_name;
+@property (strong,nonatomic) NSString *comm_unit;
+@property (strong,nonatomic) NSNumber *comm_price;
+@property (strong,nonatomic) NSString *comm_id;
+@property (strong,nonatomic) NSNumber *comm_buy_amount;
+@property (strong,nonatomic) NSMutableArray *shop_order_money;//主订单金额
+@property (strong,nonatomic) NSString *mainorder_id;
 
 
-
+@property (assign,nonatomic) double sum_order_money;
 
 
 
@@ -59,6 +64,7 @@
 @implementation OrderDetailViewController
 
 int result;
+int res;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 3;
@@ -83,7 +89,14 @@ int result;
             self.ODPicCell= [[[NSBundle mainBundle]loadNibNamed:@"OrderDetailPicTableViewCell" owner:nil options:nil]objectAtIndex:0];
             self.ODPicCell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-        if([self.comm_pic count]==1){
+        if ([self.comm_pic count]==0) {
+            self.ODPicCell.img_comm1.hidden = YES;
+            self.ODPicCell.img_comm2.hidden = YES;
+            self.ODPicCell.img_comm3.hidden = YES;
+            self.ODPicCell.label_over.hidden = YES;
+            self.ODPicCell.label_comm_amount.text = [NSString stringWithFormat:@"%d",0];
+
+        }else if([self.comm_pic count]==1){
             [self.ODPicCell setImg_comm1_url:[self.comm_pic objectAtIndex:0]];
             self.ODPicCell.img_comm1.hidden = NO;
             self.ODPicCell.img_comm2.hidden = YES;
@@ -155,6 +168,9 @@ int result;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.shop_order_money = [[NSMutableArray alloc]init];
+    
+    
     // Do any additional setup after loading the view.
     //初始化导航条title
     self.navigationItem.title = @"确认订单";
@@ -176,35 +192,53 @@ int result;
 }
 
 #pragma mark-----上传订单信息-------
--(int)addNewOrder{
+-(int)addMainOrder{
     
     
-    [OrderInfo AddNewOrderInfowithShopID:self.shop_id CustID:self.cust_id CustName:self.cust_name CustPhone:self.cust_phone ShopPhone:self.shop_phone OrderMoney:self.order_money OrderSendfee:self.order_sendfee OrderState:self.order_state OrderAddress:self.cust_address PayType:self.pay_type CommID:self.comm_id CommUnit:self.comm_unit CommPrice:self.comm_price CommName:self.comm_name BuyAmount:self.comm_buy_amount Success:^(id object) {
+    [OrderInfo AddNewMainOrderInfowithShopID:self.shop_id CustID:self.cust_id CustName:self.cust_name CustPhone:self.cust_phone ShopPhone:@"11222" OrderMoney:self.order_money OrderSendfee:self.order_sendfee OrderState:self.order_state OrderAddress:self.cust_address PayType:self.pay_type Success:^(id object) {
         
-        addOrderItem *item = (addOrderItem *)object;
-        if([item.msg containsString:@"成功"]){
+        self.mainorder_id = (NSString *)object;
+        if(self.mainorder_id){
           result=1;
         }else{
           result = 0;
         }
         
     } failurs:^(NSError *error) {
-        [UIAlertView showAlertViewWithTitle:@"提示" message:@"订单提交失败" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
-                    if(buttonIndex==0){
-                       //
-                    }else{
-                        //取消
-                    }
-                } onCancel:^{
-                    
-                }];
+//        [UIAlertView showAlertViewWithTitle:@"提示" message:@"订单提交失败" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
+//                    if(buttonIndex==0){
+//                       //
+//                    }else{
+//                        //取消
+//                    }
+//                } onCancel:^{
+//                    
+//                }];
          result = 0;
 
     }];
     return result;
 }
 
-
+#pragma mark-----上传订单子项------
+-(int)addDetailOrder{
+    
+    [DetailOrderInfo AddDetailNewOrderInfowithMainorderID:self.mainorder_id CommID:self.comm_id CommUnit:self.comm_unit CommPrice:self.comm_price CommName:self.comm_name BuyAmount:self.comm_buy_amount ShopID:self.shop_id Success:^(id object) {
+        
+        newPostItem *item = (newPostItem *)object;
+        if([item.msg containsString:@"成功"]){
+            res = 1;
+        }else{
+            res = 0;
+        }
+        
+    } failurs:^(NSError *error) {
+        res=0;
+        
+    }];
+    
+    return res;
+}
 
 
 #pragma mark-----获取用户真实姓名和地址------
@@ -224,24 +258,25 @@ int result;
 -(void)getOrderCommInfo{
     
     //初始化数组
-    self.comm_id = [[NSMutableArray alloc]init];
-    self.comm_name = [[NSMutableArray alloc]init];
-    self.comm_price = [[NSMutableArray alloc]init];
-    self.comm_unit = [[NSMutableArray alloc]init];
     self.comm_pic = [[NSMutableArray alloc]init];
-    self.comm_buy_amount = [[NSMutableArray alloc]init];
+    self.sum_order_money = 0;
     
     for(int i=0;i<[_order_comm count];i++){
+        double sum_money = 0;
         NSMutableArray *temp=[_order_comm objectAtIndex:i];
         for(int j=0;j<[temp count];j++){
             ShoppingCartCommodity *s = [temp objectAtIndex:j];
+            self.sum_order_money = self.sum_order_money+s.buy_amount*s.comm_price;
+            sum_money = sum_money+s.buy_amount*s.comm_price;
             if(s.comm_photo&&![s.comm_photo isEqualToString:@""]){
                 [self.comm_pic addObject:s.comm_photo];
             }else{
                 [self.comm_pic addObject:@"loading"];
             }
         }
+        [self.shop_order_money addObject:[NSNumber numberWithDouble:sum_money]];
     }
+    self.label_order_money.text = [NSString stringWithFormat:@"%.2f",self.sum_order_money];
     self.order_state = @"已下单";
     self.pay_type = @"货到付款";
     self.order_sendfee = [NSNumber numberWithInt:0];
@@ -269,15 +304,15 @@ int result;
     
     
     //日期比较
-     NSInteger seconds = [p_date timeIntervalSinceDate:cur_date];//计算时间差秒数
-    long time = (long)seconds;
-    if(time>0){//超过晚上11点下订单，明日送达
-        NSDate *date = [NSDate dateWithTimeInterval:24*60*60 sinceDate:p_date];
-        self.send_time = [formatter stringFromDate:date];
-    }else{
-        self.send_time = cur_date_str;//今日送达
-    }
-    
+//     NSInteger seconds = [p_date timeIntervalSinceDate:cur_date];//计算时间差秒数
+//    long time = (long)seconds;
+//    if(time>0){//超过晚上11点下订单，明日送达
+//        NSDate *date = [NSDate dateWithTimeInterval:24*60*60 sinceDate:p_date];
+//        self.send_time = [formatter stringFromDate:date];
+//    }else{
+//        self.send_time = cur_date_str;//今日送达
+//    }
+    self.send_time = cur_date_str;//今日送达
     
 }
 
@@ -308,27 +343,36 @@ int result;
 //        
 //    }];
     
-    NSMutableArray *result = [[NSMutableArray alloc]init];
+    NSMutableArray *resultArray = [[NSMutableArray alloc]init];
     
     for(int i=0;i<[_order_comm count];i++){
-        double sum_money = 0;
-        NSMutableArray *temp = [_order_comm objectAtIndex:i];
+        
+        NSMutableArray *temp =[[NSMutableArray alloc]init];
+
+        temp = [_order_comm objectAtIndex:i];
         ShoppingCartCommodity *s = [temp objectAtIndex:0];
         self.shop_id = s.shop_id;
         self.shop_phone = s.shop_phone;
-        for(int j=0;j<[temp count];j++){
-            s=[temp objectAtIndex:j];
-            [self.comm_buy_amount addObject:[NSNumber numberWithInt:s.buy_amount]];
-            [self.comm_id addObject:s.commodity_id];
-            [self.comm_name addObject:s.comm_name];
-            [self.comm_price addObject:[NSNumber numberWithInt:s.comm_price]];
-            [self.comm_unit addObject:s.comm_unit];
-            sum_money = sum_money+s.buy_amount*s.comm_price;
+        self.order_money = [self.shop_order_money objectAtIndex:i];
+        int result2 =[self addMainOrder];//上传主订单
+        
+        if(result2){
+            for(int j=0;j<[temp count];j++){
+                s = [temp objectAtIndex:j];
+                //上传新订单子项
+                self.comm_id = s.commodity_id;
+                self.comm_unit = s.comm_unit;
+                self.comm_price =[NSNumber numberWithDouble:s.comm_price];
+                self.comm_name = s.comm_name;
+                self.comm_buy_amount = [NSNumber numberWithInt:s.buy_amount];
+                int rest = [self addDetailOrder];
+                [resultArray addObject:[NSNumber numberWithInt:rest]];
+            }
         }
-        self.order_money = [NSNumber numberWithDouble:sum_money];
-        [result addObject:[NSNumber numberWithInt:[self addNewOrder]]];
+        
+        
     }
-    if([result containsObject:[NSNumber numberWithInt:0]]){
+    if([resultArray containsObject:[NSNumber numberWithInt:0]]){
         [UIAlertView showAlertViewWithTitle:@"提示" message:@"订单提交失败" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
                     if(buttonIndex==0){
                         //

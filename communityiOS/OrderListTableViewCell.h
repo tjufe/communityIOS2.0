@@ -14,7 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *CommPic1;
 @property (weak, nonatomic) IBOutlet UIImageView *CommPic2;
 @property (weak, nonatomic) IBOutlet UIImageView *CommPic3;
-@property (weak, nonatomic) IBOutlet UIView *CommPicMore;
+@property (weak, nonatomic) IBOutlet UIImageView *CommPicMore;
+
 @property (weak, nonatomic) IBOutlet UILabel *OrderPrice;
 @property (weak, nonatomic) IBOutlet UIButton *OrderDeleteBt;
 - (IBAction)OrderDeleteOnclick:(id)sender;
@@ -23,11 +24,11 @@
 - (IBAction)toEstimateOnclick:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *OrderState;
 
--(void)makeOrderPrice:(NSString *)OrderPrice;
--(void)makeCommPic3:(NSString *)comm_pic3;
--(void)makeCommPic2:(NSString *)comm_pic2;
--(void)makeCommPic1:(NSString *)comm_pic1;
--(void)makeShopName:(NSString *)shop_name;
--(void)makeShopHead:(NSString *)ShopHead;
--(void)makeOrderState:(NSString *)Order_state;
+@property (strong,nonatomic) NSString *order_price;
+@property (strong,nonatomic) NSString *comm_pic3_url;
+@property (strong,nonatomic) NSString *comm_pic2_url;
+@property (strong,nonatomic) NSString *comm_pic1_url;
+@property (strong,nonatomic) NSString *shop_name;
+@property (strong,nonatomic) NSString *shop_head_url;
+@property (strong,nonatomic) NSString *order_state;
 @end

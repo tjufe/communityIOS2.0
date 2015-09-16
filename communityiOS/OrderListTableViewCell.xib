@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="order_cell" selectionStyle="default" indentationWidth="10" rowHeight="154" id="KGk-i7-Jjw" customClass="OrderListTableViewCell">
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="order_list_cell" selectionStyle="default" indentationWidth="10" rowHeight="154" id="KGk-i7-Jjw" customClass="OrderListTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="449" height="154"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -74,15 +74,6 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODd-Ql-lhq">
-                        <rect key="frame" x="383" y="105" width="46" height="30"/>
-                        <state key="normal" title="去评价">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="toEstimateOnclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="N9z-tp-f3J"/>
-                        </connections>
-                    </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="菜单" translatesAutoresizingMaskIntoConstraints="NO" id="6Rb-jN-Ogb">
                         <rect key="frame" x="233" y="64" width="33" height="8"/>
                         <constraints>
@@ -106,7 +97,7 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czj-9H-lrr">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czj-9H-lrr">
                         <rect key="frame" x="404" y="10" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="9rX-D4-csh"/>
@@ -128,6 +119,21 @@
                         <color key="textColor" red="0.63786300510000005" green="0.63786300510000005" blue="0.63786300510000005" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODd-Ql-lhq">
+                        <rect key="frame" x="385" y="106" width="45" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="iY4-Uc-I01"/>
+                            <constraint firstAttribute="width" constant="46" id="tbp-06-Bho"/>
+                        </constraints>
+                        <state key="normal" title="去评价">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="tbp-06-Bho"/>
+                            </mask>
+                        </variation>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="6Rb-jN-Ogb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="64" id="1Cb-XV-Oru"/>
@@ -139,6 +145,7 @@
                     <constraint firstItem="JUa-BA-NsU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="O1M-Ea-qdk"/>
                     <constraint firstItem="TG5-Oy-zoU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="PH3-Xd-xcm"/>
                     <constraint firstItem="AWq-2o-5jf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="PYq-xr-Zpu"/>
+                    <constraint firstAttribute="trailing" secondItem="ODd-Ql-lhq" secondAttribute="trailing" constant="19" id="Pp6-mq-hMq"/>
                     <constraint firstItem="pO9-a1-mON" firstAttribute="top" secondItem="czj-9H-lrr" secondAttribute="bottom" constant="24" id="Tby-DA-YdD"/>
                     <constraint firstItem="JUa-BA-NsU" firstAttribute="leading" secondItem="l9e-8a-xEL" secondAttribute="trailing" constant="2" id="WLX-8u-TnE"/>
                     <constraint firstItem="Vka-A1-ypN" firstAttribute="leading" secondItem="TG5-Oy-zoU" secondAttribute="trailing" constant="10" id="Wkd-QN-o6U"/>
@@ -147,6 +154,7 @@
                     <constraint firstAttribute="trailing" secondItem="czj-9H-lrr" secondAttribute="trailing" constant="20" id="eij-xI-4RM"/>
                     <constraint firstItem="Vka-A1-ypN" firstAttribute="top" secondItem="JUa-BA-NsU" secondAttribute="bottom" constant="8" id="hAH-tj-zgE"/>
                     <constraint firstItem="TG5-Oy-zoU" firstAttribute="top" secondItem="JUa-BA-NsU" secondAttribute="bottom" constant="8" id="j51-Wg-J4Q"/>
+                    <constraint firstAttribute="bottom" secondItem="ODd-Ql-lhq" secondAttribute="bottom" constant="17.5" id="lBB-6L-FVk"/>
                     <constraint firstItem="QwN-w2-JyV" firstAttribute="leading" secondItem="AWq-2o-5jf" secondAttribute="trailing" constant="7.5" id="okv-L2-ayv"/>
                     <constraint firstItem="l9e-8a-xEL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="sM1-O8-4sS"/>
                     <constraint firstItem="AWq-2o-5jf" firstAttribute="top" secondItem="TG5-Oy-zoU" secondAttribute="bottom" constant="13" id="w8G-h8-ay4"/>
@@ -156,7 +164,7 @@
                 <outlet property="CommPic1" destination="TG5-Oy-zoU" id="z5G-d2-Z6J"/>
                 <outlet property="CommPic2" destination="Vka-A1-ypN" id="7LG-6b-xtv"/>
                 <outlet property="CommPic3" destination="X36-71-sZI" id="GqD-VG-ZpP"/>
-                <outlet property="CommPicMore" destination="H2p-sc-9uM" id="hkL-Ng-Ho5"/>
+                <outlet property="CommPicMore" destination="6Rb-jN-Ogb" id="Zp0-dp-gUN"/>
                 <outlet property="OrderDeleteBt" destination="czj-9H-lrr" id="ptA-3x-3Eo"/>
                 <outlet property="OrderPrice" destination="QwN-w2-JyV" id="b3L-pZ-sP2"/>
                 <outlet property="OrderState" destination="pO9-a1-mON" id="Vp6-2C-TKY"/>

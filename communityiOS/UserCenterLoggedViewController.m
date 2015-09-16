@@ -90,6 +90,12 @@
 //    
 //    [self.revealSideViewController popViewControllerWithNewCenterController:nav animated:YES];
 //    [nav pushViewController:poLVC animated:YES];
+    
+    OrderListViewController *OLVC = [OrderListViewController createFromStoryboardName:@"OrderList" withIdentifier:@"order_list"];
+    UINavigationController *nav = [[UINavigationController alloc]init];
+    [self.revealSideViewController popViewControllerWithNewCenterController:nav animated:YES ];
+    [nav pushViewController:OLVC animated:YES];
+    
 
 }
 
@@ -197,8 +203,16 @@
 }
 
 - (IBAction)MyOrderOncilck:(id)sender {
-     UINavigationController *nav = [[UINavigationController alloc]init];
     OrderListViewController  *OLVC = [OrderListViewController createFromStoryboardName:@"OrderList" withIdentifier:@"order_list"];
+
+    UIButton *btn = [UIButton buttonWithType: UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 20, 10, 20);
+    [btn setImage:[UIImage imageNamed:@"back"] forState: UIControlStateNormal];
+    [btn addTarget:self action:@selector(go2main) forControlEvents:UIControlEventTouchUpInside];
+    UINavigationController *nav = [[UINavigationController alloc]init];
+    UIBarButtonItem *leftBtn =[[UIBarButtonItem alloc]initWithCustomView:btn];
+    OLVC.navigationItem.leftBarButtonItem =leftBtn;
+    
     [self.revealSideViewController popViewControllerWithNewCenterController:nav animated:YES];
     [nav pushViewController:OLVC animated:YES];
     

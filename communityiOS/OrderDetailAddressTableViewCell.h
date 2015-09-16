@@ -13,4 +13,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *label_phone;
 @property (weak, nonatomic) IBOutlet UILabel *label_address;
 
+@property(strong ,nonatomic)NSString * l_name;
+
+@property(strong ,nonatomic)NSString * l_phone;
+
+@property(strong ,nonatomic)NSString * l_address;
+
+
 @end

@@ -1125,8 +1125,8 @@ float assessViewY = 0;
     
 }
 -(void)justClose{
-    self.replyView.hidden = NO;
-    self.assessView.hidden =YES;
+//    self.replyView.hidden = NO;
+//    self.assessView.hidden =YES;
     [self.maskView removeFromSuperview];
 }
 

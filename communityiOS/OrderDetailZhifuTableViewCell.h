@@ -11,4 +11,6 @@
 @interface OrderDetailZhifuTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *label_send_date;
 
+@property (strong ,nonatomic)NSString *l_send_date;
+
 @end
