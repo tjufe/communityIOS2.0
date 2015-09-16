@@ -40,6 +40,7 @@
 +(void)AddDetailNewOrderInfowithMainorderID:(NSString *)mainorder_id CommID:(NSString *)comm_id CommUnit:(NSString *)comm_unit CommPrice:(NSNumber *)comm_price CommName:(NSString *)comm_name BuyAmount:(NSNumber *)buy_amount ShopID:(NSString *)shop_id Success:(StatusSuccess)success failurs:(StatusFailurs)failure{
     
         NSMutableDictionary *firstDic = [[NSMutableDictionary alloc]init];
+        [firstDic setValue:mainorder_id forKey:@"mainorder_id"];
         [firstDic setValue:shop_id forKey:@"shop_id"];
         [firstDic setValue:comm_id forKey:@"comm_id"];
         [firstDic setValue:comm_unit forKey:@"comm_unit"];
@@ -52,7 +53,7 @@
     
         NSMutableDictionary *thirdDic = [[NSMutableDictionary  alloc] init];
         [thirdDic setValue:secondDic forKey:@"param"];
-        [thirdDic setValue:@"AddNewMainOrder" forKey:@"method"];
+        [thirdDic setValue:@"AddNewDetailOrder" forKey:@"method"];
     
         [HttpTool postWithparams:thirdDic success:^(id responseObject) {
         //no response

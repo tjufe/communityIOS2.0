@@ -52,6 +52,10 @@ BOOL FirstLoad ;
     self.shop_name = shop_name;
     
 }
+-(void)getShopPhone:(NSString *)shop_phone{
+    self.shop_phone = shop_phone;
+    
+}
 -(void)getShopID:(NSString *) shop_id {
     self.shop_id = shop_id;
 }
