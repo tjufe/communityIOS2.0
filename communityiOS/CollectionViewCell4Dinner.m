@@ -26,9 +26,13 @@
 
 -(void)setShopmainpic:(NSString *)shop_main_url{
     if(![shop_main_url isEqual:@""]){
-        NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,shop_main_url];
+        NSString *url = [NSString stringWithFormat:@"%@/uploadimg/%@",API_HOST,shop_main_url];
         
-        [_shop_main_pic sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
+        //包含中文字符的string转换为nsurl
+        NSURL *iurl = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+
+        
+        [_shop_main_pic sd_setImageWithURL:iurl placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
             
             _shop_main_pic.image = image;
             

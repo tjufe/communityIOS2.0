@@ -23,6 +23,7 @@
         _shop_name = [coder decodeObjectForKey:@"shop_name"];
         _shop_id = [coder decodeObjectForKey:@"shop_id"];
         _select_status = [coder decodeInt32ForKey:@"select_status"];
+        _shop_phone = [coder decodeObjectForKey:@"shop_phone"];
         
         
     }
@@ -41,6 +42,7 @@
     [coder encodeObject:_shop_name forKey:@"shop_name"];
     [coder encodeObject:_shop_id forKey:@"shop_id"];
     [coder encodeInt32:_select_status forKey:@"select_status"];
+    [coder encodeObject:_shop_phone forKey:@"shop_phone"];
     
     
 }

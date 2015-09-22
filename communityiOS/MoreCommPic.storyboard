@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--More Comm Pic View Controller-->
+        <scene sceneID="eyS-U9-pX7">
+            <objects>
+                <viewController storyboardIdentifier="more_comm_pic" id="PRz-3O-o5S" customClass="MoreCommPicViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mdZ-XQ-N86"/>
+                        <viewControllerLayoutGuide type="bottom" id="nI6-4L-78i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xtn-ca-7kH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8ZT-85-vjf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="PRz-3O-o5S" id="hXm-sn-gwp"/>
+                                    <outlet property="delegate" destination="PRz-3O-o5S" id="3H9-ev-uhD"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8ZT-85-vjf" firstAttribute="top" secondItem="xtn-ca-7kH" secondAttribute="top" id="iJf-7C-QMn"/>
+                            <constraint firstItem="8ZT-85-vjf" firstAttribute="leading" secondItem="xtn-ca-7kH" secondAttribute="leading" id="kxH-zZ-ELU"/>
+                            <constraint firstItem="nI6-4L-78i" firstAttribute="top" secondItem="8ZT-85-vjf" secondAttribute="bottom" id="n1b-m4-Qsi"/>
+                            <constraint firstAttribute="trailing" secondItem="8ZT-85-vjf" secondAttribute="trailing" id="nax-jV-zyn"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="MCPtableView" destination="8ZT-85-vjf" id="Sd4-Gg-Gbg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOm-oU-L27" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="289" y="182"/>
+        </scene>
+    </scenes>
+</document>

@@ -24,6 +24,7 @@
 #import "ShoppingCartViewController.h"
 #import "String.h"
 #import "ShoppingCartCommodity.h"
+#import "MoreCommPicViewController.h"
 
 @interface Detail4FoodViewController ()
 
@@ -31,6 +32,12 @@
 
 @implementation Detail4FoodViewController
 
+
+- (IBAction)MorePicOnclick:(id)sender {
+    MoreCommPicViewController *MCPVC = [MoreCommPicViewController createFromStoryboardName:@"MoreCommPic" withIdentifier:@"more_comm_pic"];
+    [MCPVC getCommInfo:self.comm_info];
+    [self.navigationController pushViewController:MCPVC animated:YES];
+}
 
 -(void)getCommodityInfo:(id)comm_info{
     self.comm_info = (CommodityInfo *)comm_info;
@@ -49,7 +56,7 @@
     newfood.comm_unit = _comm_info.comm_unit;
     newfood.shop_id = _comm_info.shop_id;
     newfood.shop_name = _shop_name;
-    newfood.shop_phone = _shop_phone;
+    newfood.shop_phone = self.shop_phone;
     newfood.buy_amount=1;
     newfood.select_status = 0;
     
@@ -62,33 +69,54 @@
     NSMutableArray *cart = [[NSMutableArray alloc]init];
     cart = [NSKeyedUnarchiver unarchiveObjectWithFile:file_path];
     
+    bool flag_shop = false;
+    bool flag_commodity = false;
+    
     if(cart && [cart count]>0){//购物车不为空
         for(int i=0;i<[cart count];i++){
             NSMutableArray *comm_array = [cart objectAtIndex:i];
-            if([comm_array containsObject:newfood]){
+            
+            ShoppingCartCommodity *s = [comm_array objectAtIndex:0];
+            if([s.shop_id isEqualToString:newfood.shop_id ]){//同一商家
+                flag_shop = true;
                 for(int j=0;j<[comm_array count];j++){
                     ShoppingCartCommodity *s = [comm_array objectAtIndex:j];
-                    if(s.commodity_id == newfood.commodity_id){//找到同一商品
+                    if([s.commodity_id isEqualToString: newfood.commodity_id]){//找到同一商品
                         newfood.buy_amount=s.buy_amount+1;
                         [comm_array removeObject:s];
                         [comm_array addObject:newfood];
                         NSMutableArray *comm_array2 = [NSMutableArray arrayWithArray:comm_array];
                         [cart removeObject:comm_array];
                         [cart addObject:comm_array2];
+                        flag_commodity = true;
                         break;
+                    }else{
+                        flag_commodity = false;
                     }
                 }
+                if(!flag_commodity){//同家不同商品
+                    
+                    [comm_array addObject:newfood];
+                    NSMutableArray *comm_array2 = [NSMutableArray arrayWithArray:comm_array];
+                    [cart removeObject:comm_array];
+                    [cart addObject:comm_array2];
+
+                }
+                
             }else{
-               ShoppingCartCommodity *s = [comm_array objectAtIndex:0];
-               if(s.shop_id==newfood.shop_id){//同一商家
-                   [comm_array addObject:newfood];
-                   NSMutableArray *comm_array2 = [NSMutableArray arrayWithArray:comm_array];
-                   [cart removeObject:comm_array];
-                   [cart addObject:comm_array2];
-               }
-            
+                flag_shop = false;//不同家
             }
         }
+            
+        
+            
+            if(!flag_shop){//不同家
+                NSMutableArray *comm_array2 = [[NSMutableArray alloc]init];
+                [comm_array2 addObject:newfood];
+                [cart addObject:comm_array2];
+            }
+
+            
         
     }else{//购物车cart为空
         cart = [[NSMutableArray alloc]init];
@@ -193,7 +221,10 @@
 }
 
 - (IBAction)CallSellerOnclick:(id)sender {
-    [UIAlertView showAlertViewWithTitle:@"卖家详情" message:@"卖家电话：13800003333" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
+    NSString *buildNameStr =@"买家电话:";
+    buildNameStr = [buildNameStr stringByAppendingString:self.shop_phone];
+    
+    [UIAlertView showAlertViewWithTitle:@"卖家详情" message:buildNameStr cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
         
         ;
     } onCancel:^{
@@ -204,8 +235,30 @@
 
 #pragma mark--跳到立即购买
 - (IBAction)BuyNowOnclick:(id)sender {
+    
+    ShoppingCartCommodity *newfood = [[ShoppingCartCommodity alloc]init];
+    newfood.commodity_id = _comm_info.commodity_id;
+    newfood.comm_name = _comm_info.comm_name;
+    newfood.comm_photo = _comm_info.comm_photo;
+    newfood.comm_price = _comm_info.comm_price;
+    newfood.comm_unit = _comm_info.comm_unit;
+    newfood.shop_id = _comm_info.shop_id;
+    newfood.shop_name = _shop_name;
+    newfood.shop_phone = self.shop_phone;
+    newfood.buy_amount=1;
+    newfood.select_status = 0;
+    
+    NSMutableArray *se_array = [[NSMutableArray alloc]init];
+    [se_array addObject:newfood];
+    NSMutableArray *comm_array = [[NSMutableArray alloc]init];
+    [comm_array addObject:se_array];
+    
+    
     OrderDetailViewController *ODVC = [OrderDetailViewController createFromStoryboardName:@"OrderDetail" withIdentifier:@"order_detail"]
     ;
+    
+    ODVC.order_comm = comm_array;
+    
     [self.navigationController pushViewController:ODVC animated:YES];
 }
 

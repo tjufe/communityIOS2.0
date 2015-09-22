@@ -13,6 +13,7 @@
 #import "String.h"
 #import "OrderDetailViewController.h"
 #import "UIViewController+Create.h"
+#import "UIAlertView+Blocks.h"
 
 @interface ShoppingCartViewController () <UITableViewDataSource,UITableViewDelegate,ShoppingCart2TableViewCellDelegate,ShoppingCartTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *sc_table;
@@ -21,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *label_comm_count;
 @property (weak, nonatomic) IBOutlet UIImageView *img_select_all;
 
+@property (weak, nonatomic) IBOutlet UIButton *btn_del;
+@property (weak, nonatomic) IBOutlet UIButton *btn_calcu;
 
 @property (strong,nonatomic) ShoppingCartTableViewCell *sc_table_cell1;
 @property (strong,nonatomic) ShoppingCart2TableViewCell *sc_table_cell2;
@@ -36,6 +39,41 @@
 double total_price;//总金额
 int m;
 bool comm_select;//全选状态
+
+bool edit_flag;//编辑状态
+
+
+#pragma mark----删除购物车商品------
+- (IBAction)Btn2deleteComm:(id)sender {
+    [UIAlertView showAlertViewWithTitle:@"提示" message:@"删除选择的商品？" cancelButtonTitle:@"删除" otherButtonTitles:@[@"取消"] onDismiss:^(int buttonIndex) {
+
+        } onCancel:^{
+        //
+ //       if(buttonIndex==0){//删除
+            
+            NSMutableArray *se_array = [[NSMutableArray alloc]init];
+            ShoppingCartCommodity *se_comm = [ShoppingCartCommodity new];
+            for(int i=0;i<[self.shopping count];i++){
+                se_array = [self.shopping objectAtIndex:i];
+                for(int j=0;j<[se_array count];j++){
+                    se_comm = [se_array objectAtIndex:j];
+                    if(se_comm.select_status==1){//选中
+                        [se_array removeObject:se_comm];
+                    }
+                }
+                if([se_array count]==0){
+                    [self.shopping removeObject:se_array];
+                }
+            }
+            [self.sc_table reloadData];
+            
+ //       }
+    }];
+    
+}
+
+
+
 
 #pragma mark-----跳转到提交订单页-----
 - (IBAction)Btn2sumbitOrders:(id)sender {
@@ -146,14 +184,22 @@ bool comm_select;//全选状态
     if(tag == 0){//减少数量
         se_comm.buy_amount = se_comm.buy_amount-1;
         if(se_comm.buy_amount==0){//数量为0了，从购物车删去
-            [self.shopping removeObject:se_comm];
-        }
+            [se_array removeObject:se_comm];
+            if([se_array count]==0){
+                [self.shopping removeObject:se_array];
+            }
+         }
     }else{
         se_comm.buy_amount = se_comm.buy_amount+1;
     }
     //刷新一行
-    NSArray *indexArrary = [NSArray arrayWithObjects:index,nil];
-    [self.sc_table reloadRowsAtIndexPaths:indexArrary withRowAnimation:UITableViewRowAnimationAutomatic];
+//    NSArray *indexArrary = [NSArray arrayWithObjects:index,nil];
+//    [self.sc_table reloadRowsAtIndexPaths:indexArrary withRowAnimation:UITableViewRowAnimationAutomatic];
+    if([self.shopping count]>0){
+    [self.sc_table reloadData];
+    }else{
+        self.sc_table.hidden = YES;
+    }
     //计算金额
     [self calculateTotalPrice];
 }
@@ -255,6 +301,7 @@ bool comm_select;//全选状态
         self.sc_table_cell2.img_comm_photo.contentMode=UIViewContentModeScaleAspectFill;
         self.sc_table_cell2.img_comm_photo.layer.masksToBounds = YES;
         [self.sc_table_cell2.img_comm_photo.layer setCornerRadius:self.sc_table_cell2.img_comm_photo.frame.size.height/8];
+        [self.sc_table_cell2 setComm_url:s.comm_photo];
         //商品名称
         self.sc_table_cell2.label_comm_name.text = s.comm_name;
         //商品数量
@@ -344,6 +391,7 @@ bool comm_select;//全选状态
      m=0;
     total_price = 0;
     comm_select = false;//初始全选状态为false
+    edit_flag = false;//初始编辑状态为false
     self.cart_shop =[[NSMutableArray alloc]init];
     [self getShoppingCartCommodity];
     if(self.shopping&&[self.shopping count]>0){
@@ -374,36 +422,12 @@ bool comm_select;//全选状态
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(selectAllComm)];
     [self.img_select_all addGestureRecognizer:singleTap];
     
-    //获取路径
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documentDirectory = [paths objectAtIndex:0];
-//    self.save_path = [documentDirectory stringByAppendingPathComponent:
-//                      ShoppingCartFile];
-//    NSMutableArray *text =[[NSMutableArray alloc]init];
-//    ShoppingCartCommodity *s =[[ShoppingCartCommodity alloc]init];
-//    s.shop_name = @"吉祥馄饨";
-//    s.comm_name = @"凉拌馄饨";
-//    s.shop_id = @"0001";
-//    s.buy_amount = 1;
-//    s.comm_price = 8.0;
-//    s.select_status = 0;
-//    [text addObject:s];
-//    ShoppingCartCommodity *s1 = [[ShoppingCartCommodity alloc]init];
-//    s1.shop_name = @"吉祥馄饨";
-//    s1.shop_id = @"0001";
-//    s1.buy_amount = 1;
-//    s1.comm_price = 12.0;
-//    s1.comm_name = @"鲜肉馄饨";
-//    s1.select_status = 0;
-//    [text addObject:s1];
-//    
-//    bool flag=[NSKeyedArchiver archiveRootObject:text toFile:self.save_path];
+    //编辑按钮圆角
+    self.btn_del.layer.masksToBounds = YES;
+    [self.btn_del.layer setCornerRadius:self.btn_del.frame.size.height/8];
     
- //   bool flag=[text writeToFile:self.save_path atomically:YES];
     
-//    if(flag){
-//        NSLog(@"chenggong");
-//    }
+
     
 
 }
@@ -478,6 +502,24 @@ bool comm_select;//全选状态
 #pragma mark----跳转编辑页
 -(void)Go2Edit{
     
+    if(!edit_flag){//切换为编辑状态
+        edit_flag = true;
+        self.navigationItem.rightBarButtonItem.title = @"完成";
+        self.btn_calcu.enabled = NO;
+        self.btn_calcu.hidden = YES;
+        self.btn_del.hidden = NO;
+        self.btn_del.enabled=YES;
+        
+        
+    }else{//切换为完成编辑状态
+        edit_flag = false;
+        self.navigationItem.rightBarButtonItem.title = @"编辑";
+        self.btn_calcu.enabled = YES;
+        self.btn_calcu.hidden = NO;
+        self.btn_del.hidden = YES;
+        self.btn_del.enabled=NO;
+    }
+    
 }
 
 #pragma mark----重新清理购物车商品----
@@ -490,7 +532,7 @@ bool comm_select;//全选状态
     
     for(int i=0;i<[self.shopping count];i++){
         comm_array = [self.shopping objectAtIndex:i];
-       for(int j=0;j<[comm_array count];j++){
+       for(int j=(int)([comm_array count]-1);j>=0;j--){
            ShoppingCartCommodity *comm2 = [ShoppingCartCommodity new];
            comm = [comm_array objectAtIndex:j];
            comm.select_status = 0;

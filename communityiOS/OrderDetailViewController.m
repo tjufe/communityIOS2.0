@@ -20,6 +20,7 @@
 #import "OrderListViewController.h"
 #import "UIViewController+Create.h"
 #import "newPostItem.h"
+#import "String.h"
 
 
 @interface OrderDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -57,14 +58,19 @@
 
 @property (assign,nonatomic) double sum_order_money;
 
-
+//id condLock = [[NSConditionLock alloc] initWithCondition:true];  //初始化
 
 @end
 
 @implementation OrderDetailViewController
 
+
+
 int result;
 int res;
+
+NSCondition     *_condition;//条件锁
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 3;
@@ -192,31 +198,49 @@ int res;
 }
 
 #pragma mark-----上传订单信息-------
--(int)addMainOrder{
+-(int)addMainOrder:(NSMutableArray *)tempArray:(NSMutableArray *)result_array{
     
+    NSMutableArray *res_array = [[NSMutableArray alloc]init];
     
-    [OrderInfo AddNewMainOrderInfowithShopID:self.shop_id CustID:self.cust_id CustName:self.cust_name CustPhone:self.cust_phone ShopPhone:@"11222" OrderMoney:self.order_money OrderSendfee:self.order_sendfee OrderState:self.order_state OrderAddress:self.cust_address PayType:self.pay_type Success:^(id object) {
-        
+        [StatusTool statusToolAddNewMainOrderInfowithShopID:self.shop_id CustID:self.cust_id CustName:self.cust_name CustPhone:self.cust_phone  OrderMoney:self.order_money OrderSendfee:self.order_sendfee OrderState:self.order_state OrderAddress:self.cust_address PayType:self.pay_type Success:^(id object) {
+//        [_condition lock];
         self.mainorder_id = (NSString *)object;
         if(self.mainorder_id){
-          result=1;
+            
+            for(int j=0;j<[tempArray count];j++){
+               ShoppingCartCommodity *s = [tempArray objectAtIndex:j];
+                //上传新订单子项
+                self.comm_id = s.commodity_id;
+                self.comm_unit = s.comm_unit;
+                self.comm_price =[NSNumber numberWithDouble:s.comm_price];
+                self.comm_name = s.comm_name;
+                self.comm_buy_amount = [NSNumber numberWithInt:s.buy_amount];
+                int res = [self addDetailOrder];
+                [res_array addObject:[NSNumber numberWithInt:res]];
+            }
+
+            
+           if([res_array containsObject:[NSNumber numberWithInt:0]]){
+                result = 0;
+           }else{
+                result=1;
+           }
         }else{
-          result = 0;
+            result = 0;
         }
         
+
+//         [_condition unlock];
+        
     } failurs:^(NSError *error) {
-//        [UIAlertView showAlertViewWithTitle:@"提示" message:@"订单提交失败" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
-//                    if(buttonIndex==0){
-//                       //
-//                    }else{
-//                        //取消
-//                    }
-//                } onCancel:^{
-//                    
-//                }];
-         result = 0;
+        result = 0;
+
+//         [_condition unlock];
 
     }];
+//    [_condition wait];
+//    [result_array addObject:[NSNumber numberWithInt:result]];
+
     return result;
 }
 
@@ -259,6 +283,7 @@ int res;
     
     //初始化数组
     self.comm_pic = [[NSMutableArray alloc]init];
+    self.shop_order_money = [[NSMutableArray alloc]init];
     self.sum_order_money = 0;
     
     for(int i=0;i<[_order_comm count];i++){
@@ -277,7 +302,7 @@ int res;
         [self.shop_order_money addObject:[NSNumber numberWithDouble:sum_money]];
     }
     self.label_order_money.text = [NSString stringWithFormat:@"%.2f",self.sum_order_money];
-    self.order_state = @"已下单";
+    self.order_state = @"尚未处理";
     self.pay_type = @"货到付款";
     self.order_sendfee = [NSNumber numberWithInt:0];
     
@@ -347,29 +372,54 @@ int res;
     
     for(int i=0;i<[_order_comm count];i++){
         
-        NSMutableArray *temp =[[NSMutableArray alloc]init];
+//<<<<<<< HEAD
+//        NSMutableArray *temp =[[NSMutableArray alloc]init];
+//
+//        temp = [_order_comm objectAtIndex:i];
+//=======
+//        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//        dispatch_async(queue, ^{
+        
 
-        temp = [_order_comm objectAtIndex:i];
+        
+        NSMutableArray *temp = [_order_comm objectAtIndex:i];
+
         ShoppingCartCommodity *s = [temp objectAtIndex:0];
         self.shop_id = s.shop_id;
-        self.shop_phone = s.shop_phone;
+//        self.shop_phone = s.shop_phone;
         self.order_money = [self.shop_order_money objectAtIndex:i];
-        int result2 =[self addMainOrder];//上传主订单
+//        [_condition lock];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                int result =   [self addMainOrder:temp:resultArray];
+                   [resultArray addObject:[NSNumber numberWithInt:result]];
+               });
+//        int result2 =[self addMainOrder:temp];//上传主订单
+//        [_condition lock];
+//        while (!_isOK) {
+//            
+//            [_condition wait];
+//            
+//        }
+//        [_condition lock];
         
-        if(result2){
-            for(int j=0;j<[temp count];j++){
-                s = [temp objectAtIndex:j];
-                //上传新订单子项
-                self.comm_id = s.commodity_id;
-                self.comm_unit = s.comm_unit;
-                self.comm_price =[NSNumber numberWithDouble:s.comm_price];
-                self.comm_name = s.comm_name;
-                self.comm_buy_amount = [NSNumber numberWithInt:s.buy_amount];
-                int rest = [self addDetailOrder];
-                [resultArray addObject:[NSNumber numberWithInt:rest]];
-            }
-        }
+ //       [resultArray addObject:[NSNumber numberWithInt:result]];
+//        [_condition unlock];
+       
         
+//        if(result2){
+//            for(int j=0;j<[temp count];j++){
+//                s = [temp objectAtIndex:j];
+//                //上传新订单子项
+//                self.comm_id = s.commodity_id;
+//                self.comm_unit = s.comm_unit;
+//                self.comm_price =[NSNumber numberWithDouble:s.comm_price];
+//                self.comm_name = s.comm_name;
+//                self.comm_buy_amount = [NSNumber numberWithInt:s.buy_amount];
+//                int rest = [self addDetailOrder];
+//                [resultArray addObject:[NSNumber numberWithInt:rest]];
+//            }
+//        }
+//     });
         
     }
     if([resultArray containsObject:[NSNumber numberWithInt:0]]){
@@ -383,14 +433,79 @@ int res;
                     
                 }];
     }else{
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"订单提交成功" delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
-        [alert show];
-        //前往订单列表页
-        OrderListViewController *OLVC = [OrderListViewController createFromStoryboardName:@"OrderList" withIdentifier:@"order_list"];
-        [self.navigationController pushViewController:OLVC animated:YES];
+        [UIAlertView showAlertViewWithTitle:@"提示" message:@"订单提交成功" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
+            
+            } onCancel:^{
+                //点取消按钮
+                    [self MotifyShoppingCart];
+                    OrderListViewController *OLVC = [OrderListViewController createFromStoryboardName:@"OrderList" withIdentifier:@"order_list"];
+                    [self.navigationController pushViewController:OLVC animated:YES];
+                }];
 
+//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"订单提交成功" delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+//        [alert show];
+        
 
     }
     
 }
+
+
+#pragma mark-----修改购物车------
+-(void)MotifyShoppingCart{
+    //获取路径
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSString *file_path = [documentDirectory stringByAppendingPathComponent:
+                           ShoppingCartFile];
+    //接档，读取文件数据
+    NSMutableArray *cart = [[NSMutableArray alloc]init];
+    cart = [NSKeyedUnarchiver unarchiveObjectWithFile:file_path];
+    
+    //删除已购买商品
+    for(int i=0;i<[_order_comm count];i++){
+        NSMutableArray *order_temp = [[NSMutableArray alloc]init];
+        order_temp = [_order_comm objectAtIndex:i];
+        ShoppingCartCommodity *s = [ShoppingCartCommodity new];
+        for(int j=0;j<[order_temp count];j++){
+            s=[order_temp objectAtIndex:j];
+            for(int m=0;m<[cart count];m++){
+                NSMutableArray *cart_temp = [[NSMutableArray alloc]init];
+                cart_temp=[cart objectAtIndex:m];
+                for(int n=0;n<[cart_temp count];n++){
+                    ShoppingCartCommodity *s1 = [ShoppingCartCommodity new];
+                    s1 = [cart_temp objectAtIndex:n];
+                if([s1.commodity_id isEqualToString:s.commodity_id]){
+                    [cart_temp removeObject:s];
+                    if([cart_temp count]==0){
+                        [cart removeObject:cart_temp];
+                    }
+                    break;
+                }
+                }
+                
+            }
+        }
+    }
+    NSMutableArray *cart2 = [NSMutableArray arrayWithArray:cart];
+    
+    //先删除归档
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if([fileManager isDeletableFileAtPath:file_path]){
+        [fileManager removeItemAtPath:file_path error:nil];
+    }
+    //再重新添加,保存归档
+    bool flag =[NSKeyedArchiver archiveRootObject:cart2 toFile:file_path];
+    if(flag){
+//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"已添加到购物车" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//        [alert show];
+        
+    }
+
+    
+}
+
+
+
+
 @end

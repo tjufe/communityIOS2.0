@@ -28,6 +28,15 @@
 		13ACD6D11BA82CE8001F9F21 /* OrderL2D.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13ACD6D01BA82CE8001F9F21 /* OrderL2D.storyboard */; };
 		13ACD6D51BA8387C001F9F21 /* OrderL2DTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACD6D31BA8387C001F9F21 /* OrderL2DTableViewCell.m */; };
 		13ACD6D61BA8387C001F9F21 /* OrderL2DTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13ACD6D41BA8387C001F9F21 /* OrderL2DTableViewCell.xib */; };
+		13ACD6D91BA99E96001F9F21 /* MoreCommPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACD6D81BA99E96001F9F21 /* MoreCommPicViewController.m */; };
+		13ACD6DB1BA99EB4001F9F21 /* MoreCommPic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13ACD6DA1BA99EB4001F9F21 /* MoreCommPic.storyboard */; };
+		13ACD6DF1BA99F81001F9F21 /* MoreCommPicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACD6DD1BA99F81001F9F21 /* MoreCommPicTableViewCell.m */; };
+		13ACD6E01BA99F81001F9F21 /* MoreCommPicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13ACD6DE1BA99F81001F9F21 /* MoreCommPicTableViewCell.xib */; };
+		13ACD6E31BA9A884001F9F21 /* MoreCommPicList.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACD6E21BA9A884001F9F21 /* MoreCommPicList.m */; };
+		13ACD6E71BAC54B2001F9F21 /* MyInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACD6E61BAC54B2001F9F21 /* MyInformationViewController.m */; };
+		13ACD6E91BAC54D2001F9F21 /* MyInformation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13ACD6E81BAC54D2001F9F21 /* MyInformation.storyboard */; };
+		13ACD6EE1BAC5652001F9F21 /* MyInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACD6EC1BAC5652001F9F21 /* MyInformationTableViewCell.m */; };
+		13ACD6EF1BAC5652001F9F21 /* MyInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13ACD6ED1BAC5652001F9F21 /* MyInformationTableViewCell.xib */; };
 		13B1C2B61ACA58B5005C179C /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B1C2B41ACA58B5005C179C /* APIClient.m */; };
 		13B1C2BB1ACA5956005C179C /* demo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B1C2BA1ACA5956005C179C /* demo.xcassets */; };
 		13B1C2BE1ACA5A27005C179C /* KZPropertyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B1C2BD1ACA5A27005C179C /* KZPropertyMapper.m */; };
@@ -259,6 +268,20 @@
 		13ACD6D21BA8387C001F9F21 /* OrderL2DTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderL2DTableViewCell.h; sourceTree = "<group>"; };
 		13ACD6D31BA8387C001F9F21 /* OrderL2DTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderL2DTableViewCell.m; sourceTree = "<group>"; };
 		13ACD6D41BA8387C001F9F21 /* OrderL2DTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderL2DTableViewCell.xib; sourceTree = "<group>"; };
+		13ACD6D71BA99E96001F9F21 /* MoreCommPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreCommPicViewController.h; sourceTree = "<group>"; };
+		13ACD6D81BA99E96001F9F21 /* MoreCommPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreCommPicViewController.m; sourceTree = "<group>"; };
+		13ACD6DA1BA99EB4001F9F21 /* MoreCommPic.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoreCommPic.storyboard; sourceTree = "<group>"; };
+		13ACD6DC1BA99F81001F9F21 /* MoreCommPicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreCommPicTableViewCell.h; sourceTree = "<group>"; };
+		13ACD6DD1BA99F81001F9F21 /* MoreCommPicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreCommPicTableViewCell.m; sourceTree = "<group>"; };
+		13ACD6DE1BA99F81001F9F21 /* MoreCommPicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreCommPicTableViewCell.xib; sourceTree = "<group>"; };
+		13ACD6E11BA9A884001F9F21 /* MoreCommPicList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreCommPicList.h; sourceTree = "<group>"; };
+		13ACD6E21BA9A884001F9F21 /* MoreCommPicList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreCommPicList.m; sourceTree = "<group>"; };
+		13ACD6E51BAC54B2001F9F21 /* MyInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInformationViewController.h; sourceTree = "<group>"; };
+		13ACD6E61BAC54B2001F9F21 /* MyInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInformationViewController.m; sourceTree = "<group>"; };
+		13ACD6E81BAC54D2001F9F21 /* MyInformation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyInformation.storyboard; sourceTree = "<group>"; };
+		13ACD6EB1BAC5652001F9F21 /* MyInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInformationTableViewCell.h; sourceTree = "<group>"; };
+		13ACD6EC1BAC5652001F9F21 /* MyInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInformationTableViewCell.m; sourceTree = "<group>"; };
+		13ACD6ED1BAC5652001F9F21 /* MyInformationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyInformationTableViewCell.xib; sourceTree = "<group>"; };
 		13B1C2B41ACA58B5005C179C /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		13B1C2B51ACA58B5005C179C /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		13B1C2BA1ACA5956005C179C /* demo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = demo.xcassets; sourceTree = "<group>"; };
@@ -603,6 +626,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13ACD6E41BAC5462001F9F21 /* MyInformation */ = {
+			isa = PBXGroup;
+			children = (
+				13ACD6E51BAC54B2001F9F21 /* MyInformationViewController.h */,
+				13ACD6E61BAC54B2001F9F21 /* MyInformationViewController.m */,
+				13ACD6E81BAC54D2001F9F21 /* MyInformation.storyboard */,
+			);
+			name = MyInformation;
+			sourceTree = "<group>";
+		};
+		13ACD6EA1BAC5615001F9F21 /* MyInformation */ = {
+			isa = PBXGroup;
+			children = (
+				13ACD6EB1BAC5652001F9F21 /* MyInformationTableViewCell.h */,
+				13ACD6EC1BAC5652001F9F21 /* MyInformationTableViewCell.m */,
+				13ACD6ED1BAC5652001F9F21 /* MyInformationTableViewCell.xib */,
+			);
+			name = MyInformation;
+			sourceTree = "<group>";
+		};
 		13B1C2A51ACA4A93005C179C /* app */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,6 +660,7 @@
 		13B1C2A61ACA4AA1005C179C /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				13ACD6E41BAC5462001F9F21 /* MyInformation */,
 				A048FDC41B314004009146FA /* buyers */,
 				188933851AFB5798006329D8 /* auth */,
 				13B1C32D1AD4D6ED005C179C /* mypickview.h */,
@@ -661,6 +705,7 @@
 		13B1C2AB1ACA4B26005C179C /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				13ACD6EA1BAC5615001F9F21 /* MyInformation */,
 				A048FDC31B313FF1009146FA /* buyers */,
 				183FCD4B1B1577060050D5B6 /* mendRply */,
 				1855840A1B031E480025B66D /* replyList */,
@@ -1156,6 +1201,9 @@
 				13ACD6D21BA8387C001F9F21 /* OrderL2DTableViewCell.h */,
 				13ACD6D31BA8387C001F9F21 /* OrderL2DTableViewCell.m */,
 				13ACD6D41BA8387C001F9F21 /* OrderL2DTableViewCell.xib */,
+				13ACD6DC1BA99F81001F9F21 /* MoreCommPicTableViewCell.h */,
+				13ACD6DD1BA99F81001F9F21 /* MoreCommPicTableViewCell.m */,
+				13ACD6DE1BA99F81001F9F21 /* MoreCommPicTableViewCell.xib */,
 			);
 			name = buyers;
 			sourceTree = "<group>";
@@ -1193,6 +1241,9 @@
 				13ACD6CD1BA82CCF001F9F21 /* OrderL2DViewController.h */,
 				13ACD6CE1BA82CCF001F9F21 /* OrderL2DViewController.m */,
 				13ACD6D01BA82CE8001F9F21 /* OrderL2D.storyboard */,
+				13ACD6D71BA99E96001F9F21 /* MoreCommPicViewController.h */,
+				13ACD6D81BA99E96001F9F21 /* MoreCommPicViewController.m */,
+				13ACD6DA1BA99EB4001F9F21 /* MoreCommPic.storyboard */,
 			);
 			name = buyers;
 			sourceTree = "<group>";
@@ -1226,6 +1277,8 @@
 				A0CCA4651BA1462C00E6E396 /* OrderList.m */,
 				A0CCA4671BA14FAB00E6E396 /* DetailOrderInfo.h */,
 				A0CCA4681BA14FAB00E6E396 /* DetailOrderInfo.m */,
+				13ACD6E11BA9A884001F9F21 /* MoreCommPicList.h */,
+				13ACD6E21BA9A884001F9F21 /* MoreCommPicList.m */,
 			);
 			name = buyers;
 			sourceTree = "<group>";
@@ -1413,10 +1466,14 @@
 				A048FDDA1B317159009146FA /* ShoppingCart.storyboard in Resources */,
 				13B1C2CB1ACA6E7C005C179C /* userCenter.xcassets in Resources */,
 				13BC4DF91B3A9530009D181D /* CollectionView4Dinner.storyboard in Resources */,
+				13ACD6DB1BA99EB4001F9F21 /* MoreCommPic.storyboard in Resources */,
+				13ACD6E01BA99F81001F9F21 /* MoreCommPicTableViewCell.xib in Resources */,
 				13B1C2BB1ACA5956005C179C /* demo.xcassets in Resources */,
 				8ED353131B0D87280017F2F6 /* MainTableViewHeaderCell.xib in Resources */,
+				13ACD6EF1BAC5652001F9F21 /* MyInformationTableViewCell.xib in Resources */,
 				8EF3F7511AD54F5400924975 /* PostReply.storyboard in Resources */,
 				8EEC48931AD90B17002E70DA /* DChainTableViewCell.xib in Resources */,
+				13ACD6E91BAC54D2001F9F21 /* MyInformation.storyboard in Resources */,
 				13C74BA61B8B56BE007DD716 /* OrderDetail.storyboard in Resources */,
 				13B1C3511AD4D6ED005C179C /* PosterTableViewCell.xib in Resources */,
 				8E4FA7471B1F0E1900561AEB /* Images.xcassets in Resources */,
@@ -1529,6 +1586,7 @@
 				A0CD1CD11B33C3C600FCA919 /* ShopUserList.m in Sources */,
 				13BE567F1ABA70D800379ACD /* UIStoryboard+Addition.m in Sources */,
 				13B1C2E71ACB7DC5005C179C /* MJRefreshFooterView.m in Sources */,
+				13ACD6EE1BAC5652001F9F21 /* MyInformationTableViewCell.m in Sources */,
 				13B1C3061ACCDA92005C179C /* DemoViewController.m in Sources */,
 				13ACD6CF1BA82CCF001F9F21 /* OrderL2DViewController.m in Sources */,
 				13B1C3161AD4D674005C179C /* ForumSelectTableViewCell.m in Sources */,
@@ -1540,6 +1598,7 @@
 				A0539A641B05E65800DC33BB /* newPostItem.m in Sources */,
 				8EE5A4661B0F2B8F00F05A12 /* RepairList.m in Sources */,
 				13B1C3551AD4D6ED005C179C /* PostTextTableViewCell.m in Sources */,
+				13ACD6E31BA9A884001F9F21 /* MoreCommPicList.m in Sources */,
 				13B1C34B1AD4D6ED005C179C /* mypickview.m in Sources */,
 				13D2471C1B043DE200717780 /* EAColourfulProgressView.m in Sources */,
 				13B1C30A1ACCFE98005C179C /* GGAddressPickerHelper.m in Sources */,
@@ -1563,6 +1622,7 @@
 				13B1C3751AD4D80B005C179C /* postListItem.m in Sources */,
 				13B1C2E91ACB7DC5005C179C /* UIScrollView+MJExtension.m in Sources */,
 				13C58BE51AB9550600090157 /* ViewController.m in Sources */,
+				13ACD6D91BA99E96001F9F21 /* MoreCommPicViewController.m in Sources */,
 				13BE56761ABA6F4700379ACD /* LoginNavigationController.m in Sources */,
 				13B1C2EA1ACB7DC5005C179C /* UIScrollView+MJRefresh.m in Sources */,
 				13B1C36E1AD4D80B005C179C /* forumItem.m in Sources */,
@@ -1605,9 +1665,11 @@
 				A0D401FB1B213FCC0033F45D /* getSMSCodeItem.m in Sources */,
 				A0C97CFB1B38FBCD006B7946 /* CommodityList.m in Sources */,
 				13C74BBE1B8B6E17007DD716 /* OrderListTableViewCell.m in Sources */,
+				13ACD6E71BAC54B2001F9F21 /* MyInformationViewController.m in Sources */,
 				13BC4DFA1B3A9530009D181D /* ViewController4Food.m in Sources */,
 				13B1C2E21ACB7DC5005C179C /* AMPActivityIndicator.m in Sources */,
 				13B1C3011ACBBED2005C179C /* SettingsViewController.m in Sources */,
+				13ACD6DF1BA99F81001F9F21 /* MoreCommPicTableViewCell.m in Sources */,
 				13BC4DF81B3A9530009D181D /* ViewController4Dinner.m in Sources */,
 				13B1C3711AD4D80B005C179C /* HttpTool.m in Sources */,
 			);

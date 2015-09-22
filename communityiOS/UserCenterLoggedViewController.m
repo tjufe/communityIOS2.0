@@ -220,4 +220,10 @@
     
     
 }
+
+- (IBAction)MyInformationOnclick:(id)sender {
+}
+
+- (IBAction)myInformation:(id)sender {
+}
 @end

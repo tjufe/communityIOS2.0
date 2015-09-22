@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgAvatar;
 - (IBAction)MyOrderOncilck:(id)sender;
 
+- (IBAction)MyInformationOnclick:(id)sender;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *labelNickname;
 @end

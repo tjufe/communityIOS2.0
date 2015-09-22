@@ -91,6 +91,15 @@ BOOL FirstLoad ;
 ////    self.temp =[self.DetailOrderList objectAtIndex:indexPath.row];
 //    
     switch ([self.temp count]) {
+        case 0:{
+            //防止崩溃 ，正常情况不会出现
+            self.OLcell.CommPic2.hidden = YES;
+            self.OLcell.CommPic3.hidden = YES;
+            self.OLcell.CommPicMore.hidden = YES;
+            self.OLcell.CommPic1.hidden = YES;
+            
+        }
+            break;
         case 1:{
             self.OLcell.CommPic2.hidden = YES;
             self.OLcell.CommPic3.hidden = YES;
@@ -194,7 +203,8 @@ BOOL FirstLoad ;
 }
 
 -(void)EnsureOrder:(id)sender{
-    [StatusTool statusToolEnsureOrderWithOrder_id:self.OrderInfo.order_id Success:^(id object) {
+     OrderInfo *order_info = [self.orderListArray objectAtIndex:[sender tag]];
+    [StatusTool statusToolEnsureOrderWithOrder_id:order_info.order_id Success:^(id object) {
         OrderInfo *order_info = [self.orderListArray objectAtIndex:[sender tag]];
         order_info.order_state = @"已完成";
         [self.orderListArray replaceObjectAtIndex:[sender tag] withObject:order_info];
@@ -428,13 +438,14 @@ BOOL FirstLoad ;
     self.page = [NSNumber numberWithInteger:page1];
     self.rows = [NSNumber numberWithInteger:rows1];
     
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"^^^^^%@",[defaults objectForKey:@"UserID"]);
     
-    [OrderList LoadOrderListWithCustID:@"0001" page:self.page rows:self.rows Success:^(id object) {
+    [OrderList LoadOrderListWithCustID:[defaults objectForKey:@"UserID"] page:self.page rows:self.rows Success:^(id object) {
         
         self.orderList = (NSMutableArray *)object;
         
-        if(self.orderList!=nil){
+        if(self.orderList!=nil&&self.orderList.count!=0){
             
             for (int i=0; i<[self.orderList count]; i++) {
                 self.OrderInfo = [self.orderList objectAtIndex:i];

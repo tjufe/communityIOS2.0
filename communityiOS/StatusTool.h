@@ -122,4 +122,7 @@ typedef void(^StatusFailurs)(NSError * error);
 +(void)statusToolEnsureOrderWithOrder_id:(NSString *)order_id  Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
 
 
+//添加主订单
++(void)statusToolAddNewMainOrderInfowithShopID:(NSString *)shop_id CustID:(NSString *)cust_id CustName:(NSString *)cust_name CustPhone:(NSString *)cust_phone  OrderMoney:(NSNumber *)order_money OrderSendfee:(NSNumber *)order_sendfee OrderState:(NSString *)order_state OrderAddress:(NSString *)order_address PayType:(NSString *)pay_type Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
+
 @end

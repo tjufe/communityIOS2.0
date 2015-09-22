@@ -17,7 +17,9 @@
 - (IBAction)CallSellerOnclick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *BuyNowBt;
 - (IBAction)BuyNowOnclick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *MorePicBt;
 
+- (IBAction)MorePicOnclick:(id)sender;
 
 -(void)getCommodityInfo:(id)comm_info;
 

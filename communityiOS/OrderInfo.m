@@ -10,6 +10,7 @@
 #import "HttpTool.h"
 #import "addOrderItem.h"
 
+
 @implementation OrderInfo
 
 
@@ -41,6 +42,7 @@
              @"detail_order_list":@"detail_order_list"
              };
 }
+
 
 
 
@@ -81,7 +83,7 @@
             if (failure == nil) return;
             failure(error);
         }];
-
-    
 }
+
+
 @end

@@ -12,6 +12,7 @@
 
 
 -(void)getShopName:(NSString *)shop_name;
+-(void)getShopPhone:(NSString *)shop_phone;
 -(void)getShopID:(NSString *) shop_id ;
 -(void)getShopIcon:(NSString *) shop_icon_url;
 -(void)getEstimateNum:(int) estimate_num;

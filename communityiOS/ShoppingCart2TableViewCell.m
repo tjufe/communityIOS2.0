@@ -7,6 +7,10 @@
 //
 
 #import "ShoppingCart2TableViewCell.h"
+#import "UIImageView+WebCache.h"//加载图片
+#import "APIAddress.h"
+#import "AppDelegate.h"
+
 
 @implementation ShoppingCart2TableViewCell
 
@@ -53,6 +57,26 @@
     }else{
         _img_select_comm.image = [UIImage imageNamed:@"未选择"];
     }
+}
+-(void)setComm_url:(NSString *)comm_url{
+    if(![comm_url isEqual:@""]){
+        NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,comm_url];
+        
+        //包含中文字符的string转换为nsurl
+        NSURL *iurl = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        
+        
+        [_img_comm_photo sd_setImageWithURL:iurl placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
+            
+            _img_comm_photo.image = image;
+            
+        }];
+    }else{
+        
+        _img_comm_photo.image = [UIImage imageNamed:@"商家小图"];
+        
+    }
+
 }
 
 @end

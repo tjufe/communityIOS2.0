@@ -29,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *label_comm_amount;
 @property (weak, nonatomic) IBOutlet UIButton *btn_delete;
 @property (weak, nonatomic) IBOutlet UIButton *btn_add;
+@property(strong,nonatomic)NSString *comm_url;
+
 
 
 

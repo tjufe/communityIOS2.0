@@ -92,14 +92,14 @@
                                     <action selector="go2myEnjoyPostList:" destination="0pW-2A-9cI" eventType="touchUpInside" id="Sbb-pY-Hcc"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mm-sy-k5O">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mm-sy-k5O">
                                 <rect key="frame" x="40" y="295" width="60" height="30"/>
-                                <state key="normal" title="我的订单">
+                                <state key="normal" title="我的消息">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="go2uncheckPostList:" destination="0pW-2A-9cI" eventType="touchUpInside" id="rxh-8V-hec"/>
+                                    <action selector="MyInformationOnclick:" destination="0pW-2A-9cI" eventType="touchUpInside" id="4do-Hx-hFD"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_settings" translatesAutoresizingMaskIntoConstraints="NO" id="ezv-tB-8gY">
@@ -148,7 +148,7 @@
                                     <constraint firstAttribute="height" constant="12" id="cWG-cK-kbH"/>
                                 </constraints>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_my_check" translatesAutoresizingMaskIntoConstraints="NO" id="f1K-1I-O7X">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_my_check" translatesAutoresizingMaskIntoConstraints="NO" id="f1K-1I-O7X">
                                 <rect key="frame" x="16" y="302" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="8Ad-r9-2cD"/>
