@@ -9,6 +9,7 @@
 #import "MoreCommPicViewController.h"
 #import "MoreCommPicList.h"
 #import "MoreCommPicTableViewCell.h"
+#import "MBProgressHUD.h"
 
 @interface MoreCommPicViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -60,8 +61,24 @@
 
 -(void)loadData{
     [MoreCommPicList LoadMoreCommPicWithCommID:self.comm_info.commodity_id Success:^(id object) {
-        self.pic_list = (NSArray *)object;
-        [self.MCPtableView reloadData];
+//        self.pic_list = (NSArray *)object;
+        if (object==nil) {
+            MBProgressHUD *hud = [[MBProgressHUD alloc]initWithView:self.view];
+            [self.view addSubview:hud];
+            hud.mode = MBProgressHUDModeText;
+            hud.labelText = @"没有更多内容了！";
+            [hud showAnimated:YES whileExecutingBlock:^{
+                sleep(1);
+            }completionBlock:^{
+                [hud removeFromSuperview];
+                [self.navigationController popViewControllerAnimated:YES];
+            }];
+
+        }else{
+            self.pic_list = (NSArray *)object;
+            [self.MCPtableView reloadData];
+        }
+        
         
     } failurs:^(NSError *error) {
         NSLog(@"^^^^^^%@",error);

@@ -14,7 +14,7 @@
 @property (nonatomic,copy)NSString *status;
 @property (nonatomic,strong)NSString *msg;
 @property (nonatomic,strong)NSDictionary *data;
-@property (nonatomic,strong)NSString *mainorder_id;//主订单id
+//@property (nonatomic,strong)NSString *mainorder_id;//主订单id
 
 +(addOrderItem *)createItemWitparametes:(NSDictionary*)dic;
 

@@ -10,5 +10,8 @@
 
 @interface PostImageTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *MainImage;
+@property(strong,nonatomic)NSString *main_image;
 
+
+-(void)setMain_image:(NSString *)main_image;
 @end

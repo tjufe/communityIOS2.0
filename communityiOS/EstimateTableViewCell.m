@@ -25,17 +25,18 @@
 }
 
 -(void)MakeCustHead:(NSString *)CustHead{
-    if(![CustHead isEqual:@""]){
+    if(![CustHead isEqual:@""]&&CustHead!=nil){
         NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,CustHead];
-        
-        [_CustHead sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
+        _CustHead.image = [UIImage imageNamed:@"默认小头像"];
+        [_CustHead sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"默认小头像"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
             
             _CustHead.image = image;
+       
             
         }];
     }else{
         
-        _CustHead.image = [UIImage imageNamed:@"商家小图"];
+        _CustHead.image = [UIImage imageNamed:@"默认小头像"];
         
     }
 

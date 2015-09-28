@@ -36,6 +36,7 @@
 - (IBAction)MorePicOnclick:(id)sender {
     MoreCommPicViewController *MCPVC = [MoreCommPicViewController createFromStoryboardName:@"MoreCommPic" withIdentifier:@"more_comm_pic"];
     [MCPVC getCommInfo:self.comm_info];
+ 
     [self.navigationController pushViewController:MCPVC animated:YES];
 }
 

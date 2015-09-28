@@ -143,6 +143,7 @@ BOOL FirstLoad ;
     [self.temp removeAllObjects];
     
     [self.OLcell setShop_head_url:self.OrderInfo.shop_head];
+    
     [self.OLcell setShop_name:self.OrderInfo.shop_name];
     [self.OLcell setOrder_price:[NSString stringWithFormat:@"%.2f",self.OrderInfo.order_money]];
     [self.OLcell setOrder_state:self.OrderInfo.order_state];

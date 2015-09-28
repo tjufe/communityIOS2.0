@@ -26,7 +26,7 @@
                             <constraint firstAttribute="height" constant="21" id="xF7-Ko-MWM"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.66854087750000002" green="0.66854087750000002" blue="0.66854087750000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="联系1" translatesAutoresizingMaskIntoConstraints="NO" id="ouW-Sl-dbr">
@@ -36,14 +36,28 @@
                             <constraint firstAttribute="height" constant="40" id="tSC-4I-0cN"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130****6722" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uS2-KG-fMO">
+                        <rect key="frame" x="251" y="29" width="91" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="kGa-Ft-bPT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.66854087750000002" green="0.66854087750000002" blue="0.66854087750000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天津市 和平区 沙市道福林里11门10楼1001" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYI-BV-pMC">
-                        <rect key="frame" x="25" y="78" width="324" height="21"/>
+                        <rect key="frame" x="103" y="78" width="239" height="41"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="L5Z-w6-nm7"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.66854087750000002" green="0.66854087750000002" blue="0.66854087750000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="L5Z-w6-nm7"/>
+                            </mask>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收货人：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgq-mS-nWZ">
                         <rect key="frame" x="25" y="29" width="68" height="21"/>
@@ -54,10 +68,21 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130****6722" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uS2-KG-fMO">
-                        <rect key="frame" x="218" y="29" width="91" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系电话:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTE-Vs-Ebo">
+                        <rect key="frame" x="177" y="29" width="73" height="20.5"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="kGa-Ft-bPT"/>
+                            <constraint firstAttribute="height" constant="20.5" id="J5w-HR-lfd"/>
+                            <constraint firstAttribute="width" constant="73" id="N2O-iQ-pjm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收货地址:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmd-Fv-OP6">
+                        <rect key="frame" x="25" y="78" width="73" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="73" id="CCb-6V-0iD"/>
+                            <constraint firstAttribute="height" constant="21" id="DGt-2k-Qy1"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,27 +90,37 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="fmd-Fv-OP6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="403-2J-O4P"/>
                     <constraint firstItem="Dgq-mS-nWZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="7em-7S-cPw"/>
+                    <constraint firstItem="fmd-Fv-OP6" firstAttribute="top" secondItem="rGj-BK-LRy" secondAttribute="bottom" constant="18" id="C9a-a7-rm2"/>
                     <constraint firstItem="rGj-BK-LRy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Eya-x3-YQd"/>
                     <constraint firstItem="uS2-KG-fMO" firstAttribute="leading" secondItem="1mz-jn-Rwm" secondAttribute="trailing" constant="96" id="HgP-6G-JpM"/>
                     <constraint firstItem="Dgq-mS-nWZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="29" id="K43-L4-KVt"/>
+                    <constraint firstItem="EYI-BV-pMC" firstAttribute="leading" secondItem="fmd-Fv-OP6" secondAttribute="trailing" constant="5" id="KXH-9B-Cgd"/>
                     <constraint firstItem="uS2-KG-fMO" firstAttribute="leading" secondItem="Dgq-mS-nWZ" secondAttribute="trailing" constant="125" id="LVi-fI-5rQ"/>
+                    <constraint firstAttribute="trailing" secondItem="EYI-BV-pMC" secondAttribute="trailing" constant="21" id="NdV-yq-7OG"/>
                     <constraint firstItem="ouW-Sl-dbr" firstAttribute="leading" secondItem="1mz-jn-Rwm" secondAttribute="trailing" constant="28" id="QMm-MO-OvC"/>
                     <constraint firstItem="EYI-BV-pMC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="QQ9-af-VT7"/>
                     <constraint firstItem="1mz-jn-Rwm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="29" id="SaG-mV-oNd"/>
+                    <constraint firstItem="lTE-Vs-Ebo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="29" id="Suv-Lk-ckG"/>
                     <constraint firstItem="rGj-BK-LRy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Xvt-nR-igF"/>
                     <constraint firstItem="uS2-KG-fMO" firstAttribute="leading" secondItem="ouW-Sl-dbr" secondAttribute="trailing" constant="8" id="f9f-fe-ZQA"/>
                     <constraint firstItem="ouW-Sl-dbr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="gmI-aV-3Az"/>
+                    <constraint firstItem="uS2-KG-fMO" firstAttribute="leading" secondItem="lTE-Vs-Ebo" secondAttribute="trailing" constant="1" id="kDQ-9f-bNo"/>
                     <constraint firstItem="uS2-KG-fMO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="29" id="qVd-cB-J02"/>
                     <constraint firstItem="EYI-BV-pMC" firstAttribute="top" secondItem="rGj-BK-LRy" secondAttribute="bottom" constant="18" id="sO6-eI-Hzy"/>
                     <constraint firstItem="ouW-Sl-dbr" firstAttribute="leading" secondItem="1mz-jn-Rwm" secondAttribute="trailing" constant="8" symbolic="YES" id="smx-H4-l1i"/>
                     <constraint firstItem="1mz-jn-Rwm" firstAttribute="leading" secondItem="rGj-BK-LRy" secondAttribute="trailing" constant="8" id="wtZ-RO-OiK"/>
                     <constraint firstItem="1mz-jn-Rwm" firstAttribute="leading" secondItem="rGj-BK-LRy" secondAttribute="trailing" constant="28" id="z7S-Mg-Dqw"/>
+                    <constraint firstAttribute="trailing" secondItem="uS2-KG-fMO" secondAttribute="trailing" constant="21" id="zxC-Zc-y7v"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="wtZ-RO-OiK"/>
+                        <exclude reference="QQ9-af-VT7"/>
                         <exclude reference="QMm-MO-OvC"/>
+                        <exclude reference="HgP-6G-JpM"/>
+                        <exclude reference="LVi-fI-5rQ"/>
                         <exclude reference="f9f-fe-ZQA"/>
                     </mask>
                 </variation>

@@ -7,6 +7,9 @@
 //
 
 #import "PosterTableViewCell.h"
+#import "UIImageView+WebCache.h"//加载图片
+#import "APIAddress.h"
+#import "AppDelegate.h"
 
 @implementation PosterTableViewCell
 
@@ -27,5 +30,42 @@
   
 
 }
+//wangyao0922重用 它显示消息详情信息
+-(void)setSend_date:(NSString *)send_date{
+    if (send_date!=nil) {
+         [_postDate setText:send_date];
+    }
+   
+
+}
+-(void)setMember_head:(NSString *)member_head{
+    if(![member_head isEqual:@""]&&member_head!=nil){
+        NSString *url = [NSString stringWithFormat:@"%@/uploadimg/%@",API_HOST,member_head];
+        
+        //包含中文字符的string转换为nsurl
+        NSURL *iurl = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        
+        
+        [_headPortrait sd_setImageWithURL:iurl placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
+            
+            _headPortrait.image = image;
+            
+        }];
+    }else{
+        
+        _headPortrait.image = [UIImage imageNamed:@"默认小头像"];
+        
+    }
+    
+
+}
+-(void)setMember_name:(NSString *)member_name{
+
+    if (member_name!=nil) {
+        [_posterNickname setText:member_name];
+    }
+    
+}
+
 
 @end

@@ -14,6 +14,7 @@
 - (IBAction)MyOrderOncilck:(id)sender;
 
 - (IBAction)MyInformationOnclick:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *ReadIcon;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *labelNickname;

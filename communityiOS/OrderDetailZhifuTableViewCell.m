@@ -21,7 +21,7 @@
 }
 
 -(void)setL_send_date:(NSString *)l_send_date{
-
+    
     [_label_send_date setText:l_send_date];
 
 }

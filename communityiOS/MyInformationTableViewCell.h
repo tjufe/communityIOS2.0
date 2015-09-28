@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface MyInformationTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *ReadState;
+@property (weak, nonatomic) IBOutlet UILabel *SendTime;
+@property (weak, nonatomic) IBOutlet UILabel *InfoTitle;
+@property (weak, nonatomic) IBOutlet UILabel *SendGroup;
+@property (weak, nonatomic) NSString  *read_state;
+@property (weak, nonatomic) NSString  *send_time;
+@property (weak, nonatomic) NSString  *info_title;
+@property (weak, nonatomic) NSString  *send_group;
 @end

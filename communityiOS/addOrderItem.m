@@ -21,10 +21,8 @@
     return @{
              @"status" : @"status",
              @"msg" : @"msg",
-             @"data" :@{
-                       @"mainorder_id":@"mainorder_id"
-                     }
-             };
+             @"data" :@"data"
+            };
 }
 
 

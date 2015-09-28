@@ -26,7 +26,7 @@
 
 -(void)setShop_head_url:(NSString *)shop_head_url{
     if(shop_head_url!=nil&&![shop_head_url isEqual:@""]){
-        NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,shop_head_url];
+        NSString *url = [NSString stringWithFormat:@"%@/uploadimg/%@",API_HOST,shop_head_url];
         
         [_ShopHead sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
             
@@ -35,9 +35,12 @@
         }];
     }else{
         
-        _ShopHead.image = [UIImage imageNamed:@"商家小图"];
+        _ShopHead.image = [UIImage imageNamed:@"loading"];
         
     }
+    [_ShopHead.layer setCornerRadius:_ShopHead.layer.frame.size.height/2];
+    _ShopHead.contentMode=UIViewContentModeScaleAspectFill;
+    _ShopHead.layer.masksToBounds = YES;
 }
 
 -(void)setShop_name:(NSString *)shop_name{

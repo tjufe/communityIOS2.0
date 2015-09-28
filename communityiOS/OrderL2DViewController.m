@@ -51,7 +51,8 @@
         if(! ODZFCell){
             ODZFCell =[[[NSBundle mainBundle] loadNibNamed:@"OrderDetailZhifuTableViewCell" owner:nil options:nil] objectAtIndex:0];
         }
-        [ODZFCell setL_send_date:self.order_info.order_date];
+        NSString *str = [self.order_info.order_date substringToIndex:11];
+        [ODZFCell setL_send_date:str];
         return ODZFCell;
     
     

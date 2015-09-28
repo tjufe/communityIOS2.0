@@ -22,6 +22,7 @@
 #import "APIAddress.h"
 #import "AppDelegate.h"
 #import "OrderListViewController.h"
+#import "MyInformationViewController.h"
 
 
 @interface UserCenterLoggedViewController ()
@@ -222,8 +223,20 @@
 }
 
 - (IBAction)MyInformationOnclick:(id)sender {
+    MyInformationViewController  *MIVC = [MyInformationViewController createFromStoryboardName:@"MyInformation" withIdentifier:@"my_information"];
+    
+    UIButton *btn = [UIButton buttonWithType: UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 20, 10, 20);
+    [btn setImage:[UIImage imageNamed:@"back"] forState: UIControlStateNormal];
+    [btn addTarget:self action:@selector(go2main) forControlEvents:UIControlEventTouchUpInside];
+    UINavigationController *nav = [[UINavigationController alloc]init];
+    UIBarButtonItem *leftBtn =[[UIBarButtonItem alloc]initWithCustomView:btn];
+    MIVC.navigationItem.leftBarButtonItem =leftBtn;
+    
+    [self.revealSideViewController popViewControllerWithNewCenterController:nav animated:YES];
+    [nav pushViewController:MIVC animated:YES];
+    
 }
 
-- (IBAction)myInformation:(id)sender {
-}
+
 @end

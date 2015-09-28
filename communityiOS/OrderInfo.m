@@ -32,7 +32,7 @@
              @"shop_user_name":@"shop_name",
              @"user_phone":@"user_phone",
              @"shop_phone":@"shop_phone",
-             @"shop_icon":@"shop_head",
+             @"shop_photo":@"shop_head",
              @"order_money":@"order_money",
              @"order_sendfee":@"order_sendfee",
              @"address":@"address",
@@ -76,8 +76,8 @@
             NSData *data = [[NSData alloc]initWithData:responseObject];
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             addOrderItem *result = [addOrderItem createItemWitparametes:dic];
-            success(result.mainorder_id);
-        
+//            success(result.mainorder_id);
+            success(result);
         } failure:^(NSError *error) {
             NSLog(@"%@",thirdDic);
             if (failure == nil) return;

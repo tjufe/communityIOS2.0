@@ -7,6 +7,9 @@
 //
 
 #import "PostImageTableViewCell.h"
+#import "UIImageView+WebCache.h"//加载图片
+#import "APIAddress.h"
+#import "AppDelegate.h"
 
 @implementation PostImageTableViewCell
 
@@ -18,6 +21,27 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)setMain_image:(NSString *)main_image{
+    if(![main_image isEqual:@""]&&main_image!=nil){
+        NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,main_image];
+        
+        //包含中文字符的string转换为nsurl
+        NSURL *iurl = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        
+        
+        [_MainImage sd_setImageWithURL:iurl placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
+            
+            _MainImage.image = image;
+            
+        }];
+    }else{
+        
+        _MainImage.image = [UIImage imageNamed:@"商家小图"];
+        
+    }
+
 }
 
 @end

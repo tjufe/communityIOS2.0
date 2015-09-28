@@ -14,6 +14,7 @@
 #import "OrderDetailViewController.h"
 #import "UIViewController+Create.h"
 #import "UIAlertView+Blocks.h"
+#import "MBProgressHUD.h"
 
 @interface ShoppingCartViewController () <UITableViewDataSource,UITableViewDelegate,ShoppingCart2TableViewCellDelegate,ShoppingCartTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *sc_table;
@@ -38,6 +39,7 @@
 
 double total_price;//总金额
 int m;
+int n;
 bool comm_select;//全选状态
 
 bool edit_flag;//编辑状态
@@ -53,9 +55,9 @@ bool edit_flag;//编辑状态
             
             NSMutableArray *se_array = [[NSMutableArray alloc]init];
             ShoppingCartCommodity *se_comm = [ShoppingCartCommodity new];
-            for(int i=0;i<[self.shopping count];i++){
+            for(int i=(int)([self.shopping count]-1);i>=0;i--){
                 se_array = [self.shopping objectAtIndex:i];
-                for(int j=0;j<[se_array count];j++){
+                for(int j=(int)([se_array count]-1);j>=0;j--){
                     se_comm = [se_array objectAtIndex:j];
                     if(se_comm.select_status==1){//选中
                         [se_array removeObject:se_comm];
@@ -65,7 +67,17 @@ bool edit_flag;//编辑状态
                     [self.shopping removeObject:se_array];
                 }
             }
+            if([self.shopping count]>0){
+            m=(int)[self.shopping count]-1;
             [self.sc_table reloadData];
+            }else{
+                self.sc_table.hidden = YES;
+            }
+            //检测是否所有商品全选
+            [self checkSelect];
+            //计算金额
+            [self calculateTotalPrice];
+
             
  //       }
     }];
@@ -78,22 +90,39 @@ bool edit_flag;//编辑状态
 #pragma mark-----跳转到提交订单页-----
 - (IBAction)Btn2sumbitOrders:(id)sender {
     //跳转到提交订单结算页
-    NSMutableArray *order_comm = [[NSMutableArray alloc]init];
-    NSMutableArray *order =[[NSMutableArray alloc]init];
+   
+     NSMutableArray *order =[[NSMutableArray alloc]init];
     for(int i=0;i<[self.shopping count];i++){
+        NSMutableArray *order_comm = [[NSMutableArray alloc]init];
+
         NSMutableArray *temp = [self.shopping objectAtIndex:i];
         for (int j=0; j<[temp count]; j++) {
-            ShoppingCartCommodity *s = [temp objectAtIndex:j];
+                        ShoppingCartCommodity *s = [temp objectAtIndex:j];
             if(s.select_status==1){//已选中
                 [order_comm addObject:s];
             }
         }
-        [order addObject:order_comm];
+        //wangyao 不选点结算就蹦
+        if (order_comm.count!=0) {
+            [order addObject:order_comm];
+        }
     }
-    
-    OrderDetailViewController *ODVC = [OrderDetailViewController createFromStoryboardName:@"OrderDetail" withIdentifier:@"order_detail"];
-    ODVC.order_comm = order;
-    [self.navigationController pushViewController:ODVC animated:YES];
+    if (order.count!=0) {
+        OrderDetailViewController *ODVC = [OrderDetailViewController createFromStoryboardName:@"OrderDetail" withIdentifier:@"order_detail"];
+        ODVC.order_comm = order;
+        [self.navigationController pushViewController:ODVC animated:YES];
+    }else{
+        MBProgressHUD *hud = [[MBProgressHUD alloc]initWithView:self.view];
+        [self.view addSubview:hud];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"请选择购买的商品！";
+        [hud showAnimated:YES whileExecutingBlock:^{
+            sleep(1);
+        }completionBlock:^{
+            [hud removeFromSuperview];
+        }];
+    }
+
 }
 
 #pragma mark-----实现协议中选中一个section商品的方法----
@@ -110,8 +139,10 @@ bool edit_flag;//编辑状态
         }
     }
     //刷新一个section
-    NSIndexSet *index_set = [NSIndexSet indexSetWithIndex:index.section];
-    [self.sc_table reloadSections:index_set withRowAnimation:UITableViewRowAnimationAutomatic];
+//    m=(int)index.section;
+//    NSIndexSet *index_set = [NSIndexSet indexSetWithIndex:index.section];
+//    [self.sc_table reloadSections:index_set withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.sc_table reloadData];
     //检测是否所有商品全选
      [self checkSelect];
     //计算金额
@@ -163,10 +194,13 @@ bool edit_flag;//编辑状态
 // //           scell1.img_select_shop.image= [UIImage imageNamed:@"未选择"];
 //        
         //刷新一个section
-        NSIndexSet *index_set = [NSIndexSet indexSetWithIndex:index.section];
-        [self.sc_table reloadSections:index_set withRowAnimation:UITableViewRowAnimationAutomatic];
+//        m=(int)index.section;
+//        NSIndexSet *index_set = [NSIndexSet indexSetWithIndex:index.section];
+//        [self.sc_table reloadSections:index_set withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    
 //    }else{
-//        [self.sc_table reloadData];
+       [self.sc_table reloadData];
 //    }
     
        //检测是否所有商品全选
@@ -196,7 +230,8 @@ bool edit_flag;//编辑状态
 //    NSArray *indexArrary = [NSArray arrayWithObjects:index,nil];
 //    [self.sc_table reloadRowsAtIndexPaths:indexArrary withRowAnimation:UITableViewRowAnimationAutomatic];
     if([self.shopping count]>0){
-    [self.sc_table reloadData];
+m=(int)[self.shopping count]-1;
+        [self.sc_table reloadData];
     }else{
         self.sc_table.hidden = YES;
     }
@@ -230,6 +265,7 @@ bool edit_flag;//编辑状态
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     NSLog(@"^^^^^%lu",(unsigned long)[self.shopping count]);
+    m=(int)[self.shopping count]-1;
     return [self.shopping count];
     
 
@@ -237,21 +273,24 @@ bool edit_flag;//编辑状态
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if(m<[self.shopping count]){
+    if(m>=0){
         self.cart_shop = [self.shopping objectAtIndex:m];
-        m=m+1;
+        n=(int)[self.cart_shop count]+1;
+        m=m-1;
+        
     }
     NSLog(@"^^^^^%lu",(unsigned long)[self.cart_shop count]+1);
-    return [self.cart_shop count]+1;
+    return n;
  
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-   
+ //   self.cart_shop = [self.shopping objectAtIndex:indexPath.section];
     
     if(indexPath.row==0){
+        self.cart_shop = [self.shopping objectAtIndex:indexPath.section];
         self.sc_table_cell1 = [tableView dequeueReusableCellWithIdentifier:@"cell1"];
         if(!self.sc_table_cell1){
             self.sc_table_cell1 = [[[NSBundle mainBundle]loadNibNamed:@"ShoppingCartTableViewCell" owner:nil options:nil]objectAtIndex:0];
@@ -288,6 +327,7 @@ bool edit_flag;//编辑状态
         return self.sc_table_cell1;
         
     }else{
+        self.cart_shop = [self.shopping objectAtIndex:indexPath.section];
         self.sc_table_cell2 = [tableView dequeueReusableCellWithIdentifier:@"cell2"];
         if(!self.sc_table_cell2){
             self.sc_table_cell2 = [[[NSBundle mainBundle]loadNibNamed:@"ShoppingCart2TableViewCell" owner:nil options:nil]objectAtIndex:0];
@@ -388,14 +428,18 @@ bool edit_flag;//编辑状态
 -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:(BOOL)animated];
-     m=0;
+//     m=0;
+     n=0;
     total_price = 0;
     comm_select = false;//初始全选状态为false
     edit_flag = false;//初始编辑状态为false
     self.cart_shop =[[NSMutableArray alloc]init];
     [self getShoppingCartCommodity];
+     m = (int)[self.shopping count]-1;
     if(self.shopping&&[self.shopping count]>0){
         [self.sc_table reloadData];
+//        m=0;
+       
     }else{
         self.sc_table.hidden = YES;
     }
@@ -437,7 +481,7 @@ bool edit_flag;//编辑状态
     NSMutableArray *comm_array = [[NSMutableArray alloc]init];
     ShoppingCartCommodity *comm = [[ShoppingCartCommodity alloc]init];
     NSMutableArray *flag = [[NSMutableArray alloc]init];
-    
+    if([self.shopping count]>0){
     for(int i=0;i<[self.shopping count];i++){
         comm_array = [self.shopping objectAtIndex:i];
         for(int j=0;j<[comm_array count];j++){
@@ -448,6 +492,9 @@ bool edit_flag;//编辑状态
                [flag addObject:@"未选中"];
             }
         }
+    }
+    }else{
+        [flag addObject:@"未选中"];
     }
     
     if(![flag containsObject:@"未选中"]){
@@ -494,6 +541,7 @@ bool edit_flag;//编辑状态
                 }
             }
         }
+    m=(int)[self.shopping count]-1;
     [self.sc_table reloadData];
     [self calculateTotalPrice];
     

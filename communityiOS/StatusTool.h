@@ -123,6 +123,13 @@ typedef void(^StatusFailurs)(NSError * error);
 
 
 //添加主订单
-+(void)statusToolAddNewMainOrderInfowithShopID:(NSString *)shop_id CustID:(NSString *)cust_id CustName:(NSString *)cust_name CustPhone:(NSString *)cust_phone  OrderMoney:(NSNumber *)order_money OrderSendfee:(NSNumber *)order_sendfee OrderState:(NSString *)order_state OrderAddress:(NSString *)order_address PayType:(NSString *)pay_type Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
++(void)statusToolAddNewMainOrderInfowithShopID:(NSArray *)shop_id CustID:(NSString *)cust_id CustName:(NSString *)cust_name CustPhone:(NSString *)cust_phone  OrderMoney:(NSNumber *)order_money OrderSendfee:(NSNumber *)order_sendfee OrderState:(NSString *)order_state OrderAddress:(NSString *)order_address PayType:(NSString *)pay_type Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
+
+//添加订单0924
++(void)statusToolAddNewOrderInfoWithShopID:(NSMutableArray *)shop_id CustID:(NSString *)cust_id CustName:(NSString *)cust_name CustPhone:(NSString *)cust_phone  OrderMoney:(NSMutableArray *)order_money OrderSendfee:(NSMutableArray *)order_sendfee OrderState:(NSString *)order_state OrderAddress:(NSString *)order_address PayType:(NSString *)pay_type CommID:(NSMutableArray *)comm_id CommUnit:(NSMutableArray *)comm_unit CommPrice:(NSMutableArray *)comm_price CommName:(NSMutableArray *)comm_name BuyAmount:(NSMutableArray *)buy_amount CommType:(NSMutableArray *)comm_count Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
+
+
+//修改消息状态为已读
++(void)statusToolChangeMessageStateWithMessage_id:(NSString *)message_id  Success:(StatusSuccess)success failurs:(StatusFailurs)failure;
 
 @end

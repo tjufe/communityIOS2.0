@@ -14,8 +14,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *posterNickname;
 @property (weak, nonatomic) IBOutlet UIImageView *posterAuth;
 
-
-
 @property (weak, nonatomic) IBOutlet UIImageView *headPortrait;
+
+//wangyao 0922 重用postercell 用来显示消息信息
+@property (weak, nonatomic) NSString  *send_date;
+@property (weak, nonatomic) NSString  *member_name;
+@property (weak, nonatomic) NSString  *member_head;
 
 @end

@@ -211,6 +211,10 @@
 		A0CCA4631B9EBD9400E6E396 /* getUserNameItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CCA4621B9EBD9400E6E396 /* getUserNameItem.m */; };
 		A0CCA4661BA1462C00E6E396 /* OrderList.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CCA4651BA1462C00E6E396 /* OrderList.m */; };
 		A0CCA4691BA14FAB00E6E396 /* DetailOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CCA4681BA14FAB00E6E396 /* DetailOrderInfo.m */; };
+		A0CCA46D1BB10EC100E6E396 /* myInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CCA46C1BB10EC100E6E396 /* myInformation.m */; };
+		A0CCA4701BB122DC00E6E396 /* myInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CCA46F1BB122DC00E6E396 /* myInfoList.m */; };
+		A0CCA4731BB1364700E6E396 /* DetailInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CCA4721BB1364700E6E396 /* DetailInformationViewController.m */; };
+		A0CCA4751BB1365200E6E396 /* DetailInformation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CCA4741BB1365200E6E396 /* DetailInformation.storyboard */; };
 		A0CD1CCE1B33B52300FCA919 /* ShopUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CD1CCD1B33B52300FCA919 /* ShopUserInfo.m */; };
 		A0CD1CD11B33C3C600FCA919 /* ShopUserList.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CD1CD01B33C3C600FCA919 /* ShopUserList.m */; };
 		A0D39DFA1AF76419007DEFA0 /* uncheckPostListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D39DF91AF76419007DEFA0 /* uncheckPostListItem.m */; };
@@ -578,6 +582,13 @@
 		A0CCA4651BA1462C00E6E396 /* OrderList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderList.m; sourceTree = "<group>"; };
 		A0CCA4671BA14FAB00E6E396 /* DetailOrderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailOrderInfo.h; sourceTree = "<group>"; };
 		A0CCA4681BA14FAB00E6E396 /* DetailOrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailOrderInfo.m; sourceTree = "<group>"; };
+		A0CCA46B1BB10EC100E6E396 /* myInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myInformation.h; sourceTree = "<group>"; };
+		A0CCA46C1BB10EC100E6E396 /* myInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myInformation.m; sourceTree = "<group>"; };
+		A0CCA46E1BB122DC00E6E396 /* myInfoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myInfoList.h; sourceTree = "<group>"; };
+		A0CCA46F1BB122DC00E6E396 /* myInfoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myInfoList.m; sourceTree = "<group>"; };
+		A0CCA4711BB1364700E6E396 /* DetailInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailInformationViewController.h; sourceTree = "<group>"; };
+		A0CCA4721BB1364700E6E396 /* DetailInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailInformationViewController.m; sourceTree = "<group>"; };
+		A0CCA4741BB1365200E6E396 /* DetailInformation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailInformation.storyboard; sourceTree = "<group>"; };
 		A0CD1CCC1B33B52300FCA919 /* ShopUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopUserInfo.h; sourceTree = "<group>"; };
 		A0CD1CCD1B33B52300FCA919 /* ShopUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopUserInfo.m; sourceTree = "<group>"; };
 		A0CD1CCF1B33C3C600FCA919 /* ShopUserList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopUserList.h; sourceTree = "<group>"; };
@@ -632,6 +643,9 @@
 				13ACD6E51BAC54B2001F9F21 /* MyInformationViewController.h */,
 				13ACD6E61BAC54B2001F9F21 /* MyInformationViewController.m */,
 				13ACD6E81BAC54D2001F9F21 /* MyInformation.storyboard */,
+				A0CCA4711BB1364700E6E396 /* DetailInformationViewController.h */,
+				A0CCA4721BB1364700E6E396 /* DetailInformationViewController.m */,
+				A0CCA4741BB1365200E6E396 /* DetailInformation.storyboard */,
 			);
 			name = MyInformation;
 			sourceTree = "<group>";
@@ -680,6 +694,7 @@
 		13B1C2A71ACA4AAF005C179C /* models */ = {
 			isa = PBXGroup;
 			children = (
+				A0CCA46A1BB10E9B00E6E396 /* MyInformation */,
 				A0CD1CCB1B33B04500FCA919 /* buyers */,
 				18AF2A2C1AFE615A00CCCDBB /* API */,
 			);
@@ -1248,6 +1263,17 @@
 			name = buyers;
 			sourceTree = "<group>";
 		};
+		A0CCA46A1BB10E9B00E6E396 /* MyInformation */ = {
+			isa = PBXGroup;
+			children = (
+				A0CCA46B1BB10EC100E6E396 /* myInformation.h */,
+				A0CCA46C1BB10EC100E6E396 /* myInformation.m */,
+				A0CCA46E1BB122DC00E6E396 /* myInfoList.h */,
+				A0CCA46F1BB122DC00E6E396 /* myInfoList.m */,
+			);
+			name = MyInformation;
+			sourceTree = "<group>";
+		};
 		A0CD1CCB1B33B04500FCA919 /* buyers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1425,6 +1451,7 @@
 				13B1C2FB1ACB9C16005C179C /* UserCenterLogged.storyboard in Resources */,
 				1300C7911BA10AC800575EEB /* NewEstimate.storyboard in Resources */,
 				13B1C3231AD4D6B3005C179C /* FSCollectionViewController.xib in Resources */,
+				A0CCA4751BB1365200E6E396 /* DetailInformation.storyboard in Resources */,
 				13B1C34E1AD4D6ED005C179C /* PostEdit.storyboard in Resources */,
 				13C74BBA1B8B6DC2007DD716 /* OrderList.storyboard in Resources */,
 				131A9ECC1B03846700926D6F /* ChainTableViewCell.xib in Resources */,
@@ -1625,6 +1652,7 @@
 				13ACD6D91BA99E96001F9F21 /* MoreCommPicViewController.m in Sources */,
 				13BE56761ABA6F4700379ACD /* LoginNavigationController.m in Sources */,
 				13B1C2EA1ACB7DC5005C179C /* UIScrollView+MJRefresh.m in Sources */,
+				A0CCA46D1BB10EC100E6E396 /* myInformation.m in Sources */,
 				13B1C36E1AD4D80B005C179C /* forumItem.m in Sources */,
 				13B1C2EE1ACB8994005C179C /* RegistViewController.m in Sources */,
 				13B1C2B61ACA58B5005C179C /* APIClient.m in Sources */,
@@ -1652,6 +1680,7 @@
 				13C74BB81B8B6DB1007DD716 /* OrderListViewController.m in Sources */,
 				A0CCA4661BA1462C00E6E396 /* OrderList.m in Sources */,
 				13C74BB41B8B621C007DD716 /* OrderDetailZhifuTableViewCell.m in Sources */,
+				A0CCA4731BB1364700E6E396 /* DetailInformationViewController.m in Sources */,
 				13C865E71B05D4A0001D34B4 /* endApplyItem.m in Sources */,
 				A0CCA4631B9EBD9400E6E396 /* getUserNameItem.m in Sources */,
 				1300C7891BA0769B00575EEB /* EstimateInfo.m in Sources */,
@@ -1670,6 +1699,7 @@
 				13B1C2E21ACB7DC5005C179C /* AMPActivityIndicator.m in Sources */,
 				13B1C3011ACBBED2005C179C /* SettingsViewController.m in Sources */,
 				13ACD6DF1BA99F81001F9F21 /* MoreCommPicTableViewCell.m in Sources */,
+				A0CCA4701BB122DC00E6E396 /* myInfoList.m in Sources */,
 				13BC4DF81B3A9530009D181D /* ViewController4Dinner.m in Sources */,
 				13B1C3711AD4D80B005C179C /* HttpTool.m in Sources */,
 			);
