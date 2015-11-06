@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/ShoppingCartViewController.m"
-            timestampString = "464868049.785599"
+            timestampString = "465293758.236953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "-selectComm:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/ShoppingCartViewController.m"
-            timestampString = "464868049.785599"
+            timestampString = "465360797.821501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
+            startingLineNumber = "355"
+            endingLineNumber = "355"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/ShoppingCartViewController.m"
-            timestampString = "464868049.785599"
+            timestampString = "465293758.236953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "-selectComm:"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/ShoppingCartViewController.m"
-            timestampString = "464868049.785599"
+            timestampString = "465293758.236953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "-selectCommInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/ShoppingCartViewController.m"
-            timestampString = "464868049.785599"
+            timestampString = "465293758.236953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "-selectCommInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/ShoppingCartViewController.m"
-            timestampString = "464868049.785599"
+            timestampString = "465293758.236953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "-calculateTotalPrice"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/ShoppingCartViewController.m"
-            timestampString = "464868049.785599"
+            timestampString = "465360797.821501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "517"
-            endingLineNumber = "517"
+            startingLineNumber = "534"
+            endingLineNumber = "534"
             landmarkName = "-selectAllComm"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/ShoppingCartViewController.m"
-            timestampString = "464868049.785599"
+            timestampString = "465360797.821501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "535"
-            endingLineNumber = "535"
+            startingLineNumber = "552"
+            endingLineNumber = "552"
             landmarkName = "-selectAllComm"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464689214.322845"
+            timestampString = "466427074.33189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
             landmarkName = "-addDetailOrder"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464689214.322845"
+            timestampString = "466427074.33189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "-addMainOrder::"
             landmarkType = "5">
          </BreakpointContent>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464689214.322845"
+            timestampString = "466427074.33189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "-addMainOrder::"
             landmarkType = "5">
          </BreakpointContent>
@@ -260,11 +260,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464689214.322845"
+            timestampString = "466427074.33189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "-addMainOrder::"
             landmarkType = "5">
          </BreakpointContent>
@@ -276,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464777725.651611"
+            timestampString = "466427074.33189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "386"
-            endingLineNumber = "386"
+            startingLineNumber = "387"
+            endingLineNumber = "387"
             landmarkName = "-SubmitOrderOnclick:"
             landmarkType = "5">
          </BreakpointContent>
@@ -372,11 +372,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/ShoppingCartViewController.m"
-            timestampString = "464868049.785599"
+            timestampString = "465293758.236953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "-changeAmount:Flag:"
             landmarkType = "5">
          </BreakpointContent>
@@ -413,13 +413,13 @@
                   symbolName = "-[ShoppingCartViewController Btn2deleteComm:]"
                   moduleName = "communityiOS"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/ShoppingCartViewController.m"
-                  timestampString = "464868050.221552"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/ShoppingCartViewController.m"
+                  timestampString = "466495173.018075"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
                   endingLineNumber = "50"
-                  offsetFromSymbolStart = "81">
+                  offsetFromSymbolStart = "34">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -428,13 +428,13 @@
                   symbolName = "__45-[ShoppingCartViewController Btn2deleteComm:]_block_invoke"
                   moduleName = "communityiOS"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/ShoppingCartViewController.m"
-                  timestampString = "464868050.221721"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/ShoppingCartViewController.m"
+                  timestampString = "466495173.018276"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "52"
                   endingLineNumber = "52"
-                  offsetFromSymbolStart = "15">
+                  offsetFromSymbolStart = "4">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -558,11 +558,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464699065.711968"
+            timestampString = "466427074.33189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "-addMainOrder::"
             landmarkType = "5">
             <Locations>
@@ -573,13 +573,13 @@
                   symbolName = "-[OrderDetailViewController addMainOrder::]"
                   moduleName = "communityiOS"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderDetailViewController.m"
-                  timestampString = "464868050.225775"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "466495173.022456"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "212"
-                  endingLineNumber = "212"
-                  offsetFromSymbolStart = "177">
+                  startingLineNumber = "213"
+                  endingLineNumber = "213"
+                  offsetFromSymbolStart = "104">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -588,13 +588,13 @@
                   symbolName = "__43-[OrderDetailViewController addMainOrder::]_block_invoke"
                   moduleName = "communityiOS"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderDetailViewController.m"
-                  timestampString = "464868050.2259"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "466495173.022622"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "212"
-                  endingLineNumber = "212"
-                  offsetFromSymbolStart = "39">
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -606,71 +606,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464699138.656807"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
-            landmarkName = "-addMainOrder::"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464699144.696892"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
-            landmarkName = "-addDetailOrder"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[OrderDetailViewController addDetailOrder]"
-                  moduleName = "communityiOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderDetailViewController.m"
-                  timestampString = "464868050.22716"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "257"
-                  endingLineNumber = "257"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__43-[OrderDetailViewController addDetailOrder]_block_invoke"
-                  moduleName = "communityiOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderDetailViewController.m"
-                  timestampString = "464868050.22735"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "257"
-                  endingLineNumber = "257"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464699875.437087"
+            timestampString = "466427074.33189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "221"
@@ -686,11 +622,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464707320.566339"
+            timestampString = "466427074.33189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "-addDetailOrder"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[OrderDetailViewController addDetailOrder]"
+                  moduleName = "communityiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "466495173.024218"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[OrderDetailViewController addDetailOrder]_block_invoke"
+                  moduleName = "communityiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "466495173.024356"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "261"
+                  endingLineNumber = "261"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/OrderDetailViewController.m"
+            timestampString = "466427074.33189"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "-addMainOrder::"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/OrderDetailViewController.m"
+            timestampString = "466427074.33189"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "-addMainOrder::"
             landmarkType = "5">
          </BreakpointContent>
@@ -750,11 +750,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464706778.352738"
+            timestampString = "466427074.33189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "-addMainOrder::"
             landmarkType = "5">
             <Locations>
@@ -765,13 +765,43 @@
                   symbolName = "__43-[OrderDetailViewController addMainOrder::]_block_invoke"
                   moduleName = "communityiOS"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderDetailViewController.m"
-                  timestampString = "464868050.255206"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "466495173.027017"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "242"
-                  endingLineNumber = "242"
-                  offsetFromSymbolStart = "1114">
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "685">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_"
+                  moduleName = "communityiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "466495173.027151"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "10">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_"
+                  moduleName = "communityiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "466495173.027267"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "10">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -780,13 +810,13 @@
                   symbolName = "__43-[OrderDetailViewController addMainOrder::]_block_invoke184"
                   moduleName = "communityiOS"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderDetailViewController.m"
-                  timestampString = "464868050.255377"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "466495173.027385"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "242"
-                  endingLineNumber = "242"
-                  offsetFromSymbolStart = "51">
+                  startingLineNumber = "244"
+                  endingLineNumber = "244"
+                  offsetFromSymbolStart = "4">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -798,11 +828,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464777725.651611"
+            timestampString = "466427074.33189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "388"
-            endingLineNumber = "388"
+            startingLineNumber = "389"
+            endingLineNumber = "389"
             landmarkName = "-SubmitOrderOnclick:"
             landmarkType = "5">
             <Locations>
@@ -813,13 +843,13 @@
                   symbolName = "-[OrderDetailViewController SubmitOrderOnclick:]"
                   moduleName = "communityiOS"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderDetailViewController.m"
-                  timestampString = "464868050.256196"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "466495173.028703"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "389"
-                  endingLineNumber = "389"
-                  offsetFromSymbolStart = "55">
+                  startingLineNumber = "390"
+                  endingLineNumber = "390"
+                  offsetFromSymbolStart = "23">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -828,13 +858,13 @@
                   symbolName = "__48-[OrderDetailViewController SubmitOrderOnclick:]_block_invoke"
                   moduleName = "communityiOS"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderDetailViewController.m"
-                  timestampString = "464868050.256318"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "466495173.028873"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "389"
-                  endingLineNumber = "389"
-                  offsetFromSymbolStart = "65">
+                  startingLineNumber = "392"
+                  endingLineNumber = "392"
+                  offsetFromSymbolStart = "4">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -878,11 +908,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464775876.641944"
+            timestampString = "466427074.33189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -894,11 +924,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464778709.891915"
+            timestampString = "466427074.33189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "389"
-            endingLineNumber = "389"
+            startingLineNumber = "390"
+            endingLineNumber = "390"
             landmarkName = "-SubmitOrderOnclick:"
             landmarkType = "5">
             <Locations>
@@ -909,13 +939,13 @@
                   symbolName = "-[OrderDetailViewController SubmitOrderOnclick:]"
                   moduleName = "communityiOS"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderDetailViewController.m"
-                  timestampString = "464868050.25931"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "466495173.030464"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "389"
-                  endingLineNumber = "389"
-                  offsetFromSymbolStart = "55">
+                  startingLineNumber = "390"
+                  endingLineNumber = "390"
+                  offsetFromSymbolStart = "23">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -924,13 +954,13 @@
                   symbolName = "__48-[OrderDetailViewController SubmitOrderOnclick:]_block_invoke"
                   moduleName = "communityiOS"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tjufe/Desktop/communityIOS2.0/communityiOS/OrderDetailViewController.m"
-                  timestampString = "464868050.259434"
+                  urlString = "file:///Users/tjufe/Desktop/123123/communityIOS2.0/communityiOS/OrderDetailViewController.m"
+                  timestampString = "466495173.030599"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "389"
-                  endingLineNumber = "389"
-                  offsetFromSymbolStart = "65">
+                  startingLineNumber = "392"
+                  endingLineNumber = "392"
+                  offsetFromSymbolStart = "4">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -941,13 +971,27 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "communityiOS/OrderDetailViewController.m"
-            timestampString = "464868886.298713"
+            filePath = "communityiOS/APIAddress.h"
+            timestampString = "465273836.608732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "27"
+            endingLineNumber = "27">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/ShoppingCartViewController.m"
+            timestampString = "465293747.119628"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "-Btn2sumbitOrders:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -958,12 +1002,140 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "communityiOS/OrderDetailPicTableViewCell.m"
-            timestampString = "464869084.925859"
+            timestampString = "465303374.680697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "-setImg_comm1_url:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/PosterTableViewCell.m"
+            timestampString = "465306162.634183"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-setMember_head:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/FSCollectionView.m"
+            timestampString = "466428436.322573"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "-getcelltext::"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/PostEditViewController.m"
+            timestampString = "466430644.626022"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/PostEditViewController.m"
+            timestampString = "466434786.53226"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/PostEditViewController.m"
+            timestampString = "466434786.53226"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "439"
+            endingLineNumber = "439"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/PostEditViewController.m"
+            timestampString = "466434786.53226"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "440"
+            endingLineNumber = "440"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/PostEditViewController.m"
+            timestampString = "466434675.484543"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "427"
+            endingLineNumber = "427"
+            landmarkName = "-tableView:willSelectRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "communityiOS/PostImageTableViewCell.m"
+            timestampString = "466495167.416861"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-setMain_image:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

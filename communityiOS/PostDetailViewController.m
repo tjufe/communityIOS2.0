@@ -762,13 +762,23 @@ bool isModerator = NO;//是否是版主
 
 }
 -(void)loadPosterHead{
-    NSString *url = [NSString stringWithFormat:@"%@/uploadimg/%@",API_HOST,self.head_portrait_url];
     
-    [self.posterCell.headPortrait sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    NSString *url = [NSString stringWithFormat:@"%@/uploadimg/%@",API_HOST,self.head_portrait_url];
+    if(![url isEqualToString:@""]&&url!=nil){
+        [self.posterCell.headPortrait sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"默认小头像"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if(image !=nil){
+                
+                self.posterCell.headPortrait.image = image;
+            }else{
+                self.posterCell.headPortrait.image = [UIImage imageNamed:@"默认小头像"];
+
+            }
         
-        self.posterCell.headPortrait.image = image;
-        
-    }];
+        }];
+    }else{
+        self.posterCell.headPortrait.image = [UIImage imageNamed:@"默认小头像"];
+    
+    }
 }
 -(void)loadMainImage{
     NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,self.main_image_url];

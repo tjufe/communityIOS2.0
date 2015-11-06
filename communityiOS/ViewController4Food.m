@@ -17,6 +17,7 @@
 #import "ShoppingCartViewController.h"
 #import "AppDelegate.h"
 #import "EstimateListViewController.h"
+#import "UIAlertView+Blocks.h"
 
 #import "MJRefresh.h"
 
@@ -28,6 +29,7 @@
 @property(strong,nonatomic) NSString *shop_id;
 @property(strong,nonatomic) NSString *shop_name;
 @property(strong,nonatomic) NSString *shop_icon_url;
+@property(strong,nonatomic) NSString *shop_notice;
 @property(assign,nonatomic) int estimate_num;
 @property(weak,nonatomic)NSNumber *page;
 @property(weak,nonatomic)NSNumber *rows;
@@ -66,6 +68,10 @@ BOOL FirstLoad ;
 }
 -(void)getEstimateNum:(int) estimate_num {
     self.estimate_num = estimate_num;
+}
+
+-(void)getShopNotice:(NSString *) shop_notice {
+    self.shop_notice = shop_notice;
 }
 
 - (IBAction)ToEstimateListOnclick:(id)sender {
@@ -119,6 +125,13 @@ BOOL FirstLoad ;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [UIAlertView showAlertViewWithTitle:@"卖家公告" message:self.shop_notice cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
+        
+        ;
+    } onCancel:^{
+        
+    }];
 
     self.comm_list = [[NSMutableArray alloc]init];
     self.commlistArray = [[NSMutableArray alloc] init];
@@ -154,19 +167,28 @@ BOOL FirstLoad ;
     
     [self.ReplyNum setText:[NSString stringWithFormat:@"%d",self.estimate_num]];
     
-    if(![self.shop_icon_url isEqual:@""]){
-        NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,self.shop_icon_url];
+    if(![self.shop_icon_url isEqual:@""]&&self.shop_icon_url!=nil){
+        NSString *url = [NSString stringWithFormat:@"%@/uploadimg/%@",API_HOST,self.shop_icon_url];
         
         [self.ShopIcon sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
             
-            self.ShopIcon.image = image;
+           
+            if(image!=nil){
+                    self.ShopIcon.image = image;
+            }else{
+                 self.ShopIcon.image = [UIImage imageNamed:@"默认小头像"];
+            
+            }
             
         }];
     }else{
         
-        self.ShopIcon.image = [UIImage imageNamed:@"吉祥馄饨"];
+        self.ShopIcon.image = [UIImage imageNamed:@"默认小头像"];
         
     }
+    [self.ShopIcon.layer setCornerRadius:self.ShopIcon.layer.frame.size.height/2];
+    self.ShopIcon.contentMode=UIViewContentModeScaleAspectFill;
+    self.ShopIcon.layer.masksToBounds = YES;
     
     //设置上拉刷新
     

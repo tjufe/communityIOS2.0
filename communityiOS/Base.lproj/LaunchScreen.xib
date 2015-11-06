@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -29,14 +30,27 @@
                         <constraint firstAttribute="height" constant="156" id="KWn-Si-4Ec"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvB-kO-0bz">
+                    <rect key="frame" x="146" y="329" width="28" height="22"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="28" id="BJt-zk-sup"/>
+                        <constraint firstAttribute="height" constant="22" id="jKh-Y2-kEo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.9868164062" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Zry-dx-s7o" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="1hQ-oP-1OR"/>
                 <constraint firstAttribute="bottom" secondItem="S4I-VX-cns" secondAttribute="bottom" constant="11" id="4eH-Z6-1oy"/>
+                <constraint firstItem="zvB-kO-0bz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="329" id="65q-Vn-jZW"/>
                 <constraint firstItem="exI-ks-WFX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CIl-hf-a51"/>
                 <constraint firstAttribute="centerX" secondItem="Zry-dx-s7o" secondAttribute="centerX" id="Ihn-GZ-onA"/>
                 <constraint firstAttribute="trailing" secondItem="S4I-VX-cns" secondAttribute="trailing" id="O4Y-v5-0Nd"/>
+                <constraint firstItem="zvB-kO-0bz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OJS-Am-GdE"/>
                 <constraint firstAttribute="trailing" secondItem="exI-ks-WFX" secondAttribute="trailing" id="T1o-dV-DbV"/>
                 <constraint firstAttribute="bottom" secondItem="exI-ks-WFX" secondAttribute="bottom" constant="8" id="fqL-E4-uXQ"/>
                 <constraint firstItem="S4I-VX-cns" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yC9-d4-W8g"/>

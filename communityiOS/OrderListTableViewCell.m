@@ -29,13 +29,17 @@
         NSString *url = [NSString stringWithFormat:@"%@/uploadimg/%@",API_HOST,shop_head_url];
         
         [_ShopHead sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
+            if (image!=nil) {
+                _ShopHead.image = image;
+            }else{
+                _ShopHead.image = [UIImage imageNamed:@"默认小头像"];
+            }
             
-            _ShopHead.image = image;
             
         }];
     }else{
         
-        _ShopHead.image = [UIImage imageNamed:@"loading"];
+        _ShopHead.image = [UIImage imageNamed:@"默认小头像"];
         
     }
     [_ShopHead.layer setCornerRadius:_ShopHead.layer.frame.size.height/2];
@@ -60,7 +64,7 @@
         }];
     }else{
         
-        _CommPic1.image = [UIImage imageNamed:@"商家小图"];
+        _CommPic1.image = [UIImage imageNamed:@"loading"];
         
     }
 
@@ -78,7 +82,7 @@
         }];
     }else{
         
-        _CommPic2.image = [UIImage imageNamed:@"商家小图"];
+        _CommPic2.image = [UIImage imageNamed:@"loading"];
         
     }
 
@@ -97,7 +101,7 @@
         }];
     }else{
         
-        _CommPic3.image = [UIImage imageNamed:@"商家小图"];
+        _CommPic3.image = [UIImage imageNamed:@"loading"];
         
     }
     

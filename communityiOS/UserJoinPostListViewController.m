@@ -338,9 +338,10 @@ NSInteger page_filter1 ;
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:(BOOL)animated];
-//    if(pop_code==1){
+    if(postListArray.count>0){
+        [postListArray removeAllObjects];
+    }
         [self loadData];
-//    }
 }
 
 - (void)viewDidLoad {
@@ -404,6 +405,7 @@ NSInteger page_filter1 ;
                 if(page_filter1==0){//第一次加载
                     [postListArray addObject:self.pitem];
                 }else{ //上拉刷新
+                    
                     if(![postListArray containsObject:self.pitem]){//去重
                         [postListArray addObject:self.pitem];
                     }

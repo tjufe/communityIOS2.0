@@ -38,7 +38,7 @@
         }];
     }else{
         
-        _MainImage.image = [UIImage imageNamed:@"商家小图"];
+        _MainImage.image = [UIImage imageNamed:@"loading"];
         
     }
 

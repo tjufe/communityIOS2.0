@@ -16,6 +16,7 @@
 -(void)getShopID:(NSString *) shop_id ;
 -(void)getShopIcon:(NSString *) shop_icon_url;
 -(void)getEstimateNum:(int) estimate_num;
+-(void)getShopNotice:(NSString *) shop_notice;
 - (IBAction)ToEstimateListOnclick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *ToEstimateListBt;
 

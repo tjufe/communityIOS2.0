@@ -40,7 +40,7 @@
             }];
         }
     }else{
-        _img_comm1.image = [UIImage imageNamed:@"商家小图"];
+        _img_comm1.image = [UIImage imageNamed:@"loading"];
 
     }
     self.img_comm1.contentMode=UIViewContentModeScaleAspectFill;

@@ -141,6 +141,7 @@ bool edit;
             ForumSelectTableViewCell *cell ;
         
         if (!cell) {
+            
             cell= [[[NSBundle mainBundle]loadNibNamed:@"ForumSelectTableViewCell" owner:nil options:nil]objectAtIndex:0];
         }
             if(![_ED_FLAG isEqualToString:@"0"]){
@@ -421,8 +422,14 @@ bool edit;
     }
 }
 
+
+- (nullable NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    return indexPath;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSIndexPath *index = indexPath;
     if(indexPath.row==0){
         if(!select_forum_dropdown_isonshowing){
         
@@ -436,6 +443,9 @@ bool edit;
         
         //初始化colletionview
         self.fs  = [[FSCollectionview alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 - 100, -50, 200, [self.select_forum count]*40) collectionViewLayout:flowlayout];
+            
+        //在collectionview注册collectionviewcell；
+        [self.fs  registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell11"];
 
         //传值
        // self.fs.PEVC = self;
@@ -452,9 +462,9 @@ bool edit;
        
         self.fs.dataSource = self.fs;
         self.fs.delegate = self.fs;
-        //在collectionview注册collectionviewcell；
-        [self.fs  registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell11"];
-
+        
+        self.fs.index = indexPath;
+        self.fs.tb = tableView;
         [self.PEtableview addSubview:self.fs];
         
         [UIView animateWithDuration:0.5 animations:^{
@@ -463,7 +473,8 @@ bool edit;
             [self.fs.layer setCornerRadius:self.fs.frame.size.height/20];
         }];
 
-            [self.fs getcelltext:indexPath:self.PEtableview];
+      //        [self.fs getcelltext:indexPath:tableView];
+     //       [self.fs getcelltext:index:self.PEtableview];
             select_forum_dropdown_isonshowing = YES;
         }
         }

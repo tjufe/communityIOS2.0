@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "去结算按钮.png"
+      "filename" : "去结算按钮.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "去结算按钮@2x.png",
       "scale" : "2x"
     },
     {

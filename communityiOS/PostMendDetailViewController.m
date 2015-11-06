@@ -318,7 +318,7 @@ float assessViewY = 0;
                             [self.applyCell.applyNum setText:self.apply_num];
                             [self.applyCell.limitApplyNum setText:self.limit_apply_num];
                             
-                            if ([self.user_auth isEqualToString:@"认证用户"]) {
+                            if ([self.user_auth isEqualToString:@"认证用户"]||[self.user_auth containsString:@"管理员"]) {
                                 if ([self.apply_flag isEqualToString:@"1"]) {
                                     
                                 }else if([self.post_over isEqualToString:@"是"]){
@@ -767,7 +767,7 @@ float assessViewY = 0;
     //制作menu下拉菜单
     [self setMenu];
     //认证用户查看是否已报名，普通用户不查看
-    if([self.user_auth  isEqualToString: @"认证用户"]){
+    if([self.user_auth  isEqualToString: @"认证用户"]||[self.user_auth containsString:@"管理员"]){
         [self getApply];
     }else{
         [self setUserInit];
@@ -888,7 +888,7 @@ float assessViewY = 0;
         mend_menuHeight++;
     }
     //delete button
-    if ([self.user_auth containsString:@"/系统管理员/"] || [self.moderator_of_forum_list containsObject:self.forum_id] || [self.user_id isEqualToString:self.poster_id]) {
+    if ([self.user_auth containsString:@"管理员"] || [self.moderator_of_forum_list containsObject:self.forum_id] || [self.user_id isEqualToString:self.poster_id]) {
         [self.operlist addSubview:self.delebutton];
         self.delebutton.frame = CGRectMake(25, 50*mend_menuHeight, 50, 50);
         mend_menuHeight++;
@@ -900,7 +900,7 @@ float assessViewY = 0;
     self.user_auth =[defaults objectForKey:@"UserPermission"];
     self.user_id = [defaults objectForKey:@"UserID"];
     if(![self.user_auth isEqualToString:@""]){
-        if([self.moderator_of_forum_list containsObject:self.forum_id] ||[self.user_auth containsString:@"/系统管理员/"] || ([self.user_id isEqualToString:self.poster_id] &&![self.post_overed isEqualToString:@"是"]) ){
+        if([self.moderator_of_forum_list containsObject:self.forum_id] ||[self.user_auth containsString:@"管理员"] || ([self.user_id isEqualToString:self.poster_id] &&![self.post_overed isEqualToString:@"是"]) ){
             self.navigationItem.rightBarButtonItem = self.rightItem;
         }
     }
@@ -920,11 +920,16 @@ float assessViewY = 0;
 }
 -(void)loadPosterHead{
     NSString *url = [NSString stringWithFormat:@"%@/uploadimg/%@",API_HOST,self.head_portrait_url];
-    
-    [self.posterCell.headPortrait sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        self.posterCell.headPortrait.image = image;
+    if(![url isEqualToString:@""]&&url!=nil){
+        [self.posterCell.headPortrait sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"默认小头像"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            
+            self.posterCell.headPortrait.image = image;
+            
+        }];
+    }else{
+        self.posterCell.headPortrait.image = [UIImage imageNamed:@"默认小头像"];
         
-    }];
+    }
 }
 -(void)loadMainImage{
     NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,self.main_image_url];
@@ -1128,6 +1133,7 @@ float assessViewY = 0;
 //    self.replyView.hidden = NO;
 //    self.assessView.hidden =YES;
     [self.maskView removeFromSuperview];
+    [self.assessView removeFromSuperview];
 }
 
 -(void)toReplyList{

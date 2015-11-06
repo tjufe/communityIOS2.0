@@ -93,7 +93,7 @@ BOOL FirstLoad ;
 
     [VC4F getEstimateNum:shop_user_info.estimate_num];
     [VC4F getShopPhone:shop_user_info.shop_phone];
-
+    [VC4F getShopNotice:shop_user_info.shop_notice];
 //    VC4F.shop_phone = shop_user_info.shop_phone;
 
     [self.navigationController pushViewController:VC4F  animated:YES];

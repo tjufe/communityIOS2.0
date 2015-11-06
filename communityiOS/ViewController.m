@@ -666,7 +666,7 @@ bool alreadyGetAddress = NO;
         
         ///20150418 认证标志显示
         NSString *userPermission = [defaults valueForKey:@"UserPermission"];
-        if([userPermission rangeOfString:@"认证用户"].location!=NSNotFound){
+        if([userPermission rangeOfString:@"认证用户"].location!=NSNotFound||[userPermission rangeOfString:@"系统管理员"].location!=NSNotFound){
             self.user_status.hidden = NO;
         }else{
             self.user_status.hidden = YES;

@@ -73,7 +73,7 @@
         }];
     }else{
         
-        _img_comm_photo.image = [UIImage imageNamed:@"商家小图"];
+        _img_comm_photo.image = [UIImage imageNamed:@"loading"];
         
     }
 

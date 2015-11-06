@@ -35,7 +35,7 @@
         }];
     }else{
         
-        _MoreCommPic.image = [UIImage imageNamed:@"商家小图"];
+        _MoreCommPic.image = [UIImage imageNamed:@"loading"];
         
     }
     

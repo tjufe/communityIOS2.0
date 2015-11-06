@@ -34,6 +34,7 @@
              @"shop_photo":@"shop_photo",
              @"shop_icon":@"shop_icon",
              @"shop_sequence":@"shop_sequence",
+              @"shop_notice":@"shop_notice",
              @"commodity_num":@"commodity_num",
              @"estimate_num":@"estimate_num"
              };

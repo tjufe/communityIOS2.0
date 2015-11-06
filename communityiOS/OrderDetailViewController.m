@@ -21,6 +21,7 @@
 #import "UIViewController+Create.h"
 #import "newPostItem.h"
 #import "String.h"
+#import "MBProgressHUD.h"
 
 
 @interface OrderDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -401,20 +402,36 @@ NSCondition     *_condition;//条件锁
         
         
     } failurs:^(NSError *error) {
-        [UIAlertView showAlertViewWithTitle:@"提示" message:@"订单提交失败" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
-                    if(buttonIndex==0){
-                                    //
-                    }else{
-                                    //
-                    }
-                    } onCancel:^{
-                                
-                    }];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *user_permission = [defaults objectForKey:@"UserPermission"];
+        if([user_permission isEqualToString:@""]||[user_permission isEqualToString:@"普通用户"]){
+            MBProgressHUD *hud = [[MBProgressHUD alloc]initWithView:self.view];
+            [self.view addSubview:hud];
+            hud.mode = MBProgressHUDModeText;
+            hud.labelText = @"只有认证用户才能购买商品！";
+            [hud showAnimated:YES whileExecutingBlock:^{
+                sleep(1);
+            }completionBlock:^{
+                [hud removeFromSuperview];
+            }];
+        }else{
+            [UIAlertView showAlertViewWithTitle:@"提示" message:@"订单提交失败" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
+                if(buttonIndex==0){
+                    //
+                }else{
+                    //
+                }
+            } onCancel:^{
+                
+            }];
+        }
+
+        
     }];
     
     
     
-//    
+//
 //    NSMutableArray *resultArray = [[NSMutableArray alloc]init];
 //    
 //    for(int i=0;i<[_order_comm count];i++){

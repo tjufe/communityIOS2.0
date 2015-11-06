@@ -26,11 +26,16 @@
 
 -(void)MakeCustHead:(NSString *)CustHead{
     if(![CustHead isEqual:@""]&&CustHead!=nil){
-        NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,CustHead];
+        NSString *url = [NSString stringWithFormat:@"%@/uploadimg/%@",API_HOST,CustHead];
         _CustHead.image = [UIImage imageNamed:@"默认小头像"];
         [_CustHead sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"默认小头像"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
-            
-            _CustHead.image = image;
+            if (image!=nil) {
+                 _CustHead.image = image;
+            }else{
+                _CustHead.image = [UIImage imageNamed:@"默认小头像"];
+
+            }
+           
        
             
         }];
@@ -39,6 +44,9 @@
         _CustHead.image = [UIImage imageNamed:@"默认小头像"];
         
     }
+    [_CustHead.layer setCornerRadius:_CustHead.layer.frame.size.height/2];
+    _CustHead.contentMode=UIViewContentModeScaleAspectFill;
+    _CustHead.layer.masksToBounds = YES;
 
 
 }

@@ -41,7 +41,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *strUserPermission = [defaults valueForKey:@"UserPermission"];
     if(strUserPermission!=nil){
-        if([strUserPermission compare:@"认证用户"] == NSOrderedSame){
+        if([strUserPermission compare:@"认证用户"] == NSOrderedSame||[strUserPermission compare:@"系统管理员"] == NSOrderedSame){
             self.authLabel.text = @"已认证";
             [self.authButton setEnabled:NO];
         }

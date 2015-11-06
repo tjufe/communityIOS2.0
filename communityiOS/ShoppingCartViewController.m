@@ -108,10 +108,26 @@ bool edit_flag;//编辑状态
         }
     }
     if (order.count!=0) {
-        OrderDetailViewController *ODVC = [OrderDetailViewController createFromStoryboardName:@"OrderDetail" withIdentifier:@"order_detail"];
-        ODVC.order_comm = order;
-        [self.navigationController pushViewController:ODVC animated:YES];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *user_permission = [defaults objectForKey:@"UserPermission"];
+        if([user_permission isEqualToString:@""]||[user_permission isEqualToString:@"普通用户"]){
+            MBProgressHUD *hud = [[MBProgressHUD alloc]initWithView:self.view];
+            [self.view addSubview:hud];
+            hud.mode = MBProgressHUDModeText;
+            hud.labelText = @"只有认证用户才能购买商品！";
+            [hud showAnimated:YES whileExecutingBlock:^{
+                sleep(1);
+            }completionBlock:^{
+                [hud removeFromSuperview];
+            }];
+        }else{
+            OrderDetailViewController *ODVC = [OrderDetailViewController createFromStoryboardName:@"OrderDetail" withIdentifier:@"order_detail"];
+            ODVC.order_comm = order;
+            [self.navigationController pushViewController:ODVC animated:YES];
+        }
+        
     }else{
+        
         MBProgressHUD *hud = [[MBProgressHUD alloc]initWithView:self.view];
         [self.view addSubview:hud];
         hud.mode = MBProgressHUDModeText;
@@ -324,6 +340,7 @@ m=(int)[self.shopping count]-1;
         ShoppingCartCommodity *s = [self.cart_shop objectAtIndex:indexPath.row];
         self.sc_table_cell1.delegate = self;//委托指定
         self.sc_table_cell1.label_shop_name.text = s.shop_name;
+        self.sc_table_cell1.selectionStyle = UITableViewCellSelectionStyleNone;
         return self.sc_table_cell1;
         
     }else{
@@ -351,7 +368,7 @@ m=(int)[self.shopping count]-1;
         //数量加、减按钮设置tag
         self.sc_table_cell2.btn_delete.tag = 0;
         self.sc_table_cell2.btn_add.tag = 1;
-        
+        self.sc_table_cell2.selectionStyle = UITableViewCellSelectionStyleNone;
         return self.sc_table_cell2;
     }
     

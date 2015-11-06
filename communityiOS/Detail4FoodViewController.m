@@ -186,13 +186,18 @@
         NSString *url = [NSString stringWithFormat:@"%@/topicpic/%@",API_HOST,self.comm_info.comm_photo];
         
         [self.CommImage sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
-            
-            self.CommImage.image = image;
+            if(image!=nil){
+                self.CommImage.image = image;
+            }
+            else{
+                self.CommImage.image = [UIImage imageNamed:@"loading"];
+
+            }
             
         }];
     }else{
         
-        self.CommImage.image = [UIImage imageNamed:@"商家小图"];
+        self.CommImage.image = [UIImage imageNamed:@"loading"];
         
     }
     

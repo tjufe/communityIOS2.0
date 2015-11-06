@@ -47,8 +47,13 @@
         
         
         [_headPortrait sd_setImageWithURL:iurl placeholderImage:[UIImage imageNamed:@"loading"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {//加载图片
+            if (image!=nil) {
+                _headPortrait.image = image;
+
+            }else{
+              _headPortrait.image = [UIImage imageNamed:@"默认小头像"];
             
-            _headPortrait.image = image;
+            }
             
         }];
     }else{

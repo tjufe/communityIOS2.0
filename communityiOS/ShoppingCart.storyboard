@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Shopping Cart View Controller-->
@@ -55,9 +56,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjU-MD-Prg">
-                                        <rect key="frame" x="152" y="9" width="17" height="21"/>
+                                        <rect key="frame" x="152" y="9" width="19" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="17" id="MtW-c6-6Io"/>
+                                            <constraint firstAttribute="width" constant="19" id="MtW-c6-6Io"/>
                                             <constraint firstAttribute="height" constant="21" id="g3D-1d-4Sb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -65,7 +66,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgs-0i-p8f">
-                                        <rect key="frame" x="170" y="8" width="105" height="21"/>
+                                        <rect key="frame" x="172" y="8" width="103" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="qIg-Rr-P0a"/>
                                         </constraints>
@@ -204,10 +205,10 @@
                                         <exclude reference="rwd-2O-Ced"/>
                                         <exclude reference="IFU-2D-ZLC"/>
                                         <exclude reference="LzX-c9-cwj"/>
-                                        <exclude reference="fg8-NO-KC9"/>
                                         <exclude reference="aKH-xw-7Ap"/>
                                         <exclude reference="tSx-Bu-ZVM"/>
                                         <exclude reference="wh7-6X-oJm"/>
+                                        <exclude reference="fg8-NO-KC9"/>
                                     </mask>
                                 </variation>
                             </view>

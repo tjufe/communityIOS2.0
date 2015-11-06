@@ -68,13 +68,14 @@ BOOL BackFresh = false;//默认回退刷新是否
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
      myInformation *m_info = [self.MyInfoArray objectAtIndex:indexPath.row];
-    [StatusTool statusToolChangeMessageStateWithMessage_id:m_info.message_id Success:^(id object) {
+    //wangyao暂时取消消息状态
+//    [StatusTool statusToolChangeMessageStateWithMessage_id:m_info.message_id Success:^(id object) {
         DetailInformationViewController *DIVC = [DetailInformationViewController createFromStoryboardName:@"DetailInformation" withIdentifier:@"detail_information"];
         [DIVC getInfo:m_info];
         [self.navigationController pushViewController:DIVC animated:YES];
-    } failurs:^(NSError *error) {
-        
-    }];
+//    } failurs:^(NSError *error) {
+//        
+//    }];
 
 }
 
@@ -86,7 +87,7 @@ BOOL BackFresh = false;//默认回退刷新是否
     rows1 = 10;
     FirstLoad = true;
     //导航栏
-    self.navigationItem.title = @"消息列表";
+    self.navigationItem.title = @"通知列表";
     UIBarButtonItem *temporaryBarButtonItem=[[UIBarButtonItem alloc] init];
     temporaryBarButtonItem.title=@"";
     self.navigationItem.backBarButtonItem = temporaryBarButtonItem;

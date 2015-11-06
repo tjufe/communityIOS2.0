@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="362" height="143"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="362" height="142.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="未选择" translatesAutoresizingMaskIntoConstraints="NO" id="omk-N4-oPn">
@@ -37,9 +38,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DB-x4-aZd">
-                        <rect key="frame" x="183" y="38" width="16" height="20"/>
+                        <rect key="frame" x="183" y="38" width="18" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="16" id="UDs-dR-VmZ"/>
+                            <constraint firstAttribute="width" constant="18" id="UDs-dR-VmZ"/>
                             <constraint firstAttribute="height" constant="20" id="sbU-hO-dKS"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -47,7 +48,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyg-H1-47r">
-                        <rect key="frame" x="199" y="37" width="143" height="21"/>
+                        <rect key="frame" x="201" y="37" width="141" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="ebZ-NW-Mub"/>
                         </constraints>
@@ -145,8 +146,8 @@
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
-                        <exclude reference="J0Q-H6-aQK"/>
                         <exclude reference="CIf-MG-44s"/>
+                        <exclude reference="J0Q-H6-aQK"/>
                         <exclude reference="rab-sW-Rsp"/>
                         <exclude reference="Tok-2X-J6H"/>
                     </mask>

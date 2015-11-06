@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "加入购物车按钮.png"
+      "filename" : "加入购物车按钮.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "加入购物车按钮@2x.png",
       "scale" : "2x"
     },
     {

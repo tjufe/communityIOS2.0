@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "立即购买按钮.png"
+      "filename" : "立即购买按钮.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "立即购买按钮@2x.png",
       "scale" : "2x"
     },
     {

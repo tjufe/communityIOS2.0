@@ -153,17 +153,18 @@ BOOL FirstLoad ;
     
     if ([self.OrderInfo.order_state isEqualToString:@"尚未处理"]) {
 //        self.OLcell.OrderDeleteBt.hidden = YES;
-        self.OLcell.toEstimateBt.hidden = YES;
-    }else if([self.OrderInfo.order_state isEqualToString:@"已发送"]){
+        
         [self.OLcell.toEstimateBt setTitle:@"确认收货" forState:UIControlStateNormal];
         [self.OLcell.toEstimateBt addTarget:self action:@selector(EnsureOrder:) forControlEvents:UIControlEventTouchUpInside];
         
         [self.OLcell.toEstimateBt setTag:indexPath.row];
+    }else if([self.OrderInfo.order_state isEqualToString:@"已发送"]){
+       self.OLcell.toEstimateBt.hidden = YES;
     
     }else{
         [self.OLcell.toEstimateBt setTitle:@"去评论" forState:UIControlStateNormal];
         [self.OLcell.toEstimateBt addTarget:self action:@selector(toEstimate:) forControlEvents:UIControlEventTouchUpInside];
-        [self.OLcell.toEstimateBt setTag:indexPath.row];
+        [self.OLcell.toEstimateBt setTag:indexPath.row]; 
         
         
     }
