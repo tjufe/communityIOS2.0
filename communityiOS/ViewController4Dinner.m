@@ -16,6 +16,7 @@
 #import "ShopUserInfo.h"
 #import "MJRefresh.h"
 #import "MBProgressHUD.h"
+#import "ShopIntroduceViewController.h"
 
 @interface ViewController4Dinner ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -85,18 +86,20 @@ BOOL FirstLoad ;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     ShopUserInfo *shop_user_info = [shopListArray objectAtIndex:indexPath.row];
-
-    ViewController4Food *VC4F = [ViewController4Food createFromStoryboardName:@"CollectionView4Food" withIdentifier:@"CollectionView4Food"];
-    [VC4F getShopID:shop_user_info.shop_user_id];
-    [VC4F getShopName:shop_user_info.shop_user_name];
-    [VC4F getShopIcon:shop_user_info.shop_photo];
-
-    [VC4F getEstimateNum:shop_user_info.estimate_num];
-    [VC4F getShopPhone:shop_user_info.shop_phone];
-    [VC4F getShopNotice:shop_user_info.shop_notice];
+    ShopIntroduceViewController *SIVC = [ShopIntroduceViewController createFromStoryboardName:@"ShopIntroduce" withIdentifier:@"shop_introduce"];
+    [SIVC getShopUserInfo:shop_user_info];
+    [self.navigationController pushViewController:SIVC animated:YES];
+//    ViewController4Food *VC4F = [ViewController4Food createFromStoryboardName:@"CollectionView4Food" withIdentifier:@"CollectionView4Food"];
+//    [VC4F getShopID:shop_user_info.shop_user_id];
+//    [VC4F getShopName:shop_user_info.shop_user_name];
+//    [VC4F getShopIcon:shop_user_info.shop_photo];
+//
+//    [VC4F getEstimateNum:shop_user_info.estimate_num];
+//    [VC4F getShopPhone:shop_user_info.shop_phone];
+//    [VC4F getShopNotice:shop_user_info.shop_notice];
 //    VC4F.shop_phone = shop_user_info.shop_phone;
 
-    [self.navigationController pushViewController:VC4F  animated:YES];
+//    [self.navigationController pushViewController:VC4F  animated:YES];
     
     
 

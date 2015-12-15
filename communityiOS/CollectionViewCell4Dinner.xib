@@ -29,8 +29,8 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来吃小海地最正宗的山西面馆！你值得拥有。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juR-OY-1Mm">
-                        <rect key="frame" x="15" y="165" width="170" height="35.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来吃小海地最正宗的山西面馆！你值得拥有。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juR-OY-1Mm">
+                        <rect key="frame" x="15" y="165" width="170" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.99215686319999996" green="0.2274509817" blue="0.25490197539999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOi-Az-QoB">
-                        <rect key="frame" x="65" y="230" width="120" height="20"/>
+                        <rect key="frame" x="65" y="213" width="120" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="aKk-nx-npb"/>
                         </constraints>
@@ -54,7 +54,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="餐品：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMq-vG-ZbQ">
-                        <rect key="frame" x="15" y="205" width="45" height="20"/>
+                        <rect key="frame" x="15" y="188" width="45" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="45" id="8Rb-QB-uCn"/>
                             <constraint firstAttribute="height" constant="20" id="Xhl-nO-NDh"/>
@@ -64,7 +64,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评价：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rj-6X-Rng">
-                        <rect key="frame" x="15" y="230" width="45" height="20"/>
+                        <rect key="frame" x="15" y="213" width="45" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="45" id="IRw-pq-KDQ"/>
                             <constraint firstAttribute="height" constant="20" id="j3g-C9-IsF"/>
@@ -74,7 +74,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hke-H2-KFe">
-                        <rect key="frame" x="65" y="205" width="120" height="20"/>
+                        <rect key="frame" x="65" y="188" width="120" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Wig-7A-do6"/>
                         </constraints>

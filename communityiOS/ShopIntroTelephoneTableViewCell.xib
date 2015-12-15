@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="42" id="KGk-i7-Jjw" customClass="ShopIntroTelephoneTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="41.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call" translatesAutoresizingMaskIntoConstraints="NO" id="u7k-ai-q1I">
+                        <rect key="frame" x="10" y="10" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="mEe-TD-83q"/>
+                            <constraint firstAttribute="height" constant="20" id="ry4-wj-9Kq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系电话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yt-eI-KSr">
+                        <rect key="frame" x="38" y="10" width="68" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="68" id="NMI-ty-aFN"/>
+                            <constraint firstAttribute="height" constant="20" id="ry4-Ci-3he"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13100008888" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSP-cj-U3J">
+                        <rect key="frame" x="203.5" y="10" width="108.5" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="yLN-a8-n0H"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="SSP-cj-U3J" secondAttribute="trailing" constant="8" id="6QJ-ej-brU"/>
+                    <constraint firstItem="u7k-ai-q1I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="OSI-jB-D4O"/>
+                    <constraint firstItem="u7k-ai-q1I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="evh-gt-DHF"/>
+                    <constraint firstItem="5yt-eI-KSr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="g03-E1-OwW"/>
+                    <constraint firstItem="5yt-eI-KSr" firstAttribute="leading" secondItem="u7k-ai-q1I" secondAttribute="trailing" constant="8" id="j2H-VU-k9s"/>
+                    <constraint firstItem="SSP-cj-U3J" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tpa-He-Ge4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="ShopPhone" destination="SSP-cj-U3J" id="tNI-PF-QqF"/>
+            </connections>
+            <point key="canvasLocation" x="325" y="236"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="call" width="32" height="33"/>
+    </resources>
+</document>

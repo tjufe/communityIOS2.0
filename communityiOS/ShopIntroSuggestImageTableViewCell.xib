@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="KGk-i7-Jjw" customClass="ShopIntroSuggestImageTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="362" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="362" height="39.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="X8B-cY-Ueh">
+                        <rect key="frame" x="10" y="10" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="5s2-2G-PXB"/>
+                            <constraint firstAttribute="height" constant="20" id="ooM-gP-tjn"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掌柜推荐" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGg-1O-lww">
+                        <rect key="frame" x="38" y="10" width="68" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="68" id="b77-G8-dxu"/>
+                            <constraint firstAttribute="height" constant="21" id="h6L-DU-Fmx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="进入" translatesAutoresizingMaskIntoConstraints="NO" id="zg3-V5-yWw">
+                        <rect key="frame" x="345" y="12" width="7" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="7" id="LOO-4E-u5F"/>
+                            <constraint firstAttribute="height" constant="15" id="d2E-R4-BNJ"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="UGg-1O-lww" firstAttribute="leading" secondItem="X8B-cY-Ueh" secondAttribute="trailing" constant="8" id="8tH-Q0-v1b"/>
+                    <constraint firstItem="X8B-cY-Ueh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="aE4-rh-ESt"/>
+                    <constraint firstItem="UGg-1O-lww" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="b9N-wK-nwu"/>
+                    <constraint firstAttribute="trailing" secondItem="zg3-V5-yWw" secondAttribute="trailing" constant="10" id="fxU-Mm-Aln"/>
+                    <constraint firstItem="zg3-V5-yWw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="gKG-hv-J73"/>
+                    <constraint firstItem="X8B-cY-Ueh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nh3-D4-igg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="262" y="246"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="camera" width="34" height="32"/>
+        <image name="进入" width="11" height="21"/>
+    </resources>
+</document>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="ShopIntroShopIntroTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="114.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" translatesAutoresizingMaskIntoConstraints="NO" id="mHZ-2k-Xs4">
+                        <rect key="frame" x="10" y="10" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="fhK-ns-2ai"/>
+                            <constraint firstAttribute="height" constant="20" id="wQT-uD-BwY"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商铺介绍内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXS-rY-3Ik">
+                        <rect key="frame" x="38" y="39" width="272" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商铺介绍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7R-gg-EJ3">
+                        <rect key="frame" x="38" y="10" width="68" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="68" id="NPp-KQ-5tP"/>
+                            <constraint firstAttribute="height" constant="21" id="axJ-9V-byt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="D7R-gg-EJ3" firstAttribute="centerY" secondItem="mHZ-2k-Xs4" secondAttribute="centerY" id="6b1-0h-9Rm"/>
+                    <constraint firstItem="JXS-rY-3Ik" firstAttribute="top" secondItem="D7R-gg-EJ3" secondAttribute="bottom" constant="8" id="7a2-XT-Wh2"/>
+                    <constraint firstItem="D7R-gg-EJ3" firstAttribute="leading" secondItem="mHZ-2k-Xs4" secondAttribute="trailing" constant="8" id="8lp-mV-bN9"/>
+                    <constraint firstAttribute="trailing" secondItem="JXS-rY-3Ik" secondAttribute="trailing" constant="10" id="ExG-Qq-pMk"/>
+                    <constraint firstItem="mHZ-2k-Xs4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="GEY-Xb-tab"/>
+                    <constraint firstItem="D7R-gg-EJ3" firstAttribute="top" secondItem="mHZ-2k-Xs4" secondAttribute="top" id="Tt9-JX-fLz"/>
+                    <constraint firstItem="JXS-rY-3Ik" firstAttribute="top" secondItem="D7R-gg-EJ3" secondAttribute="bottom" constant="8" id="XDr-20-uz8"/>
+                    <constraint firstItem="JXS-rY-3Ik" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="38" id="bRx-dr-4bo"/>
+                    <constraint firstItem="D7R-gg-EJ3" firstAttribute="leading" secondItem="JXS-rY-3Ik" secondAttribute="leading" id="fTt-nT-Dk3"/>
+                    <constraint firstItem="mHZ-2k-Xs4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="q1b-WE-74p"/>
+                    <constraint firstItem="D7R-gg-EJ3" firstAttribute="leading" secondItem="mHZ-2k-Xs4" secondAttribute="trailing" constant="8" id="sjh-5x-HIN"/>
+                    <constraint firstItem="D7R-gg-EJ3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ubf-PD-xBG"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="6b1-0h-9Rm"/>
+                        <exclude reference="Tt9-JX-fLz"/>
+                        <exclude reference="fTt-nT-Dk3"/>
+                        <exclude reference="sjh-5x-HIN"/>
+                        <exclude reference="XDr-20-uz8"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="ShopIntroduce" destination="JXS-rY-3Ik" id="kzG-sd-Kj7"/>
+            </connections>
+            <point key="canvasLocation" x="166" y="205.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="pencil" width="31" height="31"/>
+    </resources>
+</document>

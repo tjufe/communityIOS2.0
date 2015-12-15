@@ -1038,7 +1038,7 @@
 
 }
 
-+(void)statusToolAddNewOrderInfoWithShopID:(NSMutableArray *)shop_id CustID:(NSString *)cust_id CustName:(NSString *)cust_name CustPhone:(NSString *)cust_phone OrderMoney:(NSMutableArray *)order_money OrderSendfee:(NSMutableArray *)order_sendfee OrderState:(NSString *)order_state OrderAddress:(NSString *)order_address PayType:(NSString *)pay_type CommID:(NSMutableArray *)comm_id CommUnit:(NSMutableArray *)comm_unit CommPrice:(NSMutableArray *)comm_price CommName:(NSMutableArray *)comm_name BuyAmount:(NSMutableArray *)buy_amount CommType:(NSMutableArray *)comm_count Success:(StatusSuccess)success failurs:(StatusFailurs)failure{
++(void)statusToolAddNewOrderInfoWithShopID:(NSMutableArray *)shop_id CustID:(NSString *)cust_id CustName:(NSString *)cust_name CustPhone:(NSString *)cust_phone OrderMoney:(NSMutableArray *)order_money OrderSendfee:(NSMutableArray *)order_sendfee OrderState:(NSString *)order_state OrderAddress:(NSString *)order_address PayType:(NSString *)pay_type CommID:(NSMutableArray *)comm_id CommUnit:(NSMutableArray *)comm_unit CommPrice:(NSMutableArray *)comm_price CommName:(NSMutableArray *)comm_name BuyAmount:(NSMutableArray *)buy_amount CommType:(NSMutableArray *)comm_count OrderID:(NSString *)order_id Success:(StatusSuccess)success failurs:(StatusFailurs)failure{
     
     NSMutableDictionary *firstDic = [[NSMutableDictionary alloc]init];
     [firstDic setValue:shop_id forKey:@"shop_id_array"];
@@ -1056,6 +1056,7 @@
     [firstDic setValue:comm_name forKey:@"comm_name_array"];
     [firstDic setValue:buy_amount forKey:@"buy_amount_array"];
     [firstDic setValue:comm_count forKey:@"commodity_type_array"];
+    [firstDic setValue:order_id forKey:@"order_id"];
     
 
     NSMutableDictionary *secondDic = [[NSMutableDictionary  alloc] init];

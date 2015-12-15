@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Shop Sub Image View Controller-->
+        <scene sceneID="Ep9-xN-nHS">
+            <objects>
+                <viewController storyboardIdentifier="shop_sub_image" id="6IK-Jw-aBT" customClass="ShopSubImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EMm-1l-1Cf"/>
+                        <viewControllerLayoutGuide type="bottom" id="7jl-0l-xTe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X7c-8T-26Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8ys-39-i73">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6IK-Jw-aBT" id="Vxa-Dd-tjF"/>
+                                    <outlet property="delegate" destination="6IK-Jw-aBT" id="dh3-lf-Mvq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8ys-39-i73" firstAttribute="top" secondItem="X7c-8T-26Z" secondAttribute="top" id="Ion-h8-yGW"/>
+                            <constraint firstAttribute="trailing" secondItem="8ys-39-i73" secondAttribute="trailing" id="WzE-Gm-Far"/>
+                            <constraint firstItem="7jl-0l-xTe" firstAttribute="top" secondItem="8ys-39-i73" secondAttribute="bottom" id="bG0-sh-dkH"/>
+                            <constraint firstItem="8ys-39-i73" firstAttribute="leading" secondItem="X7c-8T-26Z" secondAttribute="leading" id="z00-ef-jhh"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="ShopSubImageTableView" destination="8ys-39-i73" id="uMU-5z-duo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="46q-MS-mpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="195"/>
+        </scene>
+    </scenes>
+</document>

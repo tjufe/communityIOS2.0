@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="168" id="KGk-i7-Jjw" customClass="ShopIntroShopNoticeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="167.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="cAW-A1-ca8">
+                        <rect key="frame" x="10" y="10" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Szw-RG-Toy"/>
+                            <constraint firstAttribute="width" constant="20" id="Zux-80-1c3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商家公告" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2s9-K6-ZYn">
+                        <rect key="frame" x="35" y="8" width="68" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="W3v-R5-51K"/>
+                            <constraint firstAttribute="width" constant="68" id="qmL-7w-wFh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWh-0B-hhQ">
+                        <rect key="frame" x="35" y="37" width="275" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2s9-K6-ZYn" firstAttribute="leading" secondItem="cAW-A1-ca8" secondAttribute="trailing" constant="5" id="3Wt-19-zrO"/>
+                    <constraint firstAttribute="trailing" secondItem="hWh-0B-hhQ" secondAttribute="trailing" constant="10" id="8gh-Ge-e1z"/>
+                    <constraint firstItem="hWh-0B-hhQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="35" id="A0I-FJ-BaL"/>
+                    <constraint firstItem="cAW-A1-ca8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="LNq-gH-l5h"/>
+                    <constraint firstItem="2s9-K6-ZYn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Z9f-jr-b1M"/>
+                    <constraint firstItem="cAW-A1-ca8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="na2-Cd-4Kt"/>
+                    <constraint firstItem="hWh-0B-hhQ" firstAttribute="top" secondItem="2s9-K6-ZYn" secondAttribute="bottom" constant="8" id="ypD-ad-azG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="ShopNotice" destination="hWh-0B-hhQ" id="G9d-xi-Mqw"/>
+            </connections>
+            <point key="canvasLocation" x="325" y="307"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon" width="34" height="32"/>
+    </resources>
+</document>

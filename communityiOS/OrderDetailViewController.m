@@ -22,6 +22,12 @@
 #import "newPostItem.h"
 #import "String.h"
 #import "MBProgressHUD.h"
+//wangyao 接入支付宝
+#import <AlipaySDK/AlipaySDK.h>
+#import "Order.h"
+#import "DataSigner.h"
+#import "APIAddress.h"
+#import "AppDelegate.h"
 
 
 @interface OrderDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -206,71 +212,71 @@ NSCondition     *_condition;//条件锁
 }
 
 #pragma mark-----上传订单信息-------
--(int)addMainOrder:(NSMutableArray *)tempArray:(NSMutableArray *)result_array{
-    
-    NSMutableArray *res_array = [[NSMutableArray alloc]init];
-    
-    [StatusTool statusToolAddNewMainOrderInfowithShopID:@[@"01",@"02"] CustID:self.cust_id CustName:self.cust_name CustPhone:self.cust_phone  OrderMoney:self.order_money OrderSendfee:self.order_sendfee OrderState:self.order_state OrderAddress:self.cust_address PayType:self.pay_type Success:^(id object) {
-//        [_condition lock];
-        self.mainorder_id = (NSString *)object;
-        if(self.mainorder_id){
-            
-            for(int j=0;j<[tempArray count];j++){
-               ShoppingCartCommodity *s = [tempArray objectAtIndex:j];
-                //上传新订单子项
-                self.comm_id = s.commodity_id;
-                self.comm_unit = s.comm_unit;
-                self.comm_price =[NSNumber numberWithDouble:s.comm_price];
-                self.comm_name = s.comm_name;
-                self.comm_buy_amount = [NSNumber numberWithInt:s.buy_amount];
-                int res = [self addDetailOrder];
-                [res_array addObject:[NSNumber numberWithInt:res]];
-            }
-
-            
-           if([res_array containsObject:[NSNumber numberWithInt:0]]){
-                result = 0;
-           }else{
-                result=1;
-           }
-        }else{
-            result = 0;
-        }
-        
-
-//         [_condition unlock];
-        
-    } failurs:^(NSError *error) {
-        result = 0;
-
-//         [_condition unlock];
-
-    }];
-//    [_condition wait];
-//    [result_array addObject:[NSNumber numberWithInt:result]];
-
-    return result;
-}
+//-(int)addMainOrder:(NSMutableArray *)tempArray:(NSMutableArray *)result_array{
+//    
+//    NSMutableArray *res_array = [[NSMutableArray alloc]init];
+//    
+//    [StatusTool statusToolAddNewMainOrderInfowithShopID:@[@"01",@"02"] CustID:self.cust_id CustName:self.cust_name CustPhone:self.cust_phone  OrderMoney:self.order_money OrderSendfee:self.order_sendfee OrderState:self.order_state OrderAddress:self.cust_address PayType:self.pay_type Success:^(id object) {
+////        [_condition lock];
+//        self.mainorder_id = (NSString *)object;
+//        if(self.mainorder_id){
+//            
+//            for(int j=0;j<[tempArray count];j++){
+//               ShoppingCartCommodity *s = [tempArray objectAtIndex:j];
+//                //上传新订单子项
+//                self.comm_id = s.commodity_id;
+//                self.comm_unit = s.comm_unit;
+//                self.comm_price =[NSNumber numberWithDouble:s.comm_price];
+//                self.comm_name = s.comm_name;
+//                self.comm_buy_amount = [NSNumber numberWithInt:s.buy_amount];
+//                int res = [self addDetailOrder];
+//                [res_array addObject:[NSNumber numberWithInt:res]];
+//            }
+//
+//            
+//           if([res_array containsObject:[NSNumber numberWithInt:0]]){
+//                result = 0;
+//           }else{
+//                result=1;
+//           }
+//        }else{
+//            result = 0;
+//        }
+//        
+//
+////         [_condition unlock];
+//        
+//    } failurs:^(NSError *error) {
+//        result = 0;
+//
+////         [_condition unlock];
+//
+//    }];
+////    [_condition wait];
+////    [result_array addObject:[NSNumber numberWithInt:result]];
+//
+//    return result;
+//}
 
 #pragma mark-----上传订单子项------
--(int)addDetailOrder{
-    
-    [DetailOrderInfo AddDetailNewOrderInfowithMainorderID:self.mainorder_id CommID:self.comm_id CommUnit:self.comm_unit CommPrice:self.comm_price CommName:self.comm_name BuyAmount:self.comm_buy_amount ShopID:self.shop_id Success:^(id object) {
-        
-        newPostItem *item = (newPostItem *)object;
-        if([item.msg containsString:@"成功"]){
-            res = 1;
-        }else{
-            res = 0;
-        }
-        
-    } failurs:^(NSError *error) {
-        res=0;
-        
-    }];
-    
-    return res;
-}
+//-(int)addDetailOrder{
+//    
+//    [DetailOrderInfo AddDetailNewOrderInfowithMainorderID:self.mainorder_id CommID:self.comm_id CommUnit:self.comm_unit CommPrice:self.comm_price CommName:self.comm_name BuyAmount:self.comm_buy_amount ShopID:self.shop_id Success:^(id object) {
+//        
+//        newPostItem *item = (newPostItem *)object;
+//        if([item.msg containsString:@"成功"]){
+//            res = 1;
+//        }else{
+//            res = 0;
+//        }
+//        
+//    } failurs:^(NSError *error) {
+//        res=0;
+//        
+//    }];
+//    
+//    return res;
+//}
 
 
 #pragma mark-----获取用户真实姓名和地址------
@@ -331,7 +337,7 @@ NSCondition     *_condition;//条件锁
     }
     self.label_order_money.text = [NSString stringWithFormat:@"%.2f",self.sum_order_money];
     self.order_state = @"尚未处理";
-    self.pay_type = @"货到付款";
+    self.pay_type = @"支付宝支付";
 //    self.order_sendfee = [NSNumber numberWithInt:0];
     
 }
@@ -384,21 +390,112 @@ NSCondition     *_condition;//条件锁
 }
 */
 
+
+/*============================================================================*/
+/*=======================接入支付宝需要的代码段===================================*/
+/*============================================================================*/
+NSString *partner = @"2088121360980271";
+NSString *seller = @"yly20150501@sina.com";
+NSString *privateKey = @"MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBAMlMtuJaDMnwpF613+iHgEkaom8Sw42S/KmWsp8Q2DBroOG+sxPk/4sOa3okKIaMFUQgYrj+YiKsS2jZCy43MHfaZXy4QFRr3l9nqQGJFCylRjiUdetiVHeL2uEEBr8LxYaic/je/x3Dv3N+dIKTfVxa8i1WMFdFtnmJxOxB7Oz9AgMBAAECgYBbwZUnbiagMgmqhjqu8nzeVb6u5J2wvcxfvSpkaTgyMg0eeV+FdP+qsgL5pNu4IMhcympVqtauuVySSUTYZx225MJHqfQSY5s3l5hINQDQmOC4DsCUlWmfahjf3K1WK8ujFtc8WkZx12pyVpaFgu7tKYmmhyTRc4AwlLOw6cPVvQJBAPGctR8E1Q1dG3fwqiw2UItacNEYiWbELmR3nAGts0cGVT8rpVefD6c8oKx1gf+ZLAUzKVckl8vRBU1CTq5Z7SMCQQDVSXUUbD9DPWRxSy7paHfUs5k3sRito2xVoq9e1oPT4eadJnu1FCT+UVygv2xnvKo5oYBVo4uB3n6s0jsDca9fAkEA5HzXCCuQs9+eL3IH7GG9D9wKnqL+pZHXcalvfmLfDMbfbSsAZPmGWxhJtm417xrSd2RnrwJrDxNvWR3gvJ9MUwJBALzPanXJ3bcIggJJLB4z/OCunNRQUihko2KrwdOS0uCe+ifkCV8jlhwMqpMi4jRzL74U2ib1wGoXLMyQzu0dlsECQQDreQ3cFuh0tSBA+f4C6r3P2FOGDHJaO3cTuP5tQLHD5bJ2L8y+iqEmgOTc0L9plXBKjBV5z8XOhaNZTpdcqxMR";
+
+#pragma mark -
+#pragma mark   ==============产生随机订单号==============
+
+
+- (NSString *)generateTradeNO
+{
+    static int kNumber = 15;
+    
+    NSString *sourceStr = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    NSMutableString *resultStr = [[NSMutableString alloc] init];
+    srand(time(0));
+    for (int i = 0; i < kNumber; i++)
+    {
+        unsigned index = rand() % [sourceStr length];
+        NSString *oneStr = [sourceStr substringWithRange:NSMakeRange(index, 1)];
+        [resultStr appendString:oneStr];
+    }
+    return resultStr;
+}
+
+
+/*============================================================================*/
+/*============================================================================*/
+/*============================================================================*/
+
+
+
+
+
+
 #pragma mark----提交订单-----
 - (IBAction)SubmitOrderOnclick:(id)sender {
+    NSString * order_id = [self generateTradeNO];
 
-    [StatusTool statusToolAddNewOrderInfoWithShopID:self.shop_id CustID:self.cust_id CustName:self.cust_name CustPhone:self.cust_phone OrderMoney:self.shop_order_money OrderSendfee:self.order_sendfee OrderState:self.order_state OrderAddress:self.cust_address PayType:self.pay_type CommID:self.comm_id CommUnit:self.comm_unit CommPrice:self.comm_price CommName:self.comm_name BuyAmount:self.comm_buy_amount CommType:self.commodity_type_array Success:^(id object) {
+    [StatusTool statusToolAddNewOrderInfoWithShopID:self.shop_id CustID:self.cust_id CustName:self.cust_name CustPhone:self.cust_phone OrderMoney:self.shop_order_money OrderSendfee:self.order_sendfee OrderState:self.order_state OrderAddress:self.cust_address PayType:self.pay_type CommID:self.comm_id CommUnit:self.comm_unit CommPrice:self.comm_price CommName:self.comm_name BuyAmount:self.comm_buy_amount CommType:self.commodity_type_array OrderID:order_id Success:^(id object) {
         
-        [UIAlertView showAlertViewWithTitle:@"提示" message:@"订单提交成功" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
+//        [UIAlertView showAlertViewWithTitle:@"提示" message:@"订单提交成功" cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:^(int buttonIndex) {
+//            
+//                        } onCancel:^{
+//                            //点取消按钮
+//                        [self MotifyShoppingCart];
+//            OrderListViewController *OLVC = [OrderListViewController createFromStoryboardName:@"OrderList" withIdentifier:@"order_list"];
+//                [self.navigationController pushViewController:OLVC animated:YES];
+//                            }];
+
+        /*
+         *生成订单信息及签名
+         */
+        //将商品信息赋予AlixPayOrder的成员变量
+        Order *order = [[Order alloc] init];
+        order.partner = partner;
+        order.seller = seller;
+        order.tradeNO = order_id; //订单ID（由商家自行制定）
+//        order.productName = self.comm_name[0]; //商品标题
+        //测试用
+         order.productName = @"mizhixiaopai"; //商品标题
+        order.productDescription = @"111"; //商品描述
+//        order.amount = [NSString stringWithFormat:@"%@",self.shop_order_money]; //商品价格
+//        order.amount = [NSString stringWithFormat:@"%.2f",self.sum_order_money];
+        order.amount = @"0.01";
+
+//               NSString *baseurl_string = [API_HOST stringByAppendingString:@"/notify_url.php"];
+        NSString *baseurl_string = [API_HOST stringByAppendingString:@"/index.php/Home/Tackle"];
+        NSLog(@"^^^^^^^^^baseurl = %@", baseurl_string);
+       order.notifyURL = baseurl_string; //回调URL
+        // test
+//        order.notifyURL = @"http://huaernan.wicp.net/phpAppServer/notify_url.php"; //回调URL
+
+        
+        order.service = @"mobile.securitypay.pay";
+        order.paymentType = @"1";
+        order.inputCharset = @"utf-8";
+        order.itBPay = @"30m";//移动支付30分钟时间
+        order.showUrl = @"m.alipay.com";
+        
+        //应用注册scheme,在AlixPayDemo-Info.plist定义URL types
+        NSString *appScheme = @"alisdkdemo";//CommunityService每个app都有个scheme 用来标记每个app 支付宝回调app信息是会根据这个值回调
+        
+        //将商品信息拼接成字符串
+        NSString *orderSpec = [order description];
+        NSLog(@"orderSpec = %@",orderSpec);
+        //获取私钥并将商户信息签名,外部商户可以根据情况存放私钥和签名,只需要遵循RSA签名规范,并将签名字符串base64编码和UrlEncode
+        id<DataSigner> signer = CreateRSADataSigner(privateKey);
+        NSString *signedString = [signer signString:orderSpec];
+        
+        //将签名成功字符串格式化为订单字符串,请严格按照该格式
+        NSString *orderString = nil;
+        if (signedString != nil) {
+            orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"",
+                           orderSpec, signedString, @"RSA"];
+            NSLog(@"^^^^^orderstring  =  %@",orderString);
             
-                        } onCancel:^{
-                            //点取消按钮
-                        [self MotifyShoppingCart];
-            OrderListViewController *OLVC = [OrderListViewController createFromStoryboardName:@"OrderList" withIdentifier:@"order_list"];
-                [self.navigationController pushViewController:OLVC animated:YES];
-                            }];
+            [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+                NSLog(@"~~~reslut = %@",resultDic);
+            }];
+            
+        }
 
-        
         
         
     } failurs:^(NSError *error) {

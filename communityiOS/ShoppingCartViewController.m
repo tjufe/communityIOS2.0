@@ -364,7 +364,7 @@ m=(int)[self.shopping count]-1;
         //商品数量
         self.sc_table_cell2.label_comm_amount.text = [NSString stringWithFormat:@"%d",s.buy_amount];
         //商品的价格
-        self.sc_table_cell2.label_comm_price.text = [NSString stringWithFormat:@"%.1f",s.comm_price];
+        self.sc_table_cell2.label_comm_price.text = [NSString stringWithFormat:@"%.2f",s.comm_price];
         //数量加、减按钮设置tag
         self.sc_table_cell2.btn_delete.tag = 0;
         self.sc_table_cell2.btn_add.tag = 1;
